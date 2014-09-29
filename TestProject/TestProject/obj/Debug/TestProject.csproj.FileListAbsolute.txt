@@ -1,0 +1,15 @@
+T:\School\CreatorsToolbars\TestProject\TestProject\bin\Debug\TestProject.exe.config
+T:\School\CreatorsToolbars\TestProject\TestProject\bin\Debug\TestProject.exe
+T:\School\CreatorsToolbars\TestProject\TestProject\bin\Debug\TestProject.pdb
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestProject.csprojResolveAssemblyReference.cache
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\App.g.cs
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestProject_MarkupCompile.cache
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestProject.g.resources
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestProject.Properties.Resources.resources
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestProject.csproj.GenerateResource.Cache
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestProject.exe
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestProject.pdb
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\LauncherWindow.baml
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestWindow1.baml
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\LauncherWindow.g.cs
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestWindow1.g.cs
