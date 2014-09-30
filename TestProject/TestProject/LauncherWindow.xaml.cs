@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject
 {
@@ -30,9 +31,12 @@ namespace TestProject
         int iconWidth = 150;
         int iconSpacing = 10;
 
+        ToolbarIcon launchIcon;
+
         public MainWindow()
         {
             expanded = false;
+            
             totalCols = (numToolbarIcons * numColsPerIcon)+numToolbarIcons;
             InitializeComponent();
             launcherWindow.Width = iconWidth + (2 * iconSpacing);
@@ -50,6 +54,21 @@ namespace TestProject
         }
         private void InitializeIcons()
         {
+            ImageStates states = new ImageStates();
+            states.ActivePath = "Images/launchIconActive.png";
+            states.ActiveHoverPath = "Images/launchIconActiveHover.png";
+            states.ActivePressedPath = "Images/launchIconActivePressed.png";
+            states.InactivePath = "Images/launchIconInactive.png";
+            states.InactiveHoverPath = "Images/launchIconInactiveHover.png";
+            states.InactivePressedPath = "Images/launchIconInactivePressed.png";
+            states.DisabledPath = "Images/launchIconDisabled.png";
+            launchIcon = new ToolbarIcon(Constants.ToolbarIconWidth, Constants.ToolbarIconHeight, states, false);
+            launchIcon.GetButtonControl().Click += new RoutedEventHandler(launcherButton_Click);
+            Grid.SetRow(launchIcon.GetButtonControl(), 1);
+            Grid.SetColumn(launchIcon.GetButtonControl(), 1);
+            Grid.SetColumnSpan(launchIcon.GetButtonControl(), numColsPerIcon);
+            launcherGrid.Children.Add(launchIcon.GetButtonControl());
+
             icons = new List<Button>();
             Button b1 = new Button();
             b1.Background = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
@@ -95,11 +114,13 @@ namespace TestProject
             if (expanded)
             {
                 Collapse();
+                launchIcon.SetInactive();
                 expanded = false;
             }
             else
             {
                 Expand();
+                launchIcon.SetActive();
                 expanded = true;
             }
         }

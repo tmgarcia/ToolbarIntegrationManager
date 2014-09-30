@@ -31,12 +31,5 @@
 				Name="closeButton"
 				Click="closeButton_Click">x
 		</Button>
-		<Button Background="Blue"
-				Grid.Column="1"
-				Grid.Row="1"
-				Grid.ColumnSpan="4"
-				Name="launcherButton"
-				Click="launcherButton_Click">
-		</Button>
 	</Grid>
 </Window>

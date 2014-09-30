@@ -13,3 +13,5 @@ T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\LauncherWindow.baml
 T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestWindow1.baml
 T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\LauncherWindow.g.cs
 T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\TestWindow1.g.cs
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\UserControls\ActiveInactiveImageButton.baml
+T:\School\CreatorsToolbars\TestProject\TestProject\obj\Debug\UserControls\ActiveInactiveImageButton.g.cs
