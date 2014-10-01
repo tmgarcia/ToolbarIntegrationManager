@@ -12,5 +12,8 @@ namespace TestProject
         public static int ToolbarIconHeight = 150;
         public static int ToolIconWidth;
         public static int ToolIconHeight;
+
+        public static string ToolbarIconPath = "Images/ToolbarIcons/";
+        public static string CommandButtonPath = "Images/CommandButtons/";
     }
 }

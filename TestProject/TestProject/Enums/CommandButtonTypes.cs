@@ -8,6 +8,6 @@ namespace TestProject.Enums
 {
     public enum CommandButtonTypes
     {
-        ToolbarIconClose, ToolbarIconMinimize, ToolbarIconMaximize, ToolbarIconHelp,
+        ToolbarIconClose, ToolbarIconMinimize, ToolbarIconRestore, ToolbarIconHelp,
     }
 }

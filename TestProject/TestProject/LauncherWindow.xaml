@@ -20,7 +20,7 @@
 			<RowDefinition />
 			<RowDefinition Height="8*"/>
 		</Grid.RowDefinitions>
-		<Button Grid.Column="3"
+		<!--<Button Grid.Column="3"
 				FontSize="9"
 				Name="minimizeButton"
 				Click="minimizeButton_Click">
@@ -30,6 +30,6 @@
 				FontSize="9"
 				Name="closeButton"
 				Click="closeButton_Click">x
-		</Button>
+		</Button>-->
 	</Grid>
 </Window>

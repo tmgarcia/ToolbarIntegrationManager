@@ -36,11 +36,11 @@ namespace TestProject
         public MainWindow()
         {
             expanded = false;
-            
             totalCols = (numToolbarIcons * numColsPerIcon)+numToolbarIcons;
             InitializeComponent();
             launcherWindow.Width = iconWidth + (2 * iconSpacing);
             InitializeColumnDefs();
+            InitializeLauncherIcon();
             InitializeIcons();
         }
 
@@ -52,16 +52,16 @@ namespace TestProject
                 expandedColumns.Add(new ColumnDefinition());
             }
         }
-        private void InitializeIcons()
+        private void InitializeLauncherIcon()
         {
             ImageStates states = new ImageStates();
-            states.ActivePath = "Images/launchIconActive.png";
-            states.ActiveHoverPath = "Images/launchIconActiveHover.png";
-            states.ActivePressedPath = "Images/launchIconActivePressed.png";
-            states.InactivePath = "Images/launchIconInactive.png";
-            states.InactiveHoverPath = "Images/launchIconInactiveHover.png";
-            states.InactivePressedPath = "Images/launchIconInactivePressed.png";
-            states.DisabledPath = "Images/launchIconDisabled.png";
+            states.ActivePath = Constants.ToolbarIconPath + "launchIconActive.png";
+            states.ActiveHoverPath = Constants.ToolbarIconPath + "launchIconActiveHover.png";
+            states.ActivePressedPath = Constants.ToolbarIconPath + "launchIconActivePressed.png";
+            states.InactivePath = Constants.ToolbarIconPath + "launchIconInactive.png";
+            states.InactiveHoverPath = Constants.ToolbarIconPath + "launchIconInactiveHover.png";
+            states.InactivePressedPath = Constants.ToolbarIconPath + "launchIconInactivePressed.png";
+            states.DisabledPath = Constants.ToolbarIconPath + "launchIconDisabled.png";
             launchIcon = new ToolbarIcon(Constants.ToolbarIconWidth, Constants.ToolbarIconHeight, states, false);
             launchIcon.GetButtonControl().Click += new RoutedEventHandler(launcherButton_Click);
             Grid.SetRow(launchIcon.GetButtonControl(), 1);
@@ -69,6 +69,14 @@ namespace TestProject
             Grid.SetColumnSpan(launchIcon.GetButtonControl(), numColsPerIcon);
             launcherGrid.Children.Add(launchIcon.GetButtonControl());
 
+            ToolbarIconCommandButtons launchCommands = new ToolbarIconCommandButtons();
+            launchCommands.Close.Click += new RoutedEventHandler(closeButton_Click);
+            launchCommands.Minimize.Click += new RoutedEventHandler(minimizeButton_Click);
+            launchCommands.AddButtonsToGrid(launcherGrid, 3, 0);
+            launchCommands.SetToActiveState();
+        }
+        private void InitializeIcons()
+        {
             icons = new List<Button>();
             Button b1 = new Button();
             b1.Background = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));

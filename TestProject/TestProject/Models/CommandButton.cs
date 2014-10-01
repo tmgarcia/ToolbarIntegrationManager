@@ -21,6 +21,7 @@ namespace TestProject.Models
         {
             type = buttonType;
             SetupTypePaths();
+            button = new ThreeStateEnabledButton(normalPath, hoverPath, pressedPath);
         }
 
         public Button GetButtonControl()
@@ -42,20 +43,24 @@ namespace TestProject.Models
             switch (type)
             {
                 case CommandButtonTypes.ToolbarIconClose:
-                    normalPath = "Images/commandButtonToolbarIconCloseN.png";
-                    hoverPath = "Images/commandButtonToolbarIconCloseH.png";
-                    pressedPath = "Images/commandButtonToolbarIconCloseP.png";
+                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconCloseN.png";
+                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconCloseH.png";
+                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconCloseP.png";
                     break;
                 case CommandButtonTypes.ToolbarIconMinimize:
-                    normalPath = "Images/commandButtonToolbarIconMinimizeN.png";
-                    hoverPath = "Images/commandButtonToolbarIconMinimizeH.png";
-                    pressedPath = "Images/commandButtonToolbarIconMinimizeP.png";
+                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconMinimizeN.png";
+                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconMinimizeH.png";
+                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconMinimizeP.png";
                     break;
-                case CommandButtonTypes.ToolbarIconMaximize:
-
+                case CommandButtonTypes.ToolbarIconRestore:
+                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconRestoreN.png";
+                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconRestoreH.png";
+                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconRestoreP.png";
                     break;
                 case CommandButtonTypes.ToolbarIconHelp:
-
+                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconHelpN.png";
+                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconHelpH.png";
+                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconHelpP.png";
                     break;
                 default:
 

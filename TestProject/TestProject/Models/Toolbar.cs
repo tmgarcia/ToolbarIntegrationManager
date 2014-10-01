@@ -10,6 +10,7 @@ namespace TestProject.Models
     class Toolbar
     {
         ToolbarIcon icon;
+        ToolbarIconCommandButtons commandButtons;
         DisplayStates displayState;
         DisplayOrientations displayOrientation;
         bool isActive;

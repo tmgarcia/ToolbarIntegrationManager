@@ -54,17 +54,23 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants.cs" />
+    <Compile Include="Enums\CommandButtonTypes.cs" />
     <Compile Include="Enums\DisplayOrientations.cs" />
     <Compile Include="Enums\DisplayStates.cs" />
+    <Compile Include="Models\CommandButton.cs" />
     <Compile Include="Models\ImageStates.cs" />
     <Compile Include="Models\ToolbarIcon.cs" />
     <Compile Include="Models\Tool.cs" />
     <Compile Include="Models\Toolbar.cs" />
+    <Compile Include="Models\ToolbarIconCommandButtons.cs" />
     <Compile Include="TestWindow1.xaml.cs">
       <DependentUpon>TestWindow1.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThreeStateEnabledButton.xaml.cs">
+      <DependentUpon>ThreeStateEnabledButton.xaml</DependentUpon>
     </Compile>
     <Page Include="LauncherWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ActiveInactiveImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ThreeStateEnabledButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,113 +124,140 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Images\colorsIconActive.png">
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconCloseH.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\colorsIconActiveHover.png">
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconCloseN.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\colorsIconActivePressed.png">
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconCloseP.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\colorsIconDisabled.png">
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconMinimizeH.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\colorsIconInactive.png">
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconMinimizeN.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\colorsIconInactiveHover.png">
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconMinimizeP.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\colorsIconInactivePressed.png">
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\colorsIconActive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\conversionIconActive.png">
+    <Resource Include="Images\ToolbarIcons\colorsIconActiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\conversionIconActiveHover.png">
+    <Resource Include="Images\ToolbarIcons\colorsIconActivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\conversionIconActivePressed.png">
+    <Resource Include="Images\ToolbarIcons\colorsIconDisabled.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\conversionIconDisabled.png">
+    <Resource Include="Images\ToolbarIcons\colorsIconInactive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\conversionIconInactive.png">
+    <Resource Include="Images\ToolbarIcons\colorsIconInactiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\conversionIconInactiveHover.png">
+    <Resource Include="Images\ToolbarIcons\colorsIconInactivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\conversionIconInactivePressed.png">
+    <Resource Include="Images\ToolbarIcons\conversionIconActive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\drawingIconActive.png">
+    <Resource Include="Images\ToolbarIcons\conversionIconActiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\drawingIconActiveHover.png">
+    <Resource Include="Images\ToolbarIcons\conversionIconActivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\drawingIconActivePressed.png">
+    <Resource Include="Images\ToolbarIcons\conversionIconDisabled.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\drawingIconDisabled.png">
+    <Resource Include="Images\ToolbarIcons\conversionIconInactive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\drawingIconInactive.png">
+    <Resource Include="Images\ToolbarIcons\conversionIconInactiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\drawingIconInactiveHover.png">
+    <Resource Include="Images\ToolbarIcons\conversionIconInactivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\drawingIconInactivePressed.png">
+    <Resource Include="Images\ToolbarIcons\drawingIconActive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\launchIconActive.png">
+    <Resource Include="Images\ToolbarIcons\drawingIconActiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\launchIconActiveHover.png">
+    <Resource Include="Images\ToolbarIcons\drawingIconActivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\launchIconActivePressed.png">
+    <Resource Include="Images\ToolbarIcons\drawingIconDisabled.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\launchIconDisabled.png">
+    <Resource Include="Images\ToolbarIcons\drawingIconInactive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\launchIconInactive.png">
+    <Resource Include="Images\ToolbarIcons\drawingIconInactiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\launchIconInactiveHover.png">
+    <Resource Include="Images\ToolbarIcons\drawingIconInactivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\launchIconInactivePressed.png">
+    <Resource Include="Images\ToolbarIcons\launchIconActive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\measureIconActive.png">
+    <Resource Include="Images\ToolbarIcons\launchIconActiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\measureIconActiveHover.png">
+    <Resource Include="Images\ToolbarIcons\launchIconActivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\measureIconActivePressed.png">
+    <Resource Include="Images\ToolbarIcons\launchIconDisabled.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\measureIconDisabled.png">
+    <Resource Include="Images\ToolbarIcons\launchIconInactive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\measureIconInactive.png">
+    <Resource Include="Images\ToolbarIcons\launchIconInactiveHover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\measureIconInactiveHover.png">
+    <Resource Include="Images\ToolbarIcons\launchIconInactivePressed.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\measureIconInactivePressed.png">
+    <Resource Include="Images\ToolbarIcons\measureIconActive.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconActiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconActivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconDisabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconInactive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconInactiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconInactivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconHelpH.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconHelpN.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconHelpP.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreH.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreN.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreP.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
