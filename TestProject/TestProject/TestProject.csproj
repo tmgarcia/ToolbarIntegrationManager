@@ -63,11 +63,17 @@
     <Compile Include="Models\Tool.cs" />
     <Compile Include="Models\Toolbar.cs" />
     <Compile Include="Models\ToolbarIconCommandButtons.cs" />
+    <Compile Include="TestControl.xaml.cs">
+      <DependentUpon>TestControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TestWindow1.xaml.cs">
       <DependentUpon>TestWindow1.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FloatingToolbar.xaml.cs">
+      <DependentUpon>FloatingToolbar.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ThreeStateEnabledButton.xaml.cs">
       <DependentUpon>ThreeStateEnabledButton.xaml</DependentUpon>
@@ -84,11 +90,19 @@
       <DependentUpon>LauncherWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TestControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TestWindow1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ActiveInactiveImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FloatingToolbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -258,6 +272,22 @@
     <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreH.png" />
     <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreN.png" />
     <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\toolbarIconTest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CommandButtons\toolbarClose.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\toolbarHide.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\toolbarOrientation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

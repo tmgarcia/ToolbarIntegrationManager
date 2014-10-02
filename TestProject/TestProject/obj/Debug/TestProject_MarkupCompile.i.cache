@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\App.xaml
-5-645067346
+6-35093726
 
-232126435835
+24-1186608059
 12-1401562060
-LauncherWindow.xaml;TestWindow1.xaml;UserControls\ActiveInactiveImageButton.xaml;UserControls\FloatingToolbar.xaml;UserControls\ThreeStateEnabledButton.xaml;
+LauncherWindow.xaml;TestControl.xaml;TestWindow1.xaml;UserControls\ActiveInactiveImageButton.xaml;UserControls\FloatingToolbar.xaml;UserControls\ThreeStateEnabledButton.xaml;
 
 False
 

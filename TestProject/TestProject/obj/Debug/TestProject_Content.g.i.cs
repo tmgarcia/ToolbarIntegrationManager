@@ -8,11 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/commandbuttontoolbariconhelph.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/commandbuttontoolbariconhelpn.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/commandbuttontoolbariconhelpp.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/commandbuttontoolbariconrestoreh.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/commandbuttontoolbariconrestoren.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/commandbuttontoolbariconrestorep.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/toolbarclose.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/toolbarhide.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/toolbarorientation.png")]
 
 

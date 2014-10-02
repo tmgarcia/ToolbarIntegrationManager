@@ -7,7 +7,7 @@
 		AllowsTransparency="True"
 		Background="#0FFF">
     <Grid Name="launcherGrid"
-		  ShowGridLines="True">
+		  ShowGridLines="False">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition />
 			<ColumnDefinition />

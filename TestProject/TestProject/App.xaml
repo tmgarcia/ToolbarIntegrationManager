@@ -3,6 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="LauncherWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<ResourceDictionary>
+			<Color x:Key="ToolbarBackgroundLightColor">#AAA</Color>
+			<Color x:Key="ToolbarBackgroundMediumColor">#999</Color>
+			<Color x:Key="ToolbarBackgroundDarkColor">#777</Color>
+
+			<Color x:Key="ToolbarContentLightColor">#333</Color>
+			<Color x:Key="ToolbarContentMediumColor">#111</Color>
+			<Color x:Key="ToolbarContentDarkColor">#000</Color>
+
+			<Color x:Key="ButtonBorderLightColor">#888</Color>
+			<Color x:Key="ButtonBorderMediumColor">#666</Color>
+			<Color x:Key="ButtonBorderDarkColor">#444</Color>
+
+			<Color x:Key="DarkTransparentColor1">#3111</Color>
+			<Color x:Key="DarkTransparentColor2">#5111</Color>
+			<Color x:Key="DarkTransparentColor3">#A111</Color>
+
+			<SolidColorBrush x:Key="ToolbarContentLightBrush"
+							 Color="{DynamicResource ToolbarContentLightColor}" />
+			<SolidColorBrush x:Key="ToolbarContentMediumBrush"
+							 Color="{DynamicResource ToolbarContentMediumColor}" />
+			<SolidColorBrush x:Key="ToolbarContentDarkBrush"
+							 Color="{DynamicResource ToolbarContentDarkColor}" />
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>
