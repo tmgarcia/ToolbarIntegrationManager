@@ -13,10 +13,8 @@
 					<ControlTemplate TargetType="{x:Type ToggleButton}">
 						<Border Name="Border"
 								BorderThickness="1"
-								CornerRadius="20,1,1,20">
-							<!--<Border.BorderBrush>
-								<SolidColorBrush Color="Red" />
-							</Border.BorderBrush>-->
+								CornerRadius="20,1,1,20"
+								RenderTransformOrigin="0.5,0.5">
 							<Border.Background>
 								<LinearGradientBrush StartPoint="0,0"
 													 EndPoint="1,0">
@@ -24,21 +22,16 @@
 									<GradientStop Color="#0000" Offset="1"/>
 								</LinearGradientBrush>
 							</Border.Background>
+							<Border.RenderTransform>
+								<RotateTransform x:Name="BorderRotate" Angle="0" />
+							</Border.RenderTransform>
 							<Grid>
-								<Path x:Name="DoubleArrow"
-									  VerticalAlignment="Center"
-									  Data="M 0,5 L 7,0 L 7,5 L 14,0 L 14,10 L 7,5 L 7,10 Z"
-									  RenderTransformOrigin="0.5,0.5">
-									<Path.Fill>
-										<SolidColorBrush x:Name="DoubleArrowFill" Color="{DynamicResource ToolbarContentMediumColor}" />
-									</Path.Fill>
-									<Path.RenderTransform>
-										<TransformGroup x:Name="DoubleArrowTransforms">
-											<ScaleTransform x:Name="FlipScale" ScaleX="1"/>
-											<RotateTransform x:Name="OrientationAngle" Angle="0"/>
-										</TransformGroup>
-									</Path.RenderTransform>
-								</Path>
+								<Image Name="Symbol" Source="{DynamicResource SymbolDoubleArrow}"
+									   RenderTransformOrigin="0.5,0.5">
+									<Image.RenderTransform>
+										<ScaleTransform x:Name="FlipScale" ScaleX="1"/>
+									</Image.RenderTransform>
+								</Image>
 							</Grid>
 							<VisualStateManager.VisualStateGroups>
 								<VisualStateGroup x:Name="CommonStates">
@@ -160,15 +153,15 @@
 	<ToolBar.Template>
 		<ControlTemplate TargetType="{x:Type ToolBar}">
 			<Border x:Name="Border"
-								CornerRadius="20"
-								BorderThickness="1"
-								Padding="0,3,10,3">
+					CornerRadius="20"
+					BorderThickness="1"
+					Padding="0,3,10,3">
 				<Border.BorderBrush>
 					<SolidColorBrush Color="Transparent"/>
 				</Border.BorderBrush>
 				<Border.Background>
 					<LinearGradientBrush StartPoint="0,0"
-													 EndPoint="0,1">
+										 EndPoint="0,1">
 						<GradientStop Color="{DynamicResource ToolbarBackgroundLightColor}" Offset="0" />
 						<GradientStop Color="{DynamicResource ToolbarBackgroundMediumColor}" Offset="0.5" />
 						<GradientStop Color="{DynamicResource ToolbarBackgroundDarkColor}" Offset="1" />
@@ -176,22 +169,25 @@
 				</Border.Background>
 				<DockPanel>
 					<ToggleButton x:Name="CollapseButton"
-									Style="{DynamicResource ToolBarCollapseButtonStyle}"
-									Width="20">
+								  Style="{DynamicResource ToolBarCollapseButtonStyle}"
+								  Width="20"
+								  Checked="CollapseButton_Checked"
+								  Unchecked="CollapseButton_Unchecked">
 					</ToggleButton>
 					<Image Name="ToolbarIcon"
 									   Source="../Images/ToolbarIcons/toolbarIconTest.png"
 									   Margin="5,0"/>
 					<Thumb Name="ToolBarThumb"
-									   Style="{DynamicResource ToolBarThumbStyle}"
-									   Width="10"/>
+						   Style="{DynamicResource ToolBarThumbStyle}"
+						   Width="10"/>
 					<StackPanel DockPanel.Dock="Right"
-											Orientation="Vertical">
+								Orientation="Vertical">
 						<StackPanel Orientation="Horizontal">
 							<Button Name="OrientationButton"
-												Style="{DynamicResource ToolbarCommandButtonStyle}">
-								<Image Source="../Images/CommandButtons/toolbarOrientation.png"   
-												   RenderTransformOrigin="0.5,0.5">
+									Style="{DynamicResource ToolbarCommandButtonStyle}"
+									Click="OrientationButton_Click">
+								<Image Source="{DynamicResource SymbolRotate}"   
+									   RenderTransformOrigin="0.5,0.5">
 									<Image.RenderTransform>
 										<TransformGroup x:Name="OrientationTransformGroup">
 											<RotateTransform x:Name="OrientationAngle" Angle="0"/>
@@ -200,17 +196,17 @@
 								</Image>
 							</Button>
 							<Button Name="MinimizeButton"
-												Style="{DynamicResource ToolbarCommandButtonStyle}">
-								<Image Source="../Images/CommandButtons/toolbarHide.png" />
+									Style="{DynamicResource ToolbarCommandButtonStyle}">
+								<Image Source="{DynamicResource SymbolBar}" VerticalAlignment="Bottom"/>
 							</Button>
 							<Button Name="CloseButton"
-												Style="{DynamicResource ToolbarCommandButtonStyle}">
-								<Image Source="../Images/CommandButtons/toolbarClose.png" />
+									Style="{DynamicResource ToolbarCommandButtonStyle}">
+								<Image Source="{DynamicResource SymbolClose}" />
 							</Button>
 						</StackPanel>
 					</StackPanel>
 					<ToolBarPanel x:Name="PART_ToolBarPanel"
-											  IsItemsHost="True"/>
+								  IsItemsHost="True"/>
 				</DockPanel>
 			</Border>
 		</ControlTemplate>
