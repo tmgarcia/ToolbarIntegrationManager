@@ -22,6 +22,9 @@
 									<GradientStop Color="#0000" Offset="1"/>
 								</LinearGradientBrush>
 							</Border.Background>
+							<Border.LayoutTransform>
+								<RotateTransform x:Name="BorderRotateL" Angle="0" />
+							</Border.LayoutTransform>
 							<Border.RenderTransform>
 								<RotateTransform x:Name="BorderRotate" Angle="0" />
 							</Border.RenderTransform>
@@ -155,33 +158,39 @@
 			<Border x:Name="Border"
 					CornerRadius="20"
 					BorderThickness="1"
-					Padding="0,3,10,3">
+					Padding="3">
 				<Border.BorderBrush>
 					<SolidColorBrush Color="Transparent"/>
 				</Border.BorderBrush>
 				<Border.Background>
-					<LinearGradientBrush StartPoint="0,0"
+					<LinearGradientBrush x:Name="BorderBackgroundBrush"
+										 StartPoint="0,0"
 										 EndPoint="0,1">
 						<GradientStop Color="{DynamicResource ToolbarBackgroundLightColor}" Offset="0" />
 						<GradientStop Color="{DynamicResource ToolbarBackgroundMediumColor}" Offset="0.5" />
 						<GradientStop Color="{DynamicResource ToolbarBackgroundDarkColor}" Offset="1" />
 					</LinearGradientBrush>
 				</Border.Background>
-				<DockPanel>
-					<ToggleButton x:Name="CollapseButton"
+				<DockPanel Name="Dock">
+					<StackPanel Name="CollapseAndIconPanel"
+								Orientation="Horizontal"
+								DockPanel.Dock="Left">
+						<ToggleButton x:Name="CollapseButton"
 								  Style="{DynamicResource ToolBarCollapseButtonStyle}"
 								  Width="20"
 								  Checked="CollapseButton_Checked"
 								  Unchecked="CollapseButton_Unchecked">
-					</ToggleButton>
-					<Image Name="ToolbarIcon"
+						</ToggleButton>
+						<Image Name="ToolbarIcon"
 									   Source="../Images/ToolbarIcons/toolbarIconTest.png"
 									   Margin="5,0"/>
+					</StackPanel>
 					<Thumb Name="ToolBarThumb"
 						   Style="{DynamicResource ToolBarThumbStyle}"
 						   Width="10"/>
 					<StackPanel DockPanel.Dock="Right"
-								Orientation="Vertical">
+								Orientation="Vertical"
+								Name="CommandButtonsPanel">
 						<StackPanel Orientation="Horizontal">
 							<Button Name="OrientationButton"
 									Style="{DynamicResource ToolbarCommandButtonStyle}"

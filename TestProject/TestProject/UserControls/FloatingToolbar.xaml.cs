@@ -26,10 +26,17 @@ namespace TestProject.UserControls
 
         public bool isCollapsed = false;
         public DisplayOrientations orientation = DisplayOrientations.Horizontal;
+        public double width;
+        public double height;
 
         public FloatingToolbar()
         {
+            width = Constants.ToolbarHorizontalExpandedWidth;
+            height = Constants.ToolbarHorizontalExpandedHeight;
+
             InitializeComponent();
+            toolbarControl.Width = width;
+            toolbarControl.Height = height;
         }
 
         public event RoutedEventHandler TemplateApplied
@@ -79,17 +86,90 @@ namespace TestProject.UserControls
             if (orientation == DisplayOrientations.Horizontal)
             {
                 orientation = DisplayOrientations.Vertical;
-                //ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
-                //RotateTransform r = (RotateTransform)(btn.Template.FindName("BorderRotate", btn));
-                //r.Angle = 90;
+                orientVertical();
             }
             else
             {
                 orientation = DisplayOrientations.Horizontal;
-                //ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
-                //RotateTransform r = (RotateTransform)(btn.Template.FindName("BorderRotate", btn));
-                //r.Angle = 0;
+                orientHorizontal();
             }
+        }
+
+        private void orientHorizontal()
+        {
+            double actualWidth = toolbarControl.RenderSize.Width;
+            width = toolbarControl.Width = toolbarControl.RenderSize.Height;
+            height = toolbarControl.Height = actualWidth;
+
+            DockPanel dock = (DockPanel)(toolbarControl.Template.FindName("Dock", toolbarControl));
+
+            StackPanel CommandButtonsPanel = (StackPanel)(toolbarControl.Template.FindName("CommandButtonsPanel", toolbarControl));
+            CommandButtonsPanel.Orientation = System.Windows.Controls.Orientation.Vertical;
+            DockPanel.SetDock(CommandButtonsPanel, Dock.Right);
+            dock.Children.Remove(CommandButtonsPanel);
+            dock.Children.Insert(dock.Children.Count-2, CommandButtonsPanel);
+
+            StackPanel CollapseAndIconPanel = (StackPanel)(toolbarControl.Template.FindName("CollapseAndIconPanel", toolbarControl));
+            double cipW = CollapseAndIconPanel.ActualWidth;
+            DockPanel.SetDock(CollapseAndIconPanel, Dock.Left);
+
+            ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
+            btn.Width = 20;
+            ((RotateTransform)(btn.Template.FindName("BorderRotateL", btn))).Angle = 0;
+            CollapseAndIconPanel.Width = cipW;
+            CollapseAndIconPanel.Width = Double.NaN;
+            CollapseAndIconPanel.Height = Double.NaN;
+
+            Thumb ToolBarThumb = (Thumb)(toolbarControl.Template.FindName("ToolBarThumb", toolbarControl));
+            DockPanel.SetDock(ToolBarThumb, Dock.Left);
+
+            ToolBarThumb.Width = ToolBarThumb.ActualHeight;
+            ToolBarThumb.Height = Double.NaN;
+
+            ToolBarPanel panel = (ToolBarPanel)(toolbarControl.Template.FindName("PART_ToolBarPanel", toolbarControl));
+            panel.Orientation = System.Windows.Controls.Orientation.Horizontal;
+
+            //00 10
+            LinearGradientBrush BorderBackgroundBrush = (LinearGradientBrush)(toolbarControl.Template.FindName("BorderBackgroundBrush", toolbarControl));
+            BorderBackgroundBrush.StartPoint = Constants.VerticalGradientStart;
+            BorderBackgroundBrush.EndPoint = Constants.VerticalGradientEnd;
+        }
+        private void orientVertical()
+        {
+            double actualWidth = toolbarControl.RenderSize.Width;
+            width = toolbarControl.Width = toolbarControl.RenderSize.Height;
+            height = toolbarControl.Height = actualWidth;
+
+            DockPanel dock = (DockPanel)(toolbarControl.Template.FindName("Dock", toolbarControl));
+
+            StackPanel CommandButtonsPanel = (StackPanel)(toolbarControl.Template.FindName("CommandButtonsPanel", toolbarControl));
+            CommandButtonsPanel.Orientation = System.Windows.Controls.Orientation.Horizontal;
+            DockPanel.SetDock(CommandButtonsPanel, Dock.Top);
+            dock.Children.Remove(CommandButtonsPanel);
+            dock.Children.Insert(0,CommandButtonsPanel);
+
+            StackPanel CollapseAndIconPanel = (StackPanel)(toolbarControl.Template.FindName("CollapseAndIconPanel", toolbarControl));
+            double cipH = CollapseAndIconPanel.ActualHeight;
+            DockPanel.SetDock(CollapseAndIconPanel, Dock.Top);
+
+            ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
+            btn.Width = width / 5;
+            ((RotateTransform)(btn.Template.FindName("BorderRotateL", btn))).Angle = 90;
+            CollapseAndIconPanel.Height = cipH;
+
+            Thumb ToolBarThumb = (Thumb)(toolbarControl.Template.FindName("ToolBarThumb", toolbarControl));
+            DockPanel.SetDock(ToolBarThumb, Dock.Top);
+
+            ToolBarThumb.Height = ToolBarThumb.RenderSize.Width;
+            ToolBarThumb.Width = Double.NaN;
+
+            ToolBarPanel panel = (ToolBarPanel)(toolbarControl.Template.FindName("PART_ToolBarPanel", toolbarControl));
+            panel.Orientation = System.Windows.Controls.Orientation.Vertical;
+
+            //00 10
+            LinearGradientBrush BorderBackgroundBrush = (LinearGradientBrush)(toolbarControl.Template.FindName("BorderBackgroundBrush", toolbarControl));
+            BorderBackgroundBrush.StartPoint = Constants.HorizontalGradientStart;
+            BorderBackgroundBrush.EndPoint = Constants.HorizontalGradientEnd;
         }
     }
 }

@@ -83,7 +83,8 @@
 						</GeometryDrawing.Brush>
 					</GeometryDrawing>
 				</DrawingImage.Drawing>
-			</DrawingImage>
+			</DrawingImage>
+
 			<DrawingImage x:Key="SymbolDoubleArrow">
 				<DrawingImage.Drawing>
 					<GeometryDrawing Geometry="M 0,5 L 7,0 L 7,5 L 14,0 L 14,10 L 7,5 L 7,10 Z">
@@ -93,6 +94,9 @@
 					</GeometryDrawing>
 				</DrawingImage.Drawing>
 			</DrawingImage>
+			
+			
+			
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>
