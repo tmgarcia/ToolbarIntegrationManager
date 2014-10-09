@@ -81,11 +81,11 @@ namespace TestProject
             toolbars = new List<Models.Toolbar>();
             Toolbar t1 = new ColorToolbar();
             toolbars.Add(t1);
-            Toolbar t2 = new ColorToolbar();
+            Toolbar t2 = new DrawToolbar();
             toolbars.Add(t2);
-            Toolbar t3 = new ColorToolbar();
+            Toolbar t3 = new MeasureToolbar();
             toolbars.Add(t3);
-            Toolbar t4 = new ColorToolbar();
+            Toolbar t4 = new ConversionToolbar();
             toolbars.Add(t4);
 
 
@@ -161,5 +161,11 @@ namespace TestProject
                 b.commandButtons.RemoveButtonsFromGrid(launcherGrid);
             }
         }
+
+        private void launcherGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
     }
 }

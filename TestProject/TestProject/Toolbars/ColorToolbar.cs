@@ -12,13 +12,13 @@ namespace TestProject.Toolbars
     {
         public ColorToolbar() : base()
         {
-            iconA = "colorsIconActive.png";
-            iconAH = "colorsIconActiveHover.png";
-            iconAP = "colorsIconActivePressed.png";
-            iconI = "colorsIconInactive.png";
-            iconIH = "colorsIconInactiveHover.png";
-            iconIP = "colorsIconInactivePressed.png";
-            iconD = "colorsIconDisabled.png";
+            iconA   = "colorsIconActive.png";
+            iconAH  = "colorsIconActiveHover.png";
+            iconAP  = "colorsIconActivePressed.png";
+            iconI   = "colorsIconInactive.png";
+            iconIH  = "colorsIconInactiveHover.png";
+            iconIP  = "colorsIconInactivePressed.png";
+            iconD   = "colorsIconDisabled.png";
             SetupLaunchIcon();
             SetupCommandButtons();
         }

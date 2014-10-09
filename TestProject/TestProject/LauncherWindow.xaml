@@ -5,9 +5,11 @@
         Title="MainWindow" Height="150" Width="170"
 		WindowStyle="None"
 		AllowsTransparency="True"
-		Background="#0FFF">
+		Background="Transparent"
+		ResizeMode="NoResize">
     <Grid Name="launcherGrid"
-		  ShowGridLines="False">
+		  ShowGridLines="False"
+		  MouseLeftButtonDown="launcherGrid_MouseLeftButtonDown">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition />
 			<ColumnDefinition />
@@ -19,11 +21,13 @@
 		<Grid.RowDefinitions>
 			<RowDefinition />
 			<RowDefinition Height="8*"/>
+			<RowDefinition />
 		</Grid.RowDefinitions>
 		<Border x:Name="backBorder"
 				Grid.Row="1"
 				Grid.ColumnSpan="6"
-				CornerRadius="60"
+				Grid.RowSpan="2"
+				CornerRadius="50"
 				Height="50"
 				VerticalAlignment="Bottom">
 			<Border.Background>

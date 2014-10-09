@@ -8,10 +8,10 @@
 	<Button.Template>
 		<ControlTemplate TargetType="{x:Type Button}">
 			<Grid>
-				<Image Name="Normal"/>
-				<Image Name="Hover" Visibility="Hidden"/>
-				<Image Name="Pressed" Visibility="Hidden"/>
-				<Image Name="Disabled" Visibility="Hidden"/>
+				<Image Name="Normal" RenderOptions.BitmapScalingMode="HighQuality"/>
+				<Image Name="Hover" Visibility="Hidden" RenderOptions.BitmapScalingMode="HighQuality"/>
+				<Image Name="Pressed" Visibility="Hidden" RenderOptions.BitmapScalingMode="HighQuality"/>
+				<Image Name="Disabled" Visibility="Hidden" RenderOptions.BitmapScalingMode="HighQuality"/>
 			</Grid>
 			<ControlTemplate.Triggers>
 				<Trigger Property="IsPressed" Value="True">

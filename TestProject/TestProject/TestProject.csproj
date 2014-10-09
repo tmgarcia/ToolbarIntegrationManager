@@ -70,6 +70,9 @@
       <DependentUpon>TestWindow1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Toolbars\ColorToolbar.cs" />
+    <Compile Include="Toolbars\ConversionToolbar.cs" />
+    <Compile Include="Toolbars\DrawToolbar.cs" />
+    <Compile Include="Toolbars\MeasureToolbar.cs" />
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
     </Compile>
