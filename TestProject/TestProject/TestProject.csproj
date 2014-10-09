@@ -69,14 +69,27 @@
     <Compile Include="TestWindow1.xaml.cs">
       <DependentUpon>TestWindow1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Toolbars\ColorToolbar.cs" />
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EnabledSymbolButton.xaml.cs">
+      <DependentUpon>EnabledSymbolButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseTool_Expandable.xaml.cs">
+      <DependentUpon>BaseTool_Expandable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseTool_Toggle.xaml.cs">
+      <DependentUpon>BaseTool_Toggle.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\FloatingToolbar.xaml.cs">
       <DependentUpon>FloatingToolbar.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ThreeStateEnabledButton.xaml.cs">
       <DependentUpon>ThreeStateEnabledButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ToolbarWindow.xaml.cs">
+      <DependentUpon>ToolbarWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="LauncherWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -102,11 +115,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\EnabledSymbolButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseTool_Expandable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseTool_Toggle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FloatingToolbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ThreeStateEnabledButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ToolbarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

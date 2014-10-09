@@ -20,6 +20,16 @@
 			<RowDefinition />
 			<RowDefinition Height="8*"/>
 		</Grid.RowDefinitions>
+		<Border x:Name="backBorder"
+				Grid.Row="1"
+				Grid.ColumnSpan="6"
+				CornerRadius="60"
+				Height="50"
+				VerticalAlignment="Bottom">
+			<Border.Background>
+				<SolidColorBrush Color="Gray" />
+			</Border.Background>
+		</Border>
 		<!--<Button Grid.Column="3"
 				FontSize="9"
 				Name="minimizeButton"

@@ -35,8 +35,10 @@ namespace TestProject.UserControls
             height = Constants.ToolbarHorizontalExpandedHeight;
 
             InitializeComponent();
-            toolbarControl.Width = width;
+            toolbarControl.Width = Double.NaN;
             toolbarControl.Height = height;
+            expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolWindows"));
+            expandable.Height = 20;
         }
 
         public event RoutedEventHandler TemplateApplied
@@ -66,19 +68,13 @@ namespace TestProject.UserControls
         private void CollapseButton_Checked(object sender, RoutedEventArgs e)
         {
             isCollapsed = true;
-            ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
-            ScaleTransform scale = (ScaleTransform)(btn.Template.FindName("FlipScale", btn));
-            scale.ScaleX = -1;
-            //RotateTransform r = (RotateTransform)(btn.Template.FindName("BorderRotate", btn));
-            //r.Angle = 90;
+            collapse();
         }
 
         private void CollapseButton_Unchecked(object sender, RoutedEventArgs e)
         {
             isCollapsed = false;
-            ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
-            ScaleTransform scale = (ScaleTransform)(btn.Template.FindName("FlipScale", btn));
-            scale.ScaleX = 1;
+            expand();
         }
 
         private void OrientationButton_Click(object sender, RoutedEventArgs e)
@@ -92,6 +88,42 @@ namespace TestProject.UserControls
             {
                 orientation = DisplayOrientations.Horizontal;
                 orientHorizontal();
+            }
+        }
+
+        private void collapse()
+        {
+            ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
+            ScaleTransform scale = (ScaleTransform)(btn.Template.FindName("FlipScale", btn));
+            scale.ScaleX = -1;
+
+            ToolBarPanel panel = (ToolBarPanel)(toolbarControl.Template.FindName("PART_ToolBarPanel", toolbarControl));
+            panel.Visibility = System.Windows.Visibility.Collapsed;
+            if (orientation == DisplayOrientations.Horizontal)
+            {
+                toolbarControl.Width = Double.NaN;
+            }
+            else
+            {
+                toolbarControl.Height = Double.NaN;
+            }
+        }
+        private void expand()
+        {
+            ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
+            ScaleTransform scale = (ScaleTransform)(btn.Template.FindName("FlipScale", btn));
+            scale.ScaleX = 1;
+
+            ToolBarPanel panel = (ToolBarPanel)(toolbarControl.Template.FindName("PART_ToolBarPanel", toolbarControl));
+            panel.Visibility = System.Windows.Visibility.Visible;
+
+            if (orientation == DisplayOrientations.Horizontal)
+            {
+                toolbarControl.Width = Double.NaN;
+            }
+            else
+            {
+                toolbarControl.Height = Double.NaN;
             }
         }
 
@@ -116,9 +148,11 @@ namespace TestProject.UserControls
             ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
             btn.Width = 20;
             ((RotateTransform)(btn.Template.FindName("BorderRotateL", btn))).Angle = 0;
+            ((ScaleTransform)(btn.Template.FindName("BorderScale", btn))).ScaleX = 1;
             CollapseAndIconPanel.Width = cipW;
             CollapseAndIconPanel.Width = Double.NaN;
             CollapseAndIconPanel.Height = Double.NaN;
+            CollapseAndIconPanel.Orientation = System.Windows.Controls.Orientation.Horizontal;
 
             Thumb ToolBarThumb = (Thumb)(toolbarControl.Template.FindName("ToolBarThumb", toolbarControl));
             DockPanel.SetDock(ToolBarThumb, Dock.Left);
@@ -150,12 +184,15 @@ namespace TestProject.UserControls
 
             StackPanel CollapseAndIconPanel = (StackPanel)(toolbarControl.Template.FindName("CollapseAndIconPanel", toolbarControl));
             double cipH = CollapseAndIconPanel.ActualHeight;
+            CollapseAndIconPanel.Orientation = System.Windows.Controls.Orientation.Vertical;
             DockPanel.SetDock(CollapseAndIconPanel, Dock.Top);
 
             ToggleButton btn = (ToggleButton)(toolbarControl.Template.FindName("CollapseButton", toolbarControl));
-            btn.Width = width / 5;
+            //btn.Width = width / 5;
             ((RotateTransform)(btn.Template.FindName("BorderRotateL", btn))).Angle = 90;
-            CollapseAndIconPanel.Height = cipH;
+            ((ScaleTransform)(btn.Template.FindName("BorderScale", btn))).ScaleX = 1.5;
+            CollapseAndIconPanel.Height = Double.NaN;
+            CollapseAndIconPanel.Width = cipH;
 
             Thumb ToolBarThumb = (Thumb)(toolbarControl.Template.FindName("ToolBarThumb", toolbarControl));
             DockPanel.SetDock(ToolBarThumb, Dock.Top);

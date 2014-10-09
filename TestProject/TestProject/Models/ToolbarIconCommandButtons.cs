@@ -38,6 +38,13 @@ namespace TestProject.Models
             Grid.SetColumn(Help, startCol + 1);
             grid.Children.Add(Help);
         }
+        public void RemoveButtonsFromGrid(Grid grid)
+        {
+            grid.Children.Remove(Minimize);
+            grid.Children.Remove(Restore);
+            grid.Children.Remove(Close);
+            grid.Children.Remove(Help);
+        }
         public void SetToInactiveState()
         {
             _close.Disable();

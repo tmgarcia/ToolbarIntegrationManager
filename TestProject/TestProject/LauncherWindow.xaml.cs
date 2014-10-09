@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Models;
+using TestProject.Toolbars;
 
 namespace TestProject
 {
@@ -23,7 +24,7 @@ namespace TestProject
     {
         bool expanded;
         List<ColumnDefinition> expandedColumns;
-        List<Button> icons;
+        List<Models.Toolbar> toolbars;
         int numToolbarIcons=4;
         int numColsPerIcon = 4;
         int totalCols;
@@ -77,29 +78,25 @@ namespace TestProject
         }
         private void InitializeIcons()
         {
-            icons = new List<Button>();
-            Button b1 = new Button();
-            b1.Background = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
-            b1.Click += new RoutedEventHandler(b1_Click);
-            Button b2 = new Button();
-            b2.Background = new SolidColorBrush(Color.FromArgb(255, 0, 255, 0));
-            Button b3 = new Button();
-            b3.Background = new SolidColorBrush(Color.FromArgb(255, 255, 0, 255));
-            Button b4 = new Button();
-            b4.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 0));
-            icons.Add(b1);
-            icons.Add(b2);
-            icons.Add(b3);
-            icons.Add(b4);
+            toolbars = new List<Models.Toolbar>();
+            Toolbar t1 = new ColorToolbar();
+            toolbars.Add(t1);
+            Toolbar t2 = new ColorToolbar();
+            toolbars.Add(t2);
+            Toolbar t3 = new ColorToolbar();
+            toolbars.Add(t3);
+            Toolbar t4 = new ColorToolbar();
+            toolbars.Add(t4);
+
 
             int startCol = numColsPerIcon + 2;
             int row = 1;
             for (int i = 0; i < numToolbarIcons; i++)
             {
                 int col = startCol + (i * numColsPerIcon) + i;
-                Grid.SetRow(icons[i], row);
-                Grid.SetColumn(icons[i], col);
-                Grid.SetColumnSpan(icons[i], numColsPerIcon);
+                Grid.SetRow(toolbars[i].icon.GetButtonControl(), row);
+                Grid.SetColumn(toolbars[i].icon.GetButtonControl(), col);
+                Grid.SetColumnSpan(toolbars[i].icon.GetButtonControl(), numColsPerIcon);
             }
         }
         void b1_Click(object sender, RoutedEventArgs e)
@@ -136,27 +133,32 @@ namespace TestProject
         private void Expand()
         {
             launcherWindow.Width += ((numToolbarIcons * iconWidth) + (numToolbarIcons * iconSpacing));
+            Grid.SetColumnSpan(backBorder, expandedColumns.Count + 6);
             foreach (ColumnDefinition c in expandedColumns)
             {
                 launcherGrid.ColumnDefinitions.Add(c);
             }
-            int startCol = numColsPerIcon+2;
-            int row = 1;
-            foreach (Button b in icons)
+            int startCol = numColsPerIcon+4;
+            int row = 0;
+            foreach (Toolbar b in toolbars)
             {
-                launcherGrid.Children.Add(b);
+                launcherGrid.Children.Add(b.icon.GetButtonControl());
+                b.commandButtons.AddButtonsToGrid(launcherGrid, startCol, row);
+                startCol += numColsPerIcon + 1;
             }
         }
         private void Collapse()
         {
             launcherWindow.Width -= (numToolbarIcons * (iconWidth + iconSpacing));
+            Grid.SetColumnSpan(backBorder,6);
             foreach (ColumnDefinition c in expandedColumns)
             {
                 launcherGrid.ColumnDefinitions.Remove(c);
             }
-            foreach (Button b in icons)
+            foreach (Toolbar b in toolbars)
             {
-                launcherGrid.Children.Remove(b);
+                launcherGrid.Children.Remove(b.icon.GetButtonControl());
+                b.commandButtons.RemoveButtonsFromGrid(launcherGrid);
             }
         }
     }

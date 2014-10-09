@@ -39,3 +39,13 @@ T:\School\Capstone-TaylorGarcia\TestProject\TestProject\bin\Debug\TestProject.ex
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\bin\Debug\TestProject.pdb
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\TestProject.exe
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\TestProject.pdb
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\BaseTool_Toggle.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\BaseTool_Expandable.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\BaseTool_Toggle.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\TestProject_MarkupCompile.lref
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\BaseTool_Expandable.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\EnabledSymbolButton.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\EnabledSymbolButton.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\ToolbarWindow.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\ToolbarWindow.g.cs

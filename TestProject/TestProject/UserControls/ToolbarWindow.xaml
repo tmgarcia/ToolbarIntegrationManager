@@ -1,0 +1,16 @@
+﻿<Window x:Class="TestProject.UserControls.ToolbarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TestWindow1" 
+		WindowStyle="None"
+		AllowsTransparency="True"
+		Background="Transparent"
+		ResizeMode="NoResize"
+		SizeToContent="WidthAndHeight">
+	<Grid Name="gridControl"
+		  Background="Transparent"
+		  Height="auto"
+		  Width="auto">
+
+	</Grid>
+</Window>

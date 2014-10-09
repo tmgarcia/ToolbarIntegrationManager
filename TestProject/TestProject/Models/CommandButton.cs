@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using TestProject.Enums;
 using TestProject.UserControls;
 
@@ -12,16 +14,15 @@ namespace TestProject.Models
     class CommandButton
     {
         CommandButtonTypes type;
-        string normalPath;
-        string hoverPath;
-        string pressedPath;
-        ThreeStateEnabledButton button;
+        ImageSource symbol;
+        EnabledSymbolButton button;
 
         public CommandButton(CommandButtonTypes buttonType)
         {
             type = buttonType;
-            SetupTypePaths();
-            button = new ThreeStateEnabledButton(normalPath, hoverPath, pressedPath);
+            GetSymbol();
+            button = new EnabledSymbolButton(symbol);
+            button.ApplyTemplate();
         }
 
         public Button GetButtonControl()
@@ -31,36 +32,28 @@ namespace TestProject.Models
 
         public void Disable()
         {
-            button.disable();
+            button.Disable();
         }
         public void Enable()
         {
-            button.enable();
+            button.Enable();
         }
 
-        private void SetupTypePaths()
+        private void GetSymbol()
         {
             switch (type)
             {
                 case CommandButtonTypes.ToolbarIconClose:
-                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconCloseN.png";
-                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconCloseH.png";
-                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconCloseP.png";
+                    symbol = (DrawingImage)Application.Current.FindResource("SymbolClose");
                     break;
                 case CommandButtonTypes.ToolbarIconMinimize:
-                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconMinimizeN.png";
-                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconMinimizeH.png";
-                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconMinimizeP.png";
+                    symbol = (DrawingImage)Application.Current.FindResource("SymbolBar");
                     break;
                 case CommandButtonTypes.ToolbarIconRestore:
-                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconRestoreN.png";
-                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconRestoreH.png";
-                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconRestoreP.png";
+                    symbol = (DrawingImage)Application.Current.FindResource("SymbolWindows");
                     break;
                 case CommandButtonTypes.ToolbarIconHelp:
-                    normalPath = Constants.CommandButtonPath + "commandButtonToolbarIconHelpN.png";
-                    hoverPath = Constants.CommandButtonPath + "commandButtonToolbarIconHelpH.png";
-                    pressedPath = Constants.CommandButtonPath + "commandButtonToolbarIconHelpP.png";
+                    symbol = (DrawingImage)Application.Current.FindResource("SymbolWindows");
                     break;
                 default:
 
