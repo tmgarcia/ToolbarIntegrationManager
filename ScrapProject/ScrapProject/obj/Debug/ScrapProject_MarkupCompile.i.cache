@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\App.xaml
-11151548125
+61892559999
 
-9694145260
+232018868484
 12-1401562060
-MainWindow.xaml;
+Drawings.xaml;MainWindow.xaml;Sliders.xaml;UserControls\HSBASliders.xaml;UserControls\HSLASliders.xaml;UserControls\RGBASliders.xaml;
 
 False
 

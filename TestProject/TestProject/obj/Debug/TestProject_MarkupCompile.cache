@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\App.xaml
-10-2012939640
+19430855374
 
-28-1026629183
-12-1401562060
-LauncherWindow.xaml;TestControl.xaml;TestWindow1.xaml;UserControls\ActiveInactiveImageButton.xaml;UserControls\EnabledSymbolButton.xaml;UserControls\BaseTool_Expandable.xaml;UserControls\BaseTool_Toggle.xaml;UserControls\FloatingToolbar.xaml;UserControls\ThreeStateEnabledButton.xaml;UserControls\ToolbarWindow.xaml;
+51-1628905175
+141012385901
+LauncherWindow.xaml;TestControl.xaml;TestWindow1.xaml;Tools\Colors_ColorDisplay.xaml;Tools\Colors_Eyedropper.xaml;Tools\Colors_Sliders.xaml;Tools\Colors_Swatches.xaml;Tools\Colors_ValuesDisplay.xaml;UserControls\ActiveInactiveImageButton.xaml;UserControls\EnabledSymbolButton.xaml;UserControls\BaseTool_Expandable.xaml;UserControls\BaseTool_Toggle.xaml;UserControls\EyeDropOverlay.xaml;UserControls\FloatingToolbar.xaml;UserControls\HSBASliders.xaml;UserControls\HSLASliders.xaml;UserControls\RGBASliders.xaml;UserControls\ThreeStateEnabledButton.xaml;UserControls\ToolbarWindow.xaml;
 
 False
 

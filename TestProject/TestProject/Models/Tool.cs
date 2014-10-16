@@ -9,6 +9,14 @@ namespace TestProject.Models
 {
     class Tool
     {
-        UIElement userControl;
+        public Tool()
+        {
+            userControl = null;
+        }
+        public Tool(UIElement control)
+        {
+            userControl = control;
+        }
+        public UIElement userControl;
     }
 }

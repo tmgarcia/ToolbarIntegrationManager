@@ -37,8 +37,6 @@ namespace TestProject.UserControls
             InitializeComponent();
             toolbarControl.Width = Double.NaN;
             toolbarControl.Height = height;
-            expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolWindows"));
-            expandable.Height = 20;
         }
 
         public event RoutedEventHandler TemplateApplied

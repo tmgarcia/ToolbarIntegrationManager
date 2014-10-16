@@ -53,6 +53,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\ColorToHSBASliderGradients.cs" />
+    <Compile Include="Converters\ColorToHSLASliderGradients.cs" />
+    <Compile Include="Converters\ColorToRGBASliderGradient.cs" />
+    <Compile Include="Converters\HSBAToColorConverter.cs" />
+    <Compile Include="Converters\HSLAToColorConverter.cs" />
+    <Compile Include="Converters\RGBAToColorConverter.cs" />
+    <Compile Include="HSLAColor.cs" />
+    <Compile Include="HSBAColor.cs" />
+    <Compile Include="RGBAColor.cs" />
+    <Compile Include="Sliders.xaml.cs">
+      <DependentUpon>Sliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HSBASliders.xaml.cs">
+      <DependentUpon>HSBASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HSLASliders.xaml.cs">
+      <DependentUpon>HSLASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RGBASliders.xaml.cs">
+      <DependentUpon>RGBASliders.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Drawings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -61,10 +86,29 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Drawings.xaml.cs">
+      <DependentUpon>Drawings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Sliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HSBASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HSLASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\RGBASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

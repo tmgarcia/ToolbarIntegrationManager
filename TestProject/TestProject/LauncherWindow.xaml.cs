@@ -43,6 +43,21 @@ namespace TestProject
             InitializeColumnDefs();
             InitializeLauncherIcon();
             InitializeIcons();
+            this.Deactivated += ToolbarWindow_Deactivated;
+            this.Activated += ToolbarWindow_Activated;
+
+            this.ShowInTaskbar = false;
+        }
+
+        void ToolbarWindow_Activated(object sender, EventArgs e)
+        {
+            this.Topmost = true;
+        }
+
+        void ToolbarWindow_Deactivated(object sender, EventArgs e)
+        {
+            this.Topmost = true;
+            this.Activate();
         }
 
         private void InitializeColumnDefs()

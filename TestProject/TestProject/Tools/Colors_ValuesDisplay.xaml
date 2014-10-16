@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="TestProject.Tools.Colors_ValuesDisplay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:uc="clr-namespace:TestProject.UserControls"
+             mc:Ignorable="d" 
+			 Name="ucval">
+	<uc:BaseTool_Expandable x:Name="expandable">
+		<uc:BaseTool_Expandable.PopupContent>
+			<Grid Width="110"
+				  Margin="5,0">
+				<Grid.Background>
+					<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
+				</Grid.Background>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition Width="2*"/>
+					<ColumnDefinition />
+					<ColumnDefinition Width="2*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<TextBox Grid.Column="1"
+						 Grid.Row="0"
+						 Text="{Binding Path=CurrentColor.Color.R,Mode=TwoWay}"/><!--R-->
+				<TextBox Grid.Column="1"
+						 Grid.Row="1"
+						 Text="{Binding Path=CurrentColor.Color.G,Mode=TwoWay}"/><!--G-->
+				<TextBox Grid.Column="1"
+						 Grid.Row="2" 
+						 Text="{Binding Path=CurrentColor.Color.B,Mode=TwoWay}"/><!--B-->
+				<TextBox Grid.Column="1"
+						 Grid.Row="3"
+						 Text="{Binding Path=CurrentColor.Color.A,Mode=TwoWay}"/><!--A-->
+				<TextBox Grid.Column="3"
+						 Grid.Row="0"
+						 Text="{Binding Path=CurrentHColor.Color.H,Mode=TwoWay}"
+						 Width="20"/><!--H-->
+				<TextBox Grid.Column="3"
+						 Grid.Row="1"
+						 Text="{Binding Path=CurrentHColor.Color.S,Mode=TwoWay}"/><!--S-->
+				<TextBox Grid.Column="3"
+						 Grid.Row="2"
+						 Text="{Binding Path=CurrentHColor.Color.B,Mode=TwoWay}"/><!--B-->
+
+				<Label Grid.Column="0"
+					   Grid.Row="0"
+					   Content="R" />
+				<Label Grid.Column="0"
+					   Grid.Row="1"
+					   Content="G" />
+				<Label Grid.Column="0"
+					   Grid.Row="2"
+					   Content="B" />
+				<Label Grid.Column="0"
+					   Grid.Row="3"
+					   Content="A" />
+				<Label Grid.Column="2"
+					   Grid.Row="0"
+					   Content="H" />
+				<Label Grid.Column="2"
+					   Grid.Row="1"
+					   Content="S" />
+				<Label Grid.Column="2"
+					   Grid.Row="2"
+					   Content="B" />
+			</Grid>
+		</uc:BaseTool_Expandable.PopupContent>
+	</uc:BaseTool_Expandable>
+</UserControl>

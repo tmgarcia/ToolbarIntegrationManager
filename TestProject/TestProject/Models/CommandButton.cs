@@ -53,7 +53,7 @@ namespace TestProject.Models
                     symbol = (DrawingImage)Application.Current.FindResource("SymbolWindows");
                     break;
                 case CommandButtonTypes.ToolbarIconHelp:
-                    symbol = (DrawingImage)Application.Current.FindResource("SymbolWindows");
+                    symbol = (DrawingImage)Application.Current.FindResource("SymbolQuestionMark");
                     break;
                 default:
 

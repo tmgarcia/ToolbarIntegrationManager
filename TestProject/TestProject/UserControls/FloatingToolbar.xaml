@@ -231,13 +231,5 @@
 			</Border>
 		</ControlTemplate>
 	</ToolBar.Template>
-	<Button>E</Button>
-	<Button>D</Button>
-	<Button>C</Button>
-	<uc:BaseTool_Expandable x:Name="expandable">
-		<uc:BaseTool_Expandable.PopupContent>
-			<TextBlock Text="Test"
-					   Background="Yellow"/>
-		</uc:BaseTool_Expandable.PopupContent>
-	</uc:BaseTool_Expandable>
+
 </ToolBar>

@@ -29,19 +29,34 @@ namespace TestProject.UserControls
             remove { RemoveHandler(ToolbarClosedEvent, value); }
         }
 
-        FloatingToolbar tb;
+        public FloatingToolbar toolbar;
         public ToolbarWindow()
         {
             InitializeComponent();
-            tb = new FloatingToolbar();
-            gridControl.Children.Add(tb);
-            tb.TemplateApplied += new RoutedEventHandler(toolbarTemplateApplied);
-            tb.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+            toolbar = new FloatingToolbar();
+            gridControl.Children.Add(toolbar);
+            toolbar.TemplateApplied += new RoutedEventHandler(toolbarTemplateApplied);
+            toolbar.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+
+            this.Deactivated += ToolbarWindow_Deactivated;
+            this.Activated += ToolbarWindow_Activated;
+            this.ShowInTaskbar = false;
+        }
+
+        void ToolbarWindow_Activated(object sender, EventArgs e)
+        {
+            this.Topmost = true;
+        }
+
+        void ToolbarWindow_Deactivated(object sender, EventArgs e)
+        {
+            this.Topmost = true;
+            this.Activate();
         }
         private void toolbarTemplateApplied(object sender, RoutedEventArgs e)
         {
-            tb.getCloseButtonControl().Click += new RoutedEventHandler(closeClicked);
-            tb.getThumbControl().DragDelta += new DragDeltaEventHandler(toolbarDragged);
+            toolbar.getCloseButtonControl().Click += new RoutedEventHandler(closeClicked);
+            toolbar.getThumbControl().DragDelta += new DragDeltaEventHandler(toolbarDragged);
         }
         private void toolbarDragged(object sender, DragDeltaEventArgs e)
         {
@@ -55,7 +70,9 @@ namespace TestProject.UserControls
         public void CloseToolbar()
         {
             this.RaiseEvent(new RoutedEventArgs(ToolbarClosedEvent, this));
+            toolbar.Items.Clear();
             this.Close();
         }
+        
     }
 }

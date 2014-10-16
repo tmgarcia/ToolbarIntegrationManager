@@ -1,0 +1,28 @@
+﻿<Window x:Class="ScrapProject.Sliders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sliders" Height="600" Width="500"
+		xmlns:uc="clr-namespace:ScrapProject.UserControls">
+	<StackPanel>
+		<Rectangle Name="ColorDisplay"
+				   Height="50"
+				   Width="50">
+			<Rectangle.Fill>
+				<SolidColorBrush x:Name="ColorDisplayBrush"/>
+			</Rectangle.Fill>
+		</Rectangle>
+		<ComboBox Name="SliderSelector"
+				  Width="200"
+				  ItemsSource="{Binding Path=SliderChoices}"
+				  Text="Slider Type"
+				  SelectionChanged="SliderSelector_SelectionChanged" />
+		<uc:RGBASliders x:Name="rgbaSliders"
+						CurrentColor="{Binding ElementName=ColorDisplay, Path=Fill.Color}"/>
+		<uc:HSLASliders x:Name="hslaSliders"
+						CurrentColor="{Binding ElementName=ColorDisplay, Path=Fill.Color}">
+		</uc:HSLASliders>
+		<uc:HSBASliders x:Name="hsbaSliders"
+						CurrentColor="{Binding ElementName=ColorDisplay, Path=Fill.Color}">
+		</uc:HSBASliders>
+	</StackPanel>
+</Window>

@@ -16,7 +16,7 @@ namespace TestProject.Models
         DisplayStates displayState;
         DisplayOrientations displayOrientation;
         bool isActive;
-        ToolbarWindow display;
+        protected ToolbarWindow display;
 
         protected string iconA;
         protected string iconAH;
@@ -26,10 +26,12 @@ namespace TestProject.Models
         protected string iconIP;
         protected string iconD;
 
+        protected List<Tool> tools;
+
         public Toolbar()
         {
             isActive = false;
-            
+            tools = new List<Tool>();
         }
         protected void SetupLaunchIcon()
         {
@@ -60,14 +62,26 @@ namespace TestProject.Models
         {
 
         }
+        protected virtual void PreDisplaySetup()
+        {
+            foreach (Tool t in tools)
+            {
+                display.toolbar.Items.Add(t.userControl);
+            }
+        }
+        protected virtual void PostDisplaySetup()
+        {
 
+        }
         protected void launchIcon_Click(object sender, RoutedEventArgs e)
         {
             if (!isActive)
             {
                 display = new ToolbarWindow();
                 display.ToolbarClosed += ToolbarClosed;
+                PreDisplaySetup();
                 display.Show();
+                PostDisplaySetup();
                 isActive = true;
                 commandButtons.SetToActiveState();
                 icon.SetActive();

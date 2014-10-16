@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,15 +56,27 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants.cs" />
+    <Compile Include="Converters\ColorToDisplayHSBA.cs" />
+    <Compile Include="Converters\ColorToHSBASliderGradients.cs" />
+    <Compile Include="Converters\ColorToHSLASliderGradients.cs" />
+    <Compile Include="Converters\ColorToRGBASliderGradients.cs" />
+    <Compile Include="Converters\HSBAToColor.cs" />
+    <Compile Include="Converters\HSLAToColor.cs" />
+    <Compile Include="Converters\RGBAToColor.cs" />
     <Compile Include="Enums\CommandButtonTypes.cs" />
     <Compile Include="Enums\DisplayOrientations.cs" />
     <Compile Include="Enums\DisplayStates.cs" />
     <Compile Include="Models\CommandButton.cs" />
+    <Compile Include="Models\HSBAColor.cs" />
+    <Compile Include="Models\HSBAColorWrapper.cs" />
+    <Compile Include="Models\HSLAColor.cs" />
     <Compile Include="Models\ImageStates.cs" />
+    <Compile Include="Models\RGBAColor.cs" />
     <Compile Include="Models\ToolbarIcon.cs" />
     <Compile Include="Models\Tool.cs" />
     <Compile Include="Models\Toolbar.cs" />
     <Compile Include="Models\ToolbarIconCommandButtons.cs" />
+    <Compile Include="ScreenCapturer.cs" />
     <Compile Include="TestControl.xaml.cs">
       <DependentUpon>TestControl.xaml</DependentUpon>
     </Compile>
@@ -73,6 +87,21 @@
     <Compile Include="Toolbars\ConversionToolbar.cs" />
     <Compile Include="Toolbars\DrawToolbar.cs" />
     <Compile Include="Toolbars\MeasureToolbar.cs" />
+    <Compile Include="Tools\Colors_ColorDisplay.xaml.cs">
+      <DependentUpon>Colors_ColorDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors_Eyedropper.xaml.cs">
+      <DependentUpon>Colors_Eyedropper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors_Sliders.xaml.cs">
+      <DependentUpon>Colors_Sliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors_Swatches.xaml.cs">
+      <DependentUpon>Colors_Swatches.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors_ValuesDisplay.xaml.cs">
+      <DependentUpon>Colors_ValuesDisplay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
     </Compile>
@@ -85,8 +114,20 @@
     <Compile Include="UserControls\BaseTool_Toggle.xaml.cs">
       <DependentUpon>BaseTool_Toggle.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\EyeDropOverlay.xaml.cs">
+      <DependentUpon>EyeDropOverlay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FloatingToolbar.xaml.cs">
       <DependentUpon>FloatingToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HSBASliders.xaml.cs">
+      <DependentUpon>HSBASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HSLASliders.xaml.cs">
+      <DependentUpon>HSLASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RGBASliders.xaml.cs">
+      <DependentUpon>RGBASliders.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ThreeStateEnabledButton.xaml.cs">
       <DependentUpon>ThreeStateEnabledButton.xaml</DependentUpon>
@@ -94,6 +135,8 @@
     <Compile Include="UserControls\ToolbarWindow.xaml.cs">
       <DependentUpon>ToolbarWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Win32API\GDITools.cs" />
+    <Compile Include="Win32API\Win32Tools.cs" />
     <Page Include="LauncherWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +157,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Colors_ColorDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors_Eyedropper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors_Sliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors_Swatches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors_ValuesDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ActiveInactiveImageButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,7 +193,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\EyeDropOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FloatingToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HSBASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HSLASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\RGBASliders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -321,6 +400,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
