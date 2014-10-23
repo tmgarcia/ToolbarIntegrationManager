@@ -28,9 +28,9 @@ namespace TestProject.Tools
 
         SolidColorBrush ColorDisplayBrush;
         ComboBox SliderSelector;
-        RGBASliders rgbaSliders;
-        HSLASliders hslaSliders;
-        HSBASliders hsbaSliders;
+        public RGBASliders rgbaSliders;
+        public HSLASliders hslaSliders;
+        public HSBASliders hsbaSliders;
 
         public Colors_Sliders(SolidColorBrush colorBrush)
         {
@@ -71,7 +71,7 @@ namespace TestProject.Tools
 
             HSLAToColor hslaCon = new HSLAToColor();
             hslaBinding = new MultiBinding();
-            //hslaBinding.Mode = BindingMode.TwoWay;
+            hslaBinding.Mode = BindingMode.TwoWay;
             hslaBinding.Converter = hslaCon;
             hslaBinding.Bindings.Add(new Binding { Source = hslaSliders.hSlider, Path = new PropertyPath("Value"), Mode = BindingMode.TwoWay });
             hslaBinding.Bindings.Add(new Binding { Source = hslaSliders.sSlider, Path = new PropertyPath("Value"), Mode = BindingMode.TwoWay });
@@ -80,7 +80,7 @@ namespace TestProject.Tools
 
             HSLAToColor hsbaCon = new HSLAToColor();
             hsbaBinding = new MultiBinding();
-            //hsbaBinding.Mode = BindingMode.TwoWay;
+            hsbaBinding.Mode = BindingMode.TwoWay;
             hsbaBinding.Converter = hsbaCon;
             hsbaBinding.Bindings.Add(new Binding { Source = hsbaSliders.hSlider, Path = new PropertyPath("Value"), Mode = BindingMode.TwoWay });
             hsbaBinding.Bindings.Add(new Binding { Source = hsbaSliders.sSlider, Path = new PropertyPath("Value"), Mode = BindingMode.TwoWay });

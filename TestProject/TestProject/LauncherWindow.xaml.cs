@@ -47,6 +47,16 @@ namespace TestProject
             this.Activated += ToolbarWindow_Activated;
 
             this.ShowInTaskbar = false;
+
+            System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
+            ni.Icon = new System.Drawing.Icon("../../Images/launcher.ico");
+            ni.Visible = true;
+            ni.DoubleClick +=
+                delegate(object sender, EventArgs args)
+                {
+                    this.Show();
+                    this.WindowState = System.Windows.WindowState.Normal;
+                };
         }
 
         void ToolbarWindow_Activated(object sender, EventArgs e)
@@ -114,16 +124,17 @@ namespace TestProject
                 Grid.SetColumnSpan(toolbars[i].icon.GetButtonControl(), numColsPerIcon);
             }
         }
-        void b1_Click(object sender, RoutedEventArgs e)
-        {
-            TestWindow1 w = new TestWindow1();
-            w.Show();
-        }
         private void minimizeButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.WindowState = System.Windows.WindowState.Minimized;
         }
+        protected override void OnStateChanged(EventArgs e)
+        {
+            if (WindowState == WindowState.Minimized)
+                this.Hide();
 
+            base.OnStateChanged(e);
+        }
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();

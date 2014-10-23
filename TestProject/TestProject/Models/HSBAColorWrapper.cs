@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
 namespace TestProject.Models
 {
     class HSBAColorWrapper : DependencyObject
@@ -13,7 +12,7 @@ namespace TestProject.Models
         public HSBAColor Color
         {
             get { return (HSBAColor)GetValue(ColorProperty); }
-            set { SetValue(ColorProperty, value); }
+            set {SetValue(ColorProperty, value); }
         }
     }
 }

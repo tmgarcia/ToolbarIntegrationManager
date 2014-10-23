@@ -4,8 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:uc="clr-namespace:TestProject.UserControls"
+			 xmlns:con="clr-namespace:TestProject.Converters"
              mc:Ignorable="d" 
 			 Name="ucval">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<con:NumberFormatToString x:Key="NumToString" />
+		</ResourceDictionary>
+	</UserControl.Resources>
 	<uc:BaseTool_Expandable x:Name="expandable">
 		<uc:BaseTool_Expandable.PopupContent>
 			<Grid Width="110"
@@ -28,26 +34,39 @@
 				</Grid.RowDefinitions>
 				<TextBox Grid.Column="1"
 						 Grid.Row="0"
-						 Text="{Binding Path=CurrentColor.Color.R,Mode=TwoWay}"/><!--R-->
+						 Text="{Binding Path=CurrentColor.Color.R,Mode=OneWay,Converter={StaticResource ResourceKey=NumToString},ConverterParameter=byte}"
+						 PreviewTextInput="previewTextInput_NumsOnlyInt"
+						 TextChanged="R_TextInput"/><!--R-->
 				<TextBox Grid.Column="1"
 						 Grid.Row="1"
-						 Text="{Binding Path=CurrentColor.Color.G,Mode=TwoWay}"/><!--G-->
+						 Text="{Binding Path=CurrentColor.Color.G,Mode=OneWay,Converter={StaticResource ResourceKey=NumToString},ConverterParameter=byte}"
+						 PreviewTextInput="previewTextInput_NumsOnlyInt"
+						 TextChanged="G_TextInput"/><!--G-->
 				<TextBox Grid.Column="1"
 						 Grid.Row="2" 
-						 Text="{Binding Path=CurrentColor.Color.B,Mode=TwoWay}"/><!--B-->
+						 Text="{Binding Path=CurrentColor.Color.B,Mode=OneWay,Converter={StaticResource ResourceKey=NumToString},ConverterParameter=byte}"
+						 PreviewTextInput="previewTextInput_NumsOnlyInt"
+						 TextChanged="B_TextInput"/><!--B-->
 				<TextBox Grid.Column="1"
 						 Grid.Row="3"
-						 Text="{Binding Path=CurrentColor.Color.A,Mode=TwoWay}"/><!--A-->
+						 Text="{Binding Path=CurrentColor.Color.A,Mode=OneWay,Converter={StaticResource ResourceKey=NumToString},ConverterParameter=byte}"
+						 PreviewTextInput="previewTextInput_NumsOnlyInt"
+						 TextChanged="A_TextInput"/><!--A-->
 				<TextBox Grid.Column="3"
 						 Grid.Row="0"
-						 Text="{Binding Path=CurrentHColor.Color.H,Mode=TwoWay}"
-						 Width="20"/><!--H-->
+						 Text="{Binding Path=CurrentHColor.Color.H,Mode=OneWay,Converter={StaticResource ResourceKey=NumToString},ConverterParameter=float}"
+						 PreviewTextInput="previewTextInput_NumsOnlyDec"
+						 TextChanged="H_TextInput"/><!--H-->
 				<TextBox Grid.Column="3"
 						 Grid.Row="1"
-						 Text="{Binding Path=CurrentHColor.Color.S,Mode=TwoWay}"/><!--S-->
+						 Text="{Binding Path=CurrentHColor.Color.S,Mode=OneWay,Converter={StaticResource ResourceKey=NumToString},ConverterParameter=float}"
+						 PreviewTextInput="previewTextInput_NumsOnlyDec"
+						 TextChanged="S_TextInput"/><!--S-->
 				<TextBox Grid.Column="3"
 						 Grid.Row="2"
-						 Text="{Binding Path=CurrentHColor.Color.B,Mode=TwoWay}"/><!--B-->
+						 Text="{Binding Path=CurrentHColor.Color.B,Mode=OneWay,Converter={StaticResource ResourceKey=NumToString},ConverterParameter=float}"
+						 PreviewTextInput="previewTextInput_NumsOnlyDec"
+						 TextChanged="B1_TextInput"/><!--B-->
 
 				<Label Grid.Column="0"
 					   Grid.Row="0"

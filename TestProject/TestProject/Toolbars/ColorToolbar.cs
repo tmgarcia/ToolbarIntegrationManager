@@ -34,7 +34,7 @@ namespace TestProject.Toolbars
         {
             Colors_ColorDisplay color = new Colors_ColorDisplay();
             Colors_Sliders sliders = new Colors_Sliders(color.ColorDisplayBrush);
-            Colors_ValuesDisplay values = new Colors_ValuesDisplay(color.ColorDisplayBrush);
+            Colors_ValuesDisplay values = new Colors_ValuesDisplay(color.ColorDisplayBrush, sliders.rgbaSliders, sliders.hsbaSliders);
             Colors_Eyedropper eye = new Colors_Eyedropper(color.ColorDisplayBrush);
             Colors_Swatches swatch = new Colors_Swatches(color.ColorDisplayBrush);
             Tool ct = new Tool(color);

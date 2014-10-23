@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/toolbarclose.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/toolbarhide.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/commandbuttons/toolbarorientation.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/launcher.ico")]
 
 

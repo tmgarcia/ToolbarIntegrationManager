@@ -23,3 +23,5 @@ T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\UserControls
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\UserControls\HSLASliders.g.cs
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\UserControls\HSBASliders.baml
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\UserControls\HSBASliders.g.cs
+T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\Drawing.baml
+T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\Drawing.g.cs

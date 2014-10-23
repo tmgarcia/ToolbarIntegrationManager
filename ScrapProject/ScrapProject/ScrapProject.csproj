@@ -59,6 +59,13 @@
     <Compile Include="Converters\HSBAToColorConverter.cs" />
     <Compile Include="Converters\HSLAToColorConverter.cs" />
     <Compile Include="Converters\RGBAToColorConverter.cs" />
+    <Compile Include="CustomDynamicRenderer.cs" />
+    <Compile Include="CustomRenderingInkCanvas.cs" />
+    <Compile Include="CustomStroke.cs" />
+    <Compile Include="Drawing.xaml.cs">
+      <DependentUpon>Drawing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\DrawingStrokeTypes.cs" />
     <Compile Include="HSLAColor.cs" />
     <Compile Include="HSBAColor.cs" />
     <Compile Include="RGBAColor.cs" />
@@ -74,6 +81,10 @@
     <Compile Include="UserControls\RGBASliders.xaml.cs">
       <DependentUpon>RGBASliders.xaml</DependentUpon>
     </Compile>
+    <Page Include="Drawing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Drawings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -31,7 +31,7 @@ namespace TestProject.Converters
         {
             Color c = (Color)value;
             HSLAColor hsla = new RGBAColor(c).ToHSLA();
-            object[] splitValues = { (float)hsla.H, (float)hsla.S, (float)hsla.L, (float)hsla.A };
+            object[] splitValues = { (double)hsla.H, (double)hsla.S, (double)hsla.L, (double)hsla.A };
             return splitValues;
         }
     }
