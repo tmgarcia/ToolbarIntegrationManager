@@ -67,3 +67,9 @@ T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\E
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\EyeDropOverlay.g.cs
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Colors_Swatches.baml
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Colors_Swatches.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_FillSelect.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_FillSelect.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_StrokeSelect.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_StrokeSelect.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_StrokeWeight.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_StrokeWeight.baml

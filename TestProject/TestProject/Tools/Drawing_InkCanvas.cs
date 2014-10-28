@@ -5,24 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Media;
-using ScrapProject.Enums;
 using System.Windows;
 using System.Windows.Input;
 using System.Globalization;
+using TestProject.Enums;
 using System.Windows.Ink;
 
-namespace ScrapProject
+namespace TestProject.Tools
 {
-    public class CustomRenderingInkCanvas : InkCanvas
+    class Drawing_InkCanvas : InkCanvas
     {
-        CustomDynamicRenderer customRenderer = new CustomDynamicRenderer();
+        Drawing_DynamicRenderer customRenderer = new Drawing_DynamicRenderer();
         public Color strokeColor;
         public Color fillColor;
         public DrawingStrokeType StrokeMode;
         public TextBox box;
         private bool textBeingInput = false;
         private Point textInputPos;
-        public CustomRenderingInkCanvas() : base()
+        public Drawing_InkCanvas()  : base()
         {
             // Use the custom dynamic renderer on the
             // custom InkCanvas.
@@ -95,8 +95,8 @@ namespace ScrapProject
                 StylusPointCollection sp = new StylusPointCollection();
                 sp.Add(new StylusPoint(textInputPos.X, textInputPos.Y));
                 sp.Add(new StylusPoint(textInputPos.X + text.Length*32, textInputPos.Y));
-                CustomStroke customStroke;
-                customStroke = new CustomStroke(sp, strokeColor, fillColor, StrokeMode, text) { initialStrokeCreation = true };
+                Drawing_Stroke customStroke;
+                customStroke = new Drawing_Stroke(sp, strokeColor, fillColor, StrokeMode, text);
                 customStroke.DrawingAttributes = DefaultDrawingAttributes.Clone();
                 this.Strokes.Add(customStroke);
 
@@ -113,8 +113,8 @@ namespace ScrapProject
                 // Remove the original stroke and add a custom stroke.
                 this.Strokes.Remove(e.Stroke);
 
-                CustomStroke customStroke;
-                customStroke = new CustomStroke(e.Stroke.StylusPoints, strokeColor, fillColor, StrokeMode);
+                Drawing_Stroke customStroke;
+                customStroke = new Drawing_Stroke(e.Stroke.StylusPoints, strokeColor, fillColor, StrokeMode);
                 customStroke.DrawingAttributes = DefaultDrawingAttributes.Clone();
                 this.Strokes.Add(customStroke);
 

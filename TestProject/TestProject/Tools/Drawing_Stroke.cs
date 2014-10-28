@@ -6,45 +6,29 @@ using System.Windows.Input;
 using System.Windows.Ink;
 using System.Diagnostics;
 using System.Linq;
-using ScrapProject.Enums;
+using TestProject.Enums;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace ScrapProject
+namespace TestProject.Tools
 {
-    class CustomStroke : Stroke
+    class Drawing_Stroke : Stroke
     {
-        private class ConnectingPoint
-        {
-            public ConnectingPoint(double x, double y, ConnectingPoint previous)
-            {
-                this.X = x;
-                this.Y = y;
-                this.previous = previous;
-                this.next = null;
-            }
-            public double X;
-            public double Y;
-            public ConnectingPoint previous;
-            public ConnectingPoint next;
-        }
-
         Brush brush;
         Pen pen;
         Point firstPoint;
         Point lastPoint;
         private DrawingStrokeType strokeMode;
-        public bool initialStrokeCreation = false;
-        private List<ConnectingPoint> connectingPoints;
         string text;
 
-        public CustomStroke(StylusPointCollection stylusPoints, Color stroke, Color fill, DrawingStrokeType strokeMode) : base(stylusPoints)
+        public Drawing_Stroke(StylusPointCollection stylusPoints, Color stroke, Color fill, DrawingStrokeType strokeMode) : base(stylusPoints)
         {
             brush = new SolidColorBrush(fill);
             pen = new Pen(new SolidColorBrush(stroke), 2);
             this.strokeMode = strokeMode;
         }
-        public CustomStroke(StylusPointCollection stylusPoints, Color stroke, Color fill, DrawingStrokeType strokeMode, string text)  : base(stylusPoints)
+        public Drawing_Stroke(StylusPointCollection stylusPoints, Color stroke, Color fill, DrawingStrokeType strokeMode, string text)
+            : base(stylusPoints)
         {
             brush = new SolidColorBrush(fill);
             pen = new Pen(new SolidColorBrush(stroke), 2);
@@ -58,37 +42,10 @@ namespace ScrapProject
             {
                 pen.Thickness = DrawingAttributes.Width;
             }
-            if (initialStrokeCreation)
-            {
-                Geometry g = DrawCurrentStrokeMode();
-                drawingContext.DrawGeometry(brush, pen, g);
-                initialStrokeCreation = false;
-            }
-            else
-            {
-                StreamGeometry geometry = new StreamGeometry();
-                geometry.FillRule = FillRule.EvenOdd;
-
-                using (StreamGeometryContext ctx = geometry.Open())
-                {
-                    ctx.BeginFigure((Point)StylusPoints[0], true, false);
-                    for (int i = 1; i < StylusPoints.Count; i++)
-                    {
-                        if (connectingPoints[i].previous != null)
-                        {
-                            ctx.LineTo((Point)StylusPoints[i], true, false);
-                        }
-                        else
-                        {
-                            ctx.BeginFigure((Point)StylusPoints[i], true, false);
-                        }
-                    }
-                }
-
-                geometry.Freeze();
-                drawingContext.DrawGeometry(brush, pen, geometry);
-            }
+            Geometry g = DrawCurrentStrokeMode();
+            drawingContext.DrawGeometry(brush, pen, g);
         }
+
         private Geometry DrawCurrentStrokeMode()
         {
             Geometry g = new StreamGeometry();
@@ -98,7 +55,6 @@ namespace ScrapProject
             Point vHalf = new Point((firstPoint.X + lastPoint.X) / 2, (firstPoint.Y + lastPoint.Y) / 2);
 
             Geometry shapeGeo;
-            bool closed = true;
             switch (strokeMode)
             {
                 case DrawingStrokeType.Text:
@@ -128,7 +84,6 @@ namespace ScrapProject
                     break;
                 case DrawingStrokeType.Line_Line:
                     shapeGeo = new LineGeometry(firstPoint, lastPoint);
-                    closed = false;
                     break;
                 case DrawingStrokeType.Line_Arrow:
                     Vector fir = new Vector(firstPoint.X, firstPoint.Y);
@@ -152,7 +107,6 @@ namespace ScrapProject
                         ctx.LineTo(a2, true, false);
                     }
                     shapeGeo.Freeze();
-                    closed = false;
                     break;
                 case DrawingStrokeType.Line_CoordQuad:
                     shapeGeo = new StreamGeometry();
@@ -165,7 +119,6 @@ namespace ScrapProject
                         ctx.LineTo(lastPoint, true, false);
                     }
                     shapeGeo.Freeze();
-                    closed = false;
                     break;
                 case DrawingStrokeType.Line_Coord2D:
                     Point xNeg2d = new Point(firstPoint.X + (firstPoint.X - lastPoint.X), lastPoint.Y);
@@ -179,7 +132,6 @@ namespace ScrapProject
                         ctx.LineTo((Point)xNeg2d, true, false);
                     }
                     shapeGeo.Freeze();
-                    closed = false;
                     break;
                 case DrawingStrokeType.Line_Coord3D:
                     int numDashes = 42;
@@ -204,7 +156,6 @@ namespace ScrapProject
                             ctx.LineTo((Point)b, true, false);
                             i += 2;
                         }
-                        closed = false;
                     }
                     shapeGeo.Freeze();
                     break;
@@ -212,90 +163,7 @@ namespace ScrapProject
                     shapeGeo = new EllipseGeometry(vHalf, v.Length / 2, v.Length / 2);
                     break;
             }
-            g = GenerateStylusPoints(shapeGeo, closed);
-            return g;
-        }
-        private Geometry GenerateStylusPoints(Geometry geo, bool closed)
-        {
-            PathGeometry g = geo.GetFlattenedPathGeometry();
-            StylusPointCollection StylusPointsCopy = StylusPoints.Clone();
-            connectingPoints = new List<ConnectingPoint>();
-            StylusPointsCopy.Clear();
-            Point startPoint = new Point(-1, -1);
-            foreach (var f in g.Figures)
-            {
-                foreach (var s in f.Segments)
-                {
-                    if (s is PolyLineSegment)
-                    {
-                        for (int i = 0; i < ((PolyLineSegment)s).Points.Count; i++)
-                        {
-                            Point pt = (((PolyLineSegment)s).Points[i]);
-                            if (i == 0)
-                            {
-                                if (startPoint.X == -1 && startPoint.Y == -1)
-                                {
-                                    startPoint = pt;
-                                }
-                                connectingPoints.Add(new ConnectingPoint(pt.X, pt.Y, null));
-                            }
-                            else
-                            {
-                                connectingPoints.Add(new ConnectingPoint(pt.X, pt.Y, connectingPoints[connectingPoints.Count-1]));
-                            }
-                            StylusPointsCopy.Add(new StylusPoint(pt.X, pt.Y));
-                        }
-                    }
-                    else if (s is LineSegment && !closed)
-                    {
-                        Point pt = f.StartPoint;
-                        startPoint = pt;
-                        connectingPoints.Add(new ConnectingPoint(pt.X, pt.Y, null));
-                        StylusPointsCopy.Add(new StylusPoint(pt.X, pt.Y));
-
-                        pt = (((LineSegment)s).Point);
-                        connectingPoints.Add(new ConnectingPoint(pt.X, pt.Y, connectingPoints[connectingPoints.Count - 1]));
-                        StylusPointsCopy.Add(new StylusPoint(pt.X, pt.Y));
-                    }
-                }
-            }
-            if (closed && !(startPoint.X == -1 && startPoint.Y == -1))
-            {
-                StylusPointsCopy.Add(new StylusPoint(startPoint.X, startPoint.Y));
-                connectingPoints.Add(new ConnectingPoint(startPoint.X, startPoint.Y, connectingPoints[connectingPoints.Count - 1]));
-            }
-            for (int i = 0; i < connectingPoints.Count-1; i++)
-            {
-                if (connectingPoints[i + 1].previous != null)
-                {
-                    connectingPoints[i].next = connectingPoints[i + 1];
-                }
-            }
-            StylusPoints = StylusPointsCopy;
-            return g;
-        }
-
-        protected override void OnStylusPointsReplaced(StylusPointsReplacedEventArgs e)
-        {
-            if (!initialStrokeCreation)
-            {
-                IEnumerable<StylusPoint> spe = e.PreviousStylusPoints.Where(p => e.NewStylusPoints.FirstOrDefault(sp => sp.X == p.X && sp.Y == p.Y) == null);
-                if (spe.ToList().Count > 0)
-                {
-                    StylusPointCollection removedPoints = new StylusPointCollection(spe);
-                    for (int i = 0; i < removedPoints.Count; i++)
-                    {
-                        //connectingPoints.RemoveAll(cp => removedPoints.FirstOrDefault(sp => sp.X == cp.X && sp.Y == cp.Y) != null);
-                        List<ConnectingPoint> toRemove = connectingPoints.Where(cp => removedPoints.FirstOrDefault(sp => sp.X == cp.X && sp.Y == cp.Y) != null).ToList();
-                        foreach (ConnectingPoint cp in toRemove)
-                        {
-                            cp.next.previous = null;
-                        }
-                        connectingPoints.RemoveAll(cp => removedPoints.FirstOrDefault(sp => sp.X == cp.X && sp.Y == cp.Y) != null);
-                    }
-                }
-            }
-            base.OnStylusPointsReplaced(e);
+            return shapeGeo;
         }
     }
 }

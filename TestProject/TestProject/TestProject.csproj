@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants.cs" />
+    <Compile Include="Converters\ColorToBrushConverter.cs" />
     <Compile Include="Converters\NumberFormatToString.cs" />
     <Compile Include="Converters\ColorToDisplayHSBA.cs" />
     <Compile Include="Converters\ColorToHSBASliderGradients.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Enums\CommandButtonTypes.cs" />
     <Compile Include="Enums\DisplayOrientations.cs" />
     <Compile Include="Enums\DisplayStates.cs" />
+    <Compile Include="Enums\DrawingStrokeType.cs" />
     <Compile Include="Models\CommandButton.cs" />
     <Compile Include="Models\HSBAColor.cs" />
     <Compile Include="Models\HSBAColorWrapper.cs" />
@@ -102,6 +104,18 @@
     </Compile>
     <Compile Include="Tools\Colors_ValuesDisplay.xaml.cs">
       <DependentUpon>Colors_ValuesDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_DynamicRenderer.cs" />
+    <Compile Include="Tools\Drawing_FillSelect.xaml.cs">
+      <DependentUpon>Drawing_FillSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_InkCanvas.cs" />
+    <Compile Include="Tools\Drawing_Stroke.cs" />
+    <Compile Include="Tools\Drawing_StrokeSelect.xaml.cs">
+      <DependentUpon>Drawing_StrokeSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_StrokeWeight.xaml.cs">
+      <DependentUpon>Drawing_StrokeWeight.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
@@ -175,6 +189,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tools\Colors_ValuesDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_FillSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_StrokeSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_StrokeWeight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

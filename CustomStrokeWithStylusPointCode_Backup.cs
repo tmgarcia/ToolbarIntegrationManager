@@ -8,7 +8,6 @@ using System.Diagnostics;
 using System.Linq;
 using ScrapProject.Enums;
 using System.Collections.Generic;
-using System.Globalization;
 
 namespace ScrapProject
 {
@@ -36,7 +35,7 @@ namespace ScrapProject
         private DrawingStrokeType strokeMode;
         public bool initialStrokeCreation = false;
         private List<ConnectingPoint> connectingPoints;
-        string text;
+        Geometry text;
 
         public CustomStroke(StylusPointCollection stylusPoints, Color stroke, Color fill, DrawingStrokeType strokeMode) : base(stylusPoints)
         {
@@ -44,7 +43,7 @@ namespace ScrapProject
             pen = new Pen(new SolidColorBrush(stroke), 2);
             this.strokeMode = strokeMode;
         }
-        public CustomStroke(StylusPointCollection stylusPoints, Color stroke, Color fill, DrawingStrokeType strokeMode, string text)  : base(stylusPoints)
+        public CustomStroke(StylusPointCollection stylusPoints, Color stroke, Color fill, DrawingStrokeType strokeMode, Geometry text) : base(stylusPoints)
         {
             brush = new SolidColorBrush(fill);
             pen = new Pen(new SolidColorBrush(stroke), 2);
@@ -105,8 +104,7 @@ namespace ScrapProject
                     shapeGeo = new EllipseGeometry(vHalf, v.Length / 2, v.Length / 2);
                     if (text != null)
                     {
-                        FormattedText formText = new FormattedText(text, CultureInfo.GetCultureInfo("en-us"), System.Windows.FlowDirection.LeftToRight, new Typeface("Arial"), 32, brush);
-                        shapeGeo = formText.BuildGeometry(firstPoint);
+                        shapeGeo = text;
                         pen = null;
                     }
                     break;

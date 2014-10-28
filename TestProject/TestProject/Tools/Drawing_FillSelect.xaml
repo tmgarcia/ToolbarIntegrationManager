@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="TestProject.Tools.Drawing_FillSelect"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:con="clr-namespace:TestProject.Converters"
+			 xmlns:uc="clr-namespace:TestProject.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<con:ColorToBrushConverter x:Key="ColorToBrush" />
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid>
+		<Border Name="outerBorder"
+				BorderThickness="7">
+			<Border.Background>
+				<SolidColorBrush x:Name="outerBorderBackground" />
+			</Border.Background>
+		</Border>
+		<uc:BaseTool_Expandable x:Name="expandable">
+			<uc:BaseTool_Expandable.PopupContent>
+				<ListBox SelectionChanged="ListBox_SelectionChanged"
+							SelectionMode="Single"
+							Width="50">
+					<ListBox.Background>
+						<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
+					</ListBox.Background>
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel>
+								<Rectangle Height="20"
+										Width="40">
+									<Rectangle.Fill>
+										<Binding Converter="{StaticResource ResourceKey=ColorToBrush}"/>
+									</Rectangle.Fill>
+								</Rectangle>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</uc:BaseTool_Expandable.PopupContent>
+		</uc:BaseTool_Expandable>
+	</Grid>
+</UserControl>

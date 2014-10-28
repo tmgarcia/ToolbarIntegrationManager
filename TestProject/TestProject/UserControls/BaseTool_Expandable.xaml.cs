@@ -86,5 +86,22 @@ namespace TestProject.UserControls
         {
             popupControl.Placement = System.Windows.Controls.Primitives.PlacementMode.Right;
         }
+
+        public void setAlignmentPointTopRight()
+        {
+
+        }
+        public void setAlignmentPointTopLeft()
+        {
+
+        }
+        public void setAlignmentPointBottomRight()
+        {
+
+        }
+        public void setAlignmentPointBottomLeft()
+        {
+
+        }
     }
 }
