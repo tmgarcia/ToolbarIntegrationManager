@@ -73,3 +73,17 @@ T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_StrokeSelect.baml
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_StrokeWeight.g.cs
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_StrokeWeight.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_GridDisplay.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_GridDisplay.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\MeasuringOverlay.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\MeasuringOverlay.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_VerticalRuler.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_VerticalRuler.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_HorizontalRuler.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_HorizontalRuler.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_MouseCoords.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_MouseCoords.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\FloatingSelectionBox.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_BoxSelector.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\FloatingSelectionBox.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure_BoxSelector.baml

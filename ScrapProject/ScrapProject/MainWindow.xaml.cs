@@ -23,10 +23,12 @@ namespace ScrapProject
         public MainWindow()
         {
             InitializeComponent();
-            Drawing d = new Drawing();
-            d.Show();
+            //Drawing d = new Drawing();
+            //d.Show();
             //Sliders s = new Sliders();
             //s.Show();
+            SimpleView sv = new SimpleView();
+            sv.Show();
         }
     }
 }

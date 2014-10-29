@@ -1,4 +1,4 @@
-﻿
+﻿T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_Eyedropper.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_Sliders.xaml;;
@@ -6,6 +6,10 @@ FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_ValuesDisp
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_FillSelect.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_StrokeSelect.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_StrokeWeight.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_BoxSelector.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_GridDisplay.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_HorizontalRuler.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_VerticalRuler.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\BaseTool_Expandable.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\FloatingToolbar.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\HSBASliders.xaml;;

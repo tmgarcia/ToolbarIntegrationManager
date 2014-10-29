@@ -1,0 +1,186 @@
+﻿<Window x:Class="TestProject.UserControls.FloatingSelectionBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FloatingSelectionBox" Height="310" Width="310"
+		AllowsTransparency="True"
+		WindowStyle="None"
+		ResizeMode="NoResize"
+		ClipToBounds="False"
+		Name="Win"
+		Margin="10"
+		Background="#01000000"
+		SnapsToDevicePixels="True">
+	<Window.Resources>
+		<Style TargetType="Rectangle">
+			<Setter Property="Width" Value="15" />
+			<Setter Property="Height" Value="15" />
+			<Setter Property="Canvas.Top" Value="-7.5" />
+			<Setter Property="Canvas.Left" Value="-7.5" />
+			<Setter Property="Fill" Value="White" />
+			<Setter Property="Stroke" Value="Black" />
+		</Style>
+		<Style TargetType="Label">
+			<Setter Property="Background" Value="#FFFF" />
+			<Setter Property="Height" Value="25" />
+			<Setter Property="Width" Value="40" />
+			<Setter Property="HorizontalContentAlignment" Value="Center" />
+			<Setter Property="Canvas.Top" Value="-12.5" />
+			<Setter Property="Canvas.Left" Value="-20" />
+		</Style>
+		<!--Background="#CFFF"
+				   Height="25"
+				   Width="40"
+				   HorizontalContentAlignment="Center"
+				   Canvas.Top="-12.5"
+				   Canvas.Left="-20"-->
+	</Window.Resources>
+	<Border Margin="15">
+		<Grid ClipToBounds="False"
+			  Name="WinGrid"
+			  Background="#01000000">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition />
+				<ColumnDefinition Width="10"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="10"/>
+				<RowDefinition />
+				<RowDefinition Height="10"/>
+			</Grid.RowDefinitions>
+			<Border BorderThickness="2"
+				Grid.ColumnSpan="3"
+				Grid.RowSpan="3"
+				VerticalAlignment="Stretch">
+				<Border.BorderBrush>
+					<DrawingBrush Viewport="0,0,8,8" ViewportUnits="Absolute" TileMode="Tile">
+						<DrawingBrush.Drawing>
+							<DrawingGroup>
+								<GeometryDrawing Brush="Black">
+									<GeometryDrawing.Geometry>
+										<GeometryGroup>
+											<RectangleGeometry Rect="0,0,50,50" />
+											<RectangleGeometry Rect="50,50,50,50" />
+										</GeometryGroup>
+									</GeometryDrawing.Geometry>
+								</GeometryDrawing>
+							</DrawingGroup>
+						</DrawingBrush.Drawing>
+					</DrawingBrush>
+				</Border.BorderBrush>
+			</Border>
+			<Canvas Grid.Column="0"
+					Grid.Row="1"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Name="left"
+					MouseEnter="DisplayResizeCursor"
+					MouseLeave="ResetCursor"
+					PreviewMouseDown="Resize"
+					Background="#01000000"/>
+			<Canvas Grid.Column="2"
+					Grid.Row="1"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Name="right"
+					MouseEnter="DisplayResizeCursor"
+					MouseLeave="ResetCursor"
+					PreviewMouseDown="Resize"
+					Background="#01000000"/>
+			<Canvas Grid.Column="1"
+					Grid.Row="0"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Name="top"
+					MouseEnter="DisplayResizeCursor"
+					MouseLeave="ResetCursor"
+					PreviewMouseDown="Resize"
+					Background="#01000000"/>
+			<Canvas Grid.Column="1"
+					Grid.Row="2"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Name="bottom"
+					MouseEnter="DisplayResizeCursor"
+					MouseLeave="ResetCursor"
+					PreviewMouseDown="Resize"
+					Background="#01000000"/>
+			
+			<Canvas Grid.Column="1"
+					Grid.Row="1"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Name="center"
+					MouseEnter="DisplayResizeCursor"
+					MouseLeave="ResetCursor"
+					PreviewMouseDown="Drag"
+					Background="#01000000"/>
+			
+			<Canvas Grid.Column="0"
+					Grid.Row="0"
+					VerticalAlignment="Top"
+					HorizontalAlignment="Left">
+				<Rectangle Name="topLeft"
+						MouseEnter="DisplayResizeCursor"
+						MouseLeave="ResetCursor"
+						PreviewMouseDown="Resize"/>
+			</Canvas>
+			<Canvas Grid.Column="2"
+					Grid.Row="0"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Top">
+				<Rectangle Name="topRight"
+						   MouseEnter="DisplayResizeCursor"
+						   MouseLeave="ResetCursor"
+						   PreviewMouseDown="Resize"/>
+			</Canvas>
+			<Canvas Grid.Column="0"
+					Grid.Row="2"
+					HorizontalAlignment="Left"
+					VerticalAlignment="Bottom">
+				<Rectangle Name="bottomLeft"
+						MouseEnter="DisplayResizeCursor"
+						MouseLeave="ResetCursor"
+						PreviewMouseDown="Resize"/>
+			</Canvas>
+			<Canvas Grid.Column="2"
+					Grid.Row="2"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Bottom">
+				<Rectangle Name="bottomRight"
+						MouseEnter="DisplayResizeCursor"
+						MouseLeave="ResetCursor"
+						PreviewMouseDown="Resize"/>
+			</Canvas>
+
+			<Canvas Grid.Column="1"
+					Grid.Row="0"
+					VerticalAlignment="Top"
+					HorizontalAlignment="Center">
+				<Label Content="{Binding ElementName=WinGrid, Path=ActualWidth}"
+					   Name="labelTop"/>
+			</Canvas>
+			<Canvas Grid.Column="2"
+					Grid.Row="1"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Right">
+				<Label Content="{Binding ElementName=WinGrid, Path=ActualHeight}"
+					   Name="labelRight"/>
+			</Canvas>
+			<Canvas Grid.Column="1"
+					Grid.Row="2"
+					VerticalAlignment="Bottom"
+					HorizontalAlignment="Center">
+				<Label Content="{Binding ElementName=WinGrid, Path=ActualWidth}"
+					   Name="labelBottom"/>
+			</Canvas>
+			<Canvas Grid.Column="0"
+					Grid.Row="1"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Left">
+				<Label Content="{Binding ElementName=WinGrid, Path=ActualHeight}"
+					   Name="labelLeft"/>
+			</Canvas>
+		</Grid>
+	</Border>
+</Window>

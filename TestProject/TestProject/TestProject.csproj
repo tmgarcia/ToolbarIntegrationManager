@@ -79,6 +79,7 @@
     <Compile Include="Models\Tool.cs" />
     <Compile Include="Models\Toolbar.cs" />
     <Compile Include="Models\ToolbarIconCommandButtons.cs" />
+    <Compile Include="Models\WindowResizer.cs" />
     <Compile Include="ScreenCapturer.cs" />
     <Compile Include="TestControl.xaml.cs">
       <DependentUpon>TestControl.xaml</DependentUpon>
@@ -117,6 +118,21 @@
     <Compile Include="Tools\Drawing_StrokeWeight.xaml.cs">
       <DependentUpon>Drawing_StrokeWeight.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Measure_BoxSelector.xaml.cs">
+      <DependentUpon>Measure_BoxSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure_GridDisplay.xaml.cs">
+      <DependentUpon>Measure_GridDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure_HorizontalRuler.xaml.cs">
+      <DependentUpon>Measure_HorizontalRuler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure_MouseCoords.xaml.cs">
+      <DependentUpon>Measure_MouseCoords.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure_VerticalRuler.xaml.cs">
+      <DependentUpon>Measure_VerticalRuler.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
     </Compile>
@@ -132,6 +148,9 @@
     <Compile Include="UserControls\EyeDropOverlay.xaml.cs">
       <DependentUpon>EyeDropOverlay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\FloatingSelectionBox.xaml.cs">
+      <DependentUpon>FloatingSelectionBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FloatingToolbar.xaml.cs">
       <DependentUpon>FloatingToolbar.xaml</DependentUpon>
     </Compile>
@@ -140,6 +159,9 @@
     </Compile>
     <Compile Include="UserControls\HSLASliders.xaml.cs">
       <DependentUpon>HSLASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MeasuringOverlay.xaml.cs">
+      <DependentUpon>MeasuringOverlay.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RGBASliders.xaml.cs">
       <DependentUpon>RGBASliders.xaml</DependentUpon>
@@ -152,6 +174,7 @@
     </Compile>
     <Compile Include="Win32API\GDITools.cs" />
     <Compile Include="Win32API\Win32Tools.cs" />
+    <Compile Include="WindowsServices.cs" />
     <Page Include="LauncherWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -204,6 +227,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Measure_BoxSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure_GridDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure_HorizontalRuler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure_MouseCoords.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure_VerticalRuler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ActiveInactiveImageButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -224,6 +267,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\FloatingSelectionBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\FloatingToolbar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +280,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\HSLASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MeasuringOverlay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
