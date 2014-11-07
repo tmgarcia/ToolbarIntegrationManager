@@ -1,9 +1,17 @@
-﻿T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_Eyedropper.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_Sliders.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_ValuesDisplay.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Conversion_Ascii.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Conversion_Bases.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Conversion_Calculator.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Conversion_Unicode.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Conversion_Units.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Conversion_UnitsInner.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_FillSelect.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Lines.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Shapes.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_StrokeSelect.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_StrokeWeight.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_BoxSelector.xaml;;

@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Constants.cs" />
+    <Compile Include="Converters\ASCIIConverter.cs" />
     <Compile Include="Converters\ColorToBrushConverter.cs" />
     <Compile Include="Converters\NumberFormatToString.cs" />
     <Compile Include="Converters\ColorToDisplayHSBA.cs" />
@@ -65,6 +67,8 @@
     <Compile Include="Converters\HSBAToColor.cs" />
     <Compile Include="Converters\HSLAToColor.cs" />
     <Compile Include="Converters\RGBAToColor.cs" />
+    <Compile Include="Converters\UnitConversion_Angles.cs" />
+    <Compile Include="Converters\UnitConversion_Length.cs" />
     <Compile Include="Enums\CommandButtonTypes.cs" />
     <Compile Include="Enums\DisplayOrientations.cs" />
     <Compile Include="Enums\DisplayStates.cs" />
@@ -106,11 +110,35 @@
     <Compile Include="Tools\Colors_ValuesDisplay.xaml.cs">
       <DependentUpon>Colors_ValuesDisplay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Conversion_Ascii.xaml.cs">
+      <DependentUpon>Conversion_Ascii.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion_Bases.xaml.cs">
+      <DependentUpon>Conversion_Bases.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion_Calculator.xaml.cs">
+      <DependentUpon>Conversion_Calculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion_Unicode.xaml.cs">
+      <DependentUpon>Conversion_Unicode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion_Units.xaml.cs">
+      <DependentUpon>Conversion_Units.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion_UnitsInner.xaml.cs">
+      <DependentUpon>Conversion_UnitsInner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Drawing_DynamicRenderer.cs" />
     <Compile Include="Tools\Drawing_FillSelect.xaml.cs">
       <DependentUpon>Drawing_FillSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tools\Drawing_InkCanvas.cs" />
+    <Compile Include="Tools\Drawing_Lines.xaml.cs">
+      <DependentUpon>Drawing_Lines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_Shapes.xaml.cs">
+      <DependentUpon>Drawing_Shapes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Drawing_Stroke.cs" />
     <Compile Include="Tools\Drawing_StrokeSelect.xaml.cs">
       <DependentUpon>Drawing_StrokeSelect.xaml</DependentUpon>
@@ -135,6 +163,9 @@
     </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Calculator.xaml.cs">
+      <DependentUpon>Calculator.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\EnabledSymbolButton.xaml.cs">
       <DependentUpon>EnabledSymbolButton.xaml</DependentUpon>
@@ -215,7 +246,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Conversion_Ascii.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion_Bases.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion_Calculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion_Unicode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion_Units.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion_UnitsInner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tools\Drawing_FillSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_Lines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_Shapes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,6 +311,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ActiveInactiveImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Calculator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

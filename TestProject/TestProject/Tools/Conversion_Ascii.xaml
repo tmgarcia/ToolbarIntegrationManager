@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="TestProject.Tools.Conversion_Ascii"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:con="clr-namespace:TestProject.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="200">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<con:ASCIIConverter x:Key="ASCIICon" />
+			<Style TargetType="Label">
+				<Setter Property="FontSize" Value="9"/>
+			</Style>
+			<Style TargetType="TextBox">
+				<Setter Property="FontSize" Value="10"/>
+			</Style>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<Grid ClipToBounds="False">
+		<Grid.Background>
+			<SolidColorBrush Color="{StaticResource ResourceKey=ToolbarBackgroundMediumColor}" />
+		</Grid.Background>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1.0*"/>
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition Width="1.5*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Label Grid.Row="0"
+			   Grid.Column="0"
+			   Grid.RowSpan="2"
+			   Content="ASCII"
+			   VerticalAlignment="Center"/>
+		<Label Grid.Row="0"
+				   Grid.Column="1"
+				   Content="Char"/>
+		<Label Grid.Row="0"
+				   Grid.Column="3"
+				   Content="Bin"/>
+		<Label Grid.Row="1"
+				   Grid.Column="1"
+				   Content="Dec"/>
+		<Label Grid.Row="1"
+				   Grid.Column="3"
+				   Content="Hex"/>
+		<TextBox Grid.Row="0"
+					 Grid.Column="2"
+					 Margin="0,1"
+					 Name="charBox"/>
+		<TextBox Grid.Row="0"
+				 Grid.Column="4"
+				 Margin="0,1"
+				 Name="binBox"
+				 Text="{Binding ElementName=charBox, Path=Text,Converter={StaticResource ResourceKey=ASCIICon}, ConverterParameter=bin, Mode=TwoWay}"/>
+		<TextBox Grid.Row="1"
+					 Grid.Column="2"
+					 Margin="0,1"
+					 Name="decBox"
+					 Text="{Binding ElementName=charBox, Path=Text, Converter={StaticResource ResourceKey=ASCIICon}, ConverterParameter=dec, Mode=TwoWay}"/>
+		<TextBox Grid.Row="1"
+					 Grid.Column="4"
+					 Margin="0,1"
+					 Name="hexBox"
+					 Text="{Binding ElementName=charBox, Path=Text, Converter={StaticResource ResourceKey=ASCIICon}, ConverterParameter=hex, Mode=TwoWay}"
+					 Width="25"
+					 HorizontalAlignment="Left"/>
+		</Grid>
+</UserControl>

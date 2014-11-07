@@ -59,7 +59,7 @@ namespace TestProject.UserControls
             this.Deactivated += ToolbarWindow_Deactivated;
             this.Activated += ToolbarWindow_Activated;
             this.ShowInTaskbar = false;
-
+            
         }
 
 

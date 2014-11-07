@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="TestProject.Tools.Conversion_Bases"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:uc="clr-namespace:TestProject.UserControls"
+             mc:Ignorable="d">
+	<Grid>
+		<uc:BaseTool_Expandable x:Name="expandable">
+			<uc:BaseTool_Expandable.PopupContent>
+				<StackPanel Orientation="Vertical"
+							Width="Auto">
+					<StackPanel.Background>
+						<SolidColorBrush Color="{StaticResource ResourceKey=ToolbarBackgroundMediumColor}" />
+					</StackPanel.Background>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition Width="Auto"/>
+						</Grid.ColumnDefinitions>
+						<TextBox PreviewTextInput="NumberDisplay_PreviewTextInput"
+								 Margin="2"
+								 FontSize="11"/>
+						<GridSplitter Background="Gray"
+									  Width="4"
+									  Grid.Column="1"
+									  HorizontalAlignment="Right"
+									  VerticalAlignment="Stretch"
+									  ResizeDirection="Columns"/>
+					</Grid>
+					<StackPanel Orientation="Horizontal">
+						<RadioButton Checked="BinSelect_Checked"/>
+						<Label Content="Bin"/>
+						<RadioButton Checked="OctSelect_Checked"/>
+						<Label Content="Oct"/>
+						<RadioButton Checked="DecSelect_Checked"/>
+						<Label Content="Dec"/>
+						<RadioButton Checked="HexSelect_Checked"/>
+						<Label Content="Hex"/>
+					</StackPanel>
+				</StackPanel>
+			</uc:BaseTool_Expandable.PopupContent>
+		</uc:BaseTool_Expandable>
+	</Grid>
+</UserControl>

@@ -394,7 +394,7 @@
 				</DrawingImage.Drawing>
 			</DrawingImage>
 
-			<DrawingImage x:Key="SymbolDiagonalLine">
+			<DrawingImage x:Key="SymbolLineDiagonal">
 				<DrawingImage.Drawing>
 					<GeometryDrawing>
 						<GeometryDrawing.Brush>
@@ -475,6 +475,98 @@
 					</GeometryDrawing>
 				</DrawingImage.Drawing>
 			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolCircle">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 405.254,286.667C 405.254,292.514 400.514,297.254 394.667,297.254C 388.819,297.254 384.08,292.514 384.08,286.667C 384.08,280.819 388.819,276.079 394.667,276.079C 400.514,276.079 405.254,280.819 405.254,286.667 Z "/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+			
+			<DrawingImage x:Key="SymbolSquare">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 0,0 H10 V10 H0 Z"/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+			
+			<DrawingImage x:Key="SymbolTriangle">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 5,0 L10,10 H0 Z"/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolArrowDiagonal">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 20.8542,0.000183105L 16.9792,8.43768L 15.7083,7.896L 17.8958,3.22931L 0.833318,16.896L -1.52178e-005,15.896L 17.0208,2.18768L 12.0833,3.271L 11.8125,2.00018L 20.8542,0.000183105 Z "/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolCoordQuadrant">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 1.89103,6.02344L 1.89103,3.96368L 9.15527e-005,1.16101L 0.799943,1.16101L 1.78551,2.62354C 1.96701,2.89154 2.1281,3.13007 2.2688,3.33899C 2.38206,3.16101 2.54034,2.91266 2.74364,2.59399L 3.65746,1.16101L 4.45731,1.16101L 2.56637,3.96368L 2.56637,6.02344L 1.89103,6.02344 Z M 16.8364,21.8008L 18.6228,19.1649L 17.1065,16.9384L 17.9148,16.9384L 18.7621,18.1824C 18.9387,18.4427 19.0143,18.5898 18.989,18.6235C 19.0776,18.4948 19.1891,18.3305 19.3235,18.1307L 20.1318,16.9384L 20.9559,16.9384L 19.4396,19.1765L 21.226,21.8008L 20.4188,21.8008L 19.2581,20.0977C 19.1905,19.9985 19.1167,19.8898 19.0365,19.7716C 18.9359,19.9207 18.8627,20.0284 18.817,20.0945L 17.6615,21.8008L 16.8364,21.8008 Z M 5.85775,16.2578L 4.46191,16.2578L 4.46191,0L 5.85775,0L 5.85775,14.9036L 22.0527,14.9036L 22.0527,16.2578L 5.85775,16.2578 Z "/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolCoord2D">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 8.43561,5.53253L 8.43561,3.47278L 6.54467,0.670105L 7.34452,0.670105L 8.33009,2.13263C 8.51158,2.4007 8.67268,2.63916 8.81337,2.84808C 8.92663,2.6701 9.08492,2.42181 9.28822,2.10309L 10.202,0.670105L 11.0019,0.670105L 9.11094,3.47278L 9.11094,5.53253L 8.43561,5.53253 Z M 20.7898,19.1107L 22.5763,16.4748L 21.0599,14.2482L 21.8682,14.2482L 22.7155,15.4924C 22.8921,15.7526 22.9677,15.8997 22.9424,15.9334C 23.0311,15.8047 23.1426,15.6404 23.2769,15.4406L 24.0852,14.2482L 24.9093,14.2482L 23.393,16.4864L 25.1795,19.1107L 24.3722,19.1107L 23.2115,17.4075C 23.144,17.3084 23.0701,17.1997 22.9899,17.0815C 22.8893,17.2307 22.8161,17.3383 22.7704,17.4044L 21.615,19.1107L 20.7898,19.1107 Z M 13.2686,25.0886L 11.9079,25.0886L 11.9079,13.2005L 0,13.1992L 0,11.8659L 11.9079,11.8672L 11.9079,0L 13.2686,0L 13.2686,11.8685L 25.0885,11.8659L 25.0885,13.22L 13.2686,13.2018L 13.2686,25.0886 Z "/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolCoord3D">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 4.09911,4.88934L 4.09911,2.82953L 2.20817,0.0269165L 3.00802,0.0269165L 3.99359,1.48944C 4.17509,1.75745 4.33618,1.99591 4.47688,2.2049C 4.59014,2.02692 4.74842,1.77856 4.95172,1.4599L 5.86554,0.0269165L 6.66539,0.0269165L 4.77445,2.82953L 4.77445,4.88934L 4.09911,4.88934 Z M 5.18699,23.5781L 5.18699,23.0146L 7.6087,19.8458C 7.77965,19.6229 7.93019,19.4262 8.06033,19.256L 5.52466,19.256L 5.52466,18.7157L 8.90134,18.7157L 8.90134,19.256L 6.26436,22.7044L 6.01005,23.0378L 9.0364,23.0378L 9.0364,23.5781L 5.18699,23.5781 Z M 17.5288,20.2448L 19.3153,17.6089L 17.7989,15.3824L 18.6072,15.3824L 19.4546,16.6265C 19.6311,16.8868 19.7068,17.0338 19.6814,17.0676C 19.7701,16.9388 19.8816,16.7745 20.0159,16.5748L 20.8242,15.3824L 21.6484,15.3824L 20.132,17.6205L 21.9185,20.2448L 21.1113,20.2448L 19.9505,18.5417C 19.883,18.4425 19.8091,18.3338 19.7289,18.2156C 19.6283,18.3647 19.5552,18.4724 19.5094,18.5385L 18.354,20.2448L 17.5288,20.2448 Z M 23.3219,13.2227L 23.3219,14.5143L 8.58333,14.5143L 1.04167,22.8477L 0,22.056L 7.58333,13.556L 7.58333,0L 8.95833,0L 8.91667,13.2643L 23.3219,13.2227 Z "/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+			<!--<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />-->
 
 		</ResourceDictionary>
 	</Application.Resources>
