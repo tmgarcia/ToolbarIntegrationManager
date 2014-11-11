@@ -21,6 +21,12 @@ namespace TestProject.UserControls
     /// </summary>
     public partial class BaseTool_Expandable : UserControl
     {
+        public static readonly RoutedEvent ToolExpandedEvent = EventManager.RegisterRoutedEvent("ToolExpanded", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(BaseTool_Expandable));
+        public event RoutedEventHandler ToolExpanded
+        {
+            add { AddHandler(ToolExpandedEvent, value); }
+            remove { RemoveHandler(ToolExpandedEvent, value); }
+        }
         public static readonly DependencyProperty PopupContentProperty =
             DependencyProperty.Register("PopupContent", typeof(object), typeof(BaseTool_Expandable),
             new UIPropertyMetadata(null));
@@ -37,6 +43,15 @@ namespace TestProject.UserControls
             setExpandDirectionDown();
             Toggle.toggleControl.Checked += toggleControl_Checked;
             Toggle.toggleControl.Unchecked += toggleControl_Unchecked;
+        }
+
+        public void Expand()
+        {
+            Toggle.toggleControl.IsChecked = true;
+        }
+        public void Collapse()
+        {
+            Toggle.toggleControl.IsChecked = false;
         }
 
         void BaseTool_Expandable_Loaded(object sender, RoutedEventArgs e)
@@ -58,6 +73,7 @@ namespace TestProject.UserControls
 
         void toggleControl_Checked(object sender, RoutedEventArgs e)
         {
+            this.RaiseEvent(new RoutedEventArgs(ToolExpandedEvent, this));
             popupControl.IsOpen = true;
         }
         void toggleControl_Unchecked(object sender, RoutedEventArgs e)

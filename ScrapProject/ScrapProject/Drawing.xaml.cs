@@ -135,7 +135,7 @@ namespace ScrapProject
             if (result == true)
             {
                 string fileName = sfd.FileName;
-
+                
                 RenderTargetBitmap rtb = new RenderTargetBitmap((int)inkCanvas1.ActualWidth, (int)inkCanvas1.ActualHeight, 96d, 96d, PixelFormats.Default);
                 rtb.Render(inkCanvas1);
                 BmpBitmapEncoder encoder = new BmpBitmapEncoder();

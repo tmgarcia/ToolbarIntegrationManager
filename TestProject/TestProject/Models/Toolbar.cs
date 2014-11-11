@@ -12,6 +12,7 @@ namespace TestProject.Models
     class Toolbar
     {
         public ToolbarIcon icon;
+        public string displayIconPath;
         public ToolbarIconCommandButtons commandButtons;
         DisplayStates displayState;
         DisplayOrientations displayOrientation;
@@ -32,6 +33,7 @@ namespace TestProject.Models
         {
             isActive = false;
             tools = new List<Tool>();
+            displayIconPath = "../Images/ToolbarIcons/toolbarIconTest.png";
         }
         protected void SetupLaunchIcon()
         {
@@ -77,7 +79,7 @@ namespace TestProject.Models
         {
             if (!isActive)
             {
-                display = new ToolbarWindow();
+                display = new ToolbarWindow(displayIconPath);
                 display.ToolbarClosed += ToolbarClosed;
                 PreDisplaySetup();
                 display.Show();
@@ -87,7 +89,7 @@ namespace TestProject.Models
                 icon.SetActive();
             }
         }
-        protected void ToolbarClosed(object sender, System.Windows.RoutedEventArgs e)
+        protected virtual void ToolbarClosed(object sender, System.Windows.RoutedEventArgs e)
         {
             isActive = false;
             commandButtons.SetToInactiveState();

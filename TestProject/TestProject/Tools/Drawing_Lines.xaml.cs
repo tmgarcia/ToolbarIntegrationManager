@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Enums;
 
 namespace TestProject.Tools
 {
@@ -20,6 +21,14 @@ namespace TestProject.Tools
     /// </summary>
     public partial class Drawing_Lines : UserControl
     {
+        public static readonly RoutedEvent LineSelectedEvent = EventManager.RegisterRoutedEvent("LineSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_Lines));
+        public event RoutedEventHandler LineSelected
+        {
+            add { AddHandler(LineSelectedEvent, value); }
+            remove { RemoveHandler(LineSelectedEvent, value); }
+        }
+
+        public DrawingStrokeType selectedStrokeType;
         public Drawing_Lines()
         {
             InitializeComponent();
@@ -27,23 +36,28 @@ namespace TestProject.Tools
         }
         private void Line_Selected(object sender, RoutedEventArgs e)
         {
-
+            selectedStrokeType = DrawingStrokeType.Line_Line;
+            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
         }
         private void Arrow_Selected(object sender, RoutedEventArgs e)
         {
-
+            selectedStrokeType = DrawingStrokeType.Line_Arrow;
+            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
         }
         private void CoordQuad_Selected(object sender, RoutedEventArgs e)
         {
-
+            selectedStrokeType = DrawingStrokeType.Line_CoordQuad;
+            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
         }
         private void Coord2D_Selected(object sender, RoutedEventArgs e)
         {
-
+            selectedStrokeType = DrawingStrokeType.Line_Coord2D;
+            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
         }
         private void Coord3D_Selected(object sender, RoutedEventArgs e)
         {
-
+            selectedStrokeType = DrawingStrokeType.Line_Coord3D;
+            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
         }
     }
 }

@@ -105,3 +105,17 @@ T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Shapes.baml
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Lines.g.cs
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Lines.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Text.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Text.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Clear.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Eraser.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Pen.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Save.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Clear.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Eraser.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Pen.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Save.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Overlay.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Overlay.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_ReturnCursor.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_ReturnCursor.baml

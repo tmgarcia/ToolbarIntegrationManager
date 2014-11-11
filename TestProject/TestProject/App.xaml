@@ -476,6 +476,27 @@
 				</DrawingImage.Drawing>
 			</DrawingImage>
 
+			<DrawingImage x:Key="SymbolSave">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<CombinedGeometry GeometryCombineMode="Xor">
+								<CombinedGeometry.Geometry1>
+									<PathGeometry Figures="M 48.2917,7.49219L 48.2917,48.2917L 0,48.2917L 0,0L 8.27507,0L 8.27507,14.6406L 34.4932,14.6406L 34.4938,0L 39.4873,0L 48.2917,7.49219 Z 
+														  M24.8454,1.81641 h6.01595 v10.7825 H24.8454 Z"/>
+								</CombinedGeometry.Geometry1>
+								<CombinedGeometry.Geometry2>
+									<PathGeometry Figures="M 8.27474,22.6992 h31.5527 v18.6341 H9.27474 Z"/>
+								</CombinedGeometry.Geometry2>
+							</CombinedGeometry>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
 			<DrawingImage x:Key="SymbolCircle">
 				<DrawingImage.Drawing>
 					<GeometryDrawing>

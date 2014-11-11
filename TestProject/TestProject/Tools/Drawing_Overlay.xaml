@@ -1,0 +1,12 @@
+﻿<Window x:Class="TestProject.Tools.Drawing_Overlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:t="clr-namespace:TestProject.Tools"
+        WindowStyle="None"
+		AllowsTransparency="True"
+		ResizeMode="NoResize"
+		Background="Transparent"
+		Left="400">
+	<t:Drawing_InkCanvas x:Name="inkCanvas"
+						 Background="#01000000"/>
+</Window>

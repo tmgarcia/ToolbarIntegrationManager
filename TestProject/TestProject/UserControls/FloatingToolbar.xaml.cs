@@ -39,6 +39,12 @@ namespace TestProject.UserControls
             toolbarControl.Height = height;
         }
 
+        public Image GetIcon()
+        {
+            Image ic = (Image)(toolbarControl.Template.FindName("ToolbarIcon", toolbarControl));
+            return ic;
+        }
+
         public event RoutedEventHandler TemplateApplied
         {
             add { AddHandler(TemplateAppliedEvent, value); }

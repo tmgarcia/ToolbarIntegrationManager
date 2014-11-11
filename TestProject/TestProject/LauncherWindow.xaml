@@ -29,10 +29,14 @@
 				Grid.RowSpan="2"
 				CornerRadius="50"
 				Height="50"
-				VerticalAlignment="Bottom">
+				VerticalAlignment="Bottom" 
+				Margin="10">
 			<Border.Background>
 				<SolidColorBrush Color="Gray" />
 			</Border.Background>
+			<Border.Effect>
+				<DropShadowEffect BlurRadius="10"/>
+			</Border.Effect>
 		</Border>
 		<!--<Button Grid.Column="3"
 				FontSize="9"

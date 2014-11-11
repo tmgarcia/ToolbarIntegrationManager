@@ -74,6 +74,7 @@
     <Compile Include="Enums\DisplayStates.cs" />
     <Compile Include="Enums\DrawingStrokeType.cs" />
     <Compile Include="Models\CommandButton.cs" />
+    <Compile Include="Models\CustomCursors.cs" />
     <Compile Include="Models\HSBAColor.cs" />
     <Compile Include="Models\HSBAColorWrapper.cs" />
     <Compile Include="Models\HSLAColor.cs" />
@@ -128,13 +129,31 @@
     <Compile Include="Tools\Conversion_UnitsInner.xaml.cs">
       <DependentUpon>Conversion_UnitsInner.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Drawing_Clear.xaml.cs">
+      <DependentUpon>Drawing_Clear.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Drawing_DynamicRenderer.cs" />
+    <Compile Include="Tools\Drawing_Eraser.xaml.cs">
+      <DependentUpon>Drawing_Eraser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Drawing_FillSelect.xaml.cs">
       <DependentUpon>Drawing_FillSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tools\Drawing_InkCanvas.cs" />
     <Compile Include="Tools\Drawing_Lines.xaml.cs">
       <DependentUpon>Drawing_Lines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_Overlay.xaml.cs">
+      <DependentUpon>Drawing_Overlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_Pen.xaml.cs">
+      <DependentUpon>Drawing_Pen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_ReturnCursor.xaml.cs">
+      <DependentUpon>Drawing_ReturnCursor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_Save.xaml.cs">
+      <DependentUpon>Drawing_Save.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tools\Drawing_Shapes.xaml.cs">
       <DependentUpon>Drawing_Shapes.xaml</DependentUpon>
@@ -145,6 +164,9 @@
     </Compile>
     <Compile Include="Tools\Drawing_StrokeWeight.xaml.cs">
       <DependentUpon>Drawing_StrokeWeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing_Text.xaml.cs">
+      <DependentUpon>Drawing_Text.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tools\Measure_BoxSelector.xaml.cs">
       <DependentUpon>Measure_BoxSelector.xaml</DependentUpon>
@@ -270,11 +292,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Drawing_Clear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_Eraser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tools\Drawing_FillSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tools\Drawing_Lines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_Overlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_Pen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_ReturnCursor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_Save.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -287,6 +333,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tools\Drawing_StrokeWeight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing_Text.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -549,6 +599,12 @@
     <Resource Include="Images\launcher.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\colorsIconInToolbar.png" />
+    <Resource Include="Images\ToolbarIcons\conversionIconInToolbar.png" />
+    <Resource Include="Images\ToolbarIcons\drawingIconInToolbar.png" />
+    <Resource Include="Images\ToolbarIcons\measureIconInToolbar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

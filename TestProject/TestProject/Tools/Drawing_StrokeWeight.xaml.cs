@@ -20,11 +20,24 @@ namespace TestProject.Tools
     /// </summary>
     public partial class Drawing_StrokeWeight : UserControl
     {
+        public static readonly RoutedEvent WeightChangedEvent = EventManager.RegisterRoutedEvent("WeightChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_StrokeWeight));
+        public event RoutedEventHandler WeightChanged
+        {
+            add { AddHandler(WeightChangedEvent, value); }
+            remove { RemoveHandler(WeightChangedEvent, value); }
+        }
+        public double currentWeight=1;
         public Drawing_StrokeWeight()
         {
             InitializeComponent();
             expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolStrokes"));
 
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            currentWeight = e.NewValue;
+            this.RaiseEvent(new RoutedEventArgs(WeightChangedEvent, this));
         }
     }
 }

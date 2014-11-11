@@ -13,14 +13,16 @@
 						<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
 					</Border.Background>
 					<Slider Minimum="1"
-						Maximum="10"
-						TickFrequency="1"
-						IsSnapToTickEnabled="True"
-						Orientation="Vertical"
-						Height="100"
+							Maximum="10"
+							TickFrequency="1"
+							IsSnapToTickEnabled="True"
+							Orientation="Vertical"
+							Height="100"
 							Width="20"
 							BorderBrush="Black"
-							BorderThickness="1">
+							BorderThickness="1"
+							ValueChanged="Slider_ValueChanged"
+							Value="1">
 						<Slider.Background>
 							<DrawingBrush Stretch="Fill"								  TileMode="None">								<DrawingBrush.Drawing>									<GeometryDrawing Brush="Black">										<GeometryDrawing.Geometry>											<PathGeometry Figures="M0,0 H5 V5 Z"/>										</GeometryDrawing.Geometry>									</GeometryDrawing>								</DrawingBrush.Drawing>							</DrawingBrush>
 						</Slider.Background>

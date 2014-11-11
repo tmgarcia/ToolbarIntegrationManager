@@ -20,7 +20,14 @@ namespace TestProject.Tools
     /// </summary>
     public partial class Drawing_StrokeSelect : UserControl
     {
+        public static readonly RoutedEvent StrokeColorSelectedEvent = EventManager.RegisterRoutedEvent("StrokeColorSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_StrokeSelect));
+        public event RoutedEventHandler StrokeColorSelected
+        {
+            add { AddHandler(StrokeColorSelectedEvent, value); }
+            remove { RemoveHandler(StrokeColorSelectedEvent, value); }
+        }
         ListBox colorChoiceDisplay;
+        public Color currentColor;
         public Drawing_StrokeSelect()
         {
             InitializeComponent();
@@ -50,12 +57,14 @@ namespace TestProject.Tools
             colorChoiceDisplay.ItemsSource = colors;
 
             colorChoiceDisplay.SelectedIndex = 3;
-
+            currentColor = colors[3];
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             outerBorderBackground.Color = (Color)colorChoiceDisplay.SelectedItem;
+            currentColor = (Color)colorChoiceDisplay.SelectedItem;
+            this.RaiseEvent(new RoutedEventArgs(StrokeColorSelectedEvent, this));
         }
     }
 }

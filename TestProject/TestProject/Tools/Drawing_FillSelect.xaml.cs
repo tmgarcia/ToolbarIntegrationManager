@@ -20,7 +20,14 @@ namespace TestProject.Tools
     /// </summary>
     public partial class Drawing_FillSelect : UserControl
     {
+        public static readonly RoutedEvent FillColorSelectedEvent = EventManager.RegisterRoutedEvent("FillColorSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_FillSelect));
+        public event RoutedEventHandler FillColorSelected
+        {
+            add { AddHandler(FillColorSelectedEvent, value); }
+            remove { RemoveHandler(FillColorSelectedEvent, value); }
+        }
         ListBox colorChoiceDisplay;
+        public Color currentColor;
         public Drawing_FillSelect()
         {
             InitializeComponent();
@@ -49,11 +56,15 @@ namespace TestProject.Tools
             colors.Add(Colors.Purple);
             colorChoiceDisplay.ItemsSource = colors;
             colorChoiceDisplay.SelectedIndex = 2;
+            currentColor = colors[2];
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             outerBorderBackground.Color = (Color)colorChoiceDisplay.SelectedItem;
+            currentColor = (Color)colorChoiceDisplay.SelectedItem;
+            this.RaiseEvent(new RoutedEventArgs(FillColorSelectedEvent, this));
         }
+
     }
 }

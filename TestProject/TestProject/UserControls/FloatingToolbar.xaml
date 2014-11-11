@@ -4,7 +4,8 @@
 		 xmlns:uc="clr-namespace:TestProject.UserControls"
 		 Name="toolbarControl"
 		 Width="200"
-		 Height="50">
+		 Height="50"
+		 Margin="10">
 	<ToolBar.Resources>
 		<Style x:Key="ToolBarCollapseButtonStyle"
 			   TargetType="{x:Type ToggleButton}">
@@ -191,9 +192,8 @@
 								  Checked="CollapseButton_Checked"
 								  Unchecked="CollapseButton_Unchecked">
 						</ToggleButton>
-						<Image Name="ToolbarIcon"
-									   Source="../Images/ToolbarIcons/toolbarIconTest.png"
-									   Margin="5,0"/>
+						<Image Name="ToolbarIcon" 
+							   Margin="5,0"/>
 					</StackPanel>
 					<Thumb Name="ToolBarThumb"
 						   Style="{DynamicResource ToolBarThumbStyle}"
@@ -231,5 +231,7 @@
 			</Border>
 		</ControlTemplate>
 	</ToolBar.Template>
-
+	<ToolBar.Effect>
+		<DropShadowEffect BlurRadius="10"/>
+	</ToolBar.Effect>
 </ToolBar>

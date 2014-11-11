@@ -9,6 +9,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
@@ -22,7 +23,7 @@ namespace TestProject.UserControls
     public partial class ToolbarWindow : Window
     {
         public static readonly RoutedEvent ToolbarClosedEvent = EventManager.RegisterRoutedEvent("ToolbarClosed", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ToolbarWindow));
-
+        private string displayIconPath;
         public event RoutedEventHandler ToolbarClosed
         {
             add { AddHandler(ToolbarClosedEvent, value); }
@@ -30,9 +31,10 @@ namespace TestProject.UserControls
         }
 
         public FloatingToolbar toolbar;
-        public ToolbarWindow()
+        public ToolbarWindow(string displayIcon)
         {
             InitializeComponent();
+            displayIconPath = displayIcon;
             toolbar = new FloatingToolbar();
             gridControl.Children.Add(toolbar);
             toolbar.TemplateApplied += new RoutedEventHandler(toolbarTemplateApplied);
@@ -57,6 +59,11 @@ namespace TestProject.UserControls
         {
             toolbar.getCloseButtonControl().Click += new RoutedEventHandler(closeClicked);
             toolbar.getThumbControl().DragDelta += new DragDeltaEventHandler(toolbarDragged);
+            BitmapImage iconSource =  new BitmapImage();
+            iconSource.BeginInit();
+            iconSource.UriSource = new Uri("pack://application:,,,/TestProject;component/" + displayIconPath);
+            iconSource.EndInit();
+            toolbar.GetIcon().Source = iconSource;
         }
         private void toolbarDragged(object sender, DragDeltaEventArgs e)
         {
@@ -73,6 +80,11 @@ namespace TestProject.UserControls
             toolbar.Items.Clear();
             this.Close();
         }
-        
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            var hwnd = new WindowInteropHelper(this).Handle;
+            WindowsServices.SetWindowExTop(hwnd);
+        }
     }
 }

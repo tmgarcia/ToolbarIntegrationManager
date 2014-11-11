@@ -64,7 +64,7 @@ namespace TestProject.UserControls
         {
             base.OnApplyTemplate();
             ResetImages();
-            //Image n = ((Image)buttonControl.Template.FindName("Normal", buttonControl));
+            Image n = ((Image)buttonControl.Template.FindName("Normal", buttonControl));
             //n.Width = width;
             //n.Height = height;
             //Image h = ((Image)buttonControl.Template.FindName("Hover", buttonControl));
@@ -75,6 +75,9 @@ namespace TestProject.UserControls
             //p.Height = height;
             Image d = ((Image)buttonControl.Template.FindName("Disabled", buttonControl));
             d.Source = states.disabledImage;
+
+            //Rectangle shadow = ((Rectangle)buttonControl.Template.FindName("Shadow", buttonControl));
+            //shadow.Width = n.ActualWidth;
             //d.Width = width;
             //d.Height = height;
         }

@@ -20,6 +20,7 @@ namespace TestProject.Toolbars
             iconIH  = "colorsIconInactiveHover.png";
             iconIP  = "colorsIconInactivePressed.png";
             iconD   = "colorsIconDisabled.png";
+            displayIconPath = "../Images/ToolbarIcons/colorsIconInToolbar.png";
             SetupLaunchIcon();
             SetupCommandButtons();
             SetupTools();
