@@ -29,11 +29,11 @@ namespace TestProject.Tools
         }
         private void Toggle_Checked(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.Pen;
+            //Mouse.OverrideCursor = Cursors.Pen;
         }
         private void Toggle_Unchecked(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.Arrow;
+            //Mouse.OverrideCursor = Cursors.Arrow;
         }
 
         

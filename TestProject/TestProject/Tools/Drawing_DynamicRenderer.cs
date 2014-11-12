@@ -30,17 +30,20 @@ namespace TestProject.Tools
         private Drawing_InkCanvas canvas;
 
         private DrawingStrokeType currentStrokeMode;
-
+        
         protected override void OnStylusDown(RawStylusInput rawStylusInput)
         {
-            base.OnStylusDown(rawStylusInput);
             currentStrokeMode = canvas.StrokeMode;
+            ((SolidColorBrush)pen.Brush).Color = canvas.strokeColor;
+            pen.Thickness = canvas.DefaultDrawingAttributes.Width;
+            brush.Color = canvas.fillColor;
+            base.OnStylusDown(rawStylusInput);
         }
         protected override void OnAdded()
         {
             base.OnAdded();
             canvas = ((Drawing_InkCanvas)this.Element);
-            brush = new SolidColorBrush(canvas.DefaultDrawingAttributes.Color);
+            brush = new SolidColorBrush(Colors.White);
             pen = new Pen(new SolidColorBrush(), canvas.DefaultDrawingAttributes.Width);
         }
 
@@ -67,10 +70,6 @@ namespace TestProject.Tools
 
         private void DrawCurrentStrokeType(DrawingContext drawingContext, StylusPointCollection stylusPoints, Geometry geometry)
         {
-            ((SolidColorBrush)pen.Brush).Color = canvas.strokeColor;
-            pen.Thickness = canvas.DefaultDrawingAttributes.Width;
-            brush.Color = canvas.fillColor;
-
             if (currentStrokeMode == DrawingStrokeType.Pen)
             {
                 base.OnDraw(drawingContext, stylusPoints, geometry, pen.Brush);
@@ -81,7 +80,11 @@ namespace TestProject.Tools
                 Vector v = Point.Subtract(firstPoint, current);
                 Vector pre = Point.Subtract(current, prevPoint);
                 Point vHalf = new Point((firstPoint.X + current.X) / 2, (firstPoint.Y + current.Y) / 2);
-
+                double weight = canvas.DefaultDrawingAttributes.Width;
+                //if (((SolidColorBrush)pen.Brush).Color.A == 0)
+                //{
+                //    ((SolidColorBrush)pen.Brush).Color = Color.FromArgb(255,255,255,255);
+                //}
                 if (v.Length > 4)
                 {
                     if (needRedraw)
@@ -112,8 +115,8 @@ namespace TestProject.Tools
                             case DrawingStrokeType.Line_Arrow:
                                 Vector fir = new Vector(firstPoint.X, firstPoint.Y);
                                 Vector cur = new Vector(current.X, current.Y);
-                                float h = (10.0f + (float)(pen.Thickness / 2.0)) * (float)Math.Sqrt(3);
-                                float w = 10.0f + (float)(pen.Thickness / 2.0);
+                                float h = (10.0f + (float)(weight / 2.0)) * (float)Math.Sqrt(3);
+                                float w = 10.0f + (float)(weight / 2.0);
                                 Vector u = (cur - fir) / (cur - fir).Length;
                                 Vector uv = new Vector(-u.Y, u.X);
                                 Vector av1 = cur - h * u + w * uv;

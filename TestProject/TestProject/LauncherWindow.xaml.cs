@@ -34,6 +34,8 @@ namespace TestProject
 
         ToolbarIcon launchIcon;
 
+        System.Windows.Forms.NotifyIcon ni;
+
         public MainWindow()
         {
             expanded = false;
@@ -48,7 +50,7 @@ namespace TestProject
 
             this.ShowInTaskbar = false;
 
-            System.Windows.Forms.NotifyIcon ni = new System.Windows.Forms.NotifyIcon();
+            ni = new System.Windows.Forms.NotifyIcon();
             ni.Icon = new System.Drawing.Icon("../../Images/launcher.ico");
             ni.Visible = true;
             ni.DoubleClick +=
@@ -57,6 +59,7 @@ namespace TestProject
                     this.Show();
                     this.WindowState = System.Windows.WindowState.Normal;
                 };
+            
         }
 
         void ToolbarWindow_Activated(object sender, EventArgs e)
@@ -193,5 +196,11 @@ namespace TestProject
             this.DragMove();
         }
 
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            ni.Visible = false;
+            ni.Dispose();
+            base.OnClosing(e);
+        }
     }
 }

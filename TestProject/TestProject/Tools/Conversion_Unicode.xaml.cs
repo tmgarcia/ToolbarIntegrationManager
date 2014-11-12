@@ -23,6 +23,7 @@ namespace TestProject.Tools
         public Conversion_Unicode()
         {
             InitializeComponent();
+            Height = Constants.ToolButtonHeight;
         }
     }
 }

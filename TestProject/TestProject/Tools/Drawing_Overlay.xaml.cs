@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TestProject.Enums;
 using TestProject.UserControls;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
@@ -52,7 +53,7 @@ namespace TestProject.Tools
         {
             InitializeComponent();
             this.WindowState = System.Windows.WindowState.Maximized;
-
+            inkCanvas.DefaultDrawingAttributes.FitToCurve = true;
             parentToolbar = parent;
             double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
             double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
@@ -109,7 +110,6 @@ namespace TestProject.Tools
 
         void ReturnCursorActivated(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.Arrow;
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
@@ -147,8 +147,7 @@ namespace TestProject.Tools
 
         void EraserToolActivated(object sender, RoutedEventArgs e)
         {
-            //Mouse.OverrideCursor = Cursors.Arrow;
-
+            Mouse.OverrideCursor = CustomCursors.Cursor_Eraser();
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             returnCursorButton.toggle.toggleControl.IsChecked = false;
@@ -166,6 +165,7 @@ namespace TestProject.Tools
 
         void PenToolActivated(object sender, RoutedEventArgs e)
         {
+            Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight+4);
             textTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
             returnCursorButton.toggle.toggleControl.IsChecked = false;
@@ -180,6 +180,7 @@ namespace TestProject.Tools
 
         void TextToolActivated(object sender, RoutedEventArgs e)
         {
+            Mouse.OverrideCursor = Cursors.IBeam;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
             returnCursorButton.toggle.toggleControl.IsChecked = false;
@@ -194,14 +195,15 @@ namespace TestProject.Tools
 
         void lineSelect_LineSelected(object sender, RoutedEventArgs e)
         {
+            Mouse.OverrideCursor = Cursors.Cross;
             currentStrokeType = lineSelect.selectedStrokeType;
             CollapseAll();
             UnToggleAll();
             StartDrawing();
         }
-
         void shapeSelect_ShapeSelected(object sender, RoutedEventArgs e)
         {
+            Mouse.OverrideCursor = Cursors.Cross;
             currentStrokeType = shapeSelect.selectedStrokeType;
             CollapseAll();
             UnToggleAll();
@@ -213,6 +215,11 @@ namespace TestProject.Tools
             strokeWeight = weightSlider.currentWeight;
             inkCanvas.DefaultDrawingAttributes.Width = strokeWeight;
             inkCanvas.DefaultDrawingAttributes.Height = strokeWeight;
+
+            if ((bool)penTool.toggle.toggleControl.IsChecked)
+            {
+                Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight + 4);
+            }
         }
 
         void strokeSelect_StrokeColorSelected(object sender, RoutedEventArgs e)
@@ -220,7 +227,6 @@ namespace TestProject.Tools
             strokeColor = strokeSelect.currentColor;
             inkCanvas.strokeColor = strokeColor;
         }
-
         void fillSelect_FillColorSelected(object sender, RoutedEventArgs e)
         {
             fillColor = fillSelect.currentColor;
@@ -283,7 +289,7 @@ namespace TestProject.Tools
 
         void parentToolbar_MouseLeave(object sender, MouseEventArgs e)
         {
-            //this.Activate();
+
         }
 
         void parentToolbar_MouseEnter(object sender, MouseEventArgs e)
@@ -292,6 +298,7 @@ namespace TestProject.Tools
         }
         private void StopDrawing()
         {
+            Mouse.OverrideCursor = Cursors.Arrow;
             inkCanvas.Background = new SolidColorBrush(Color.FromArgb(0, 255, 255, 255));
             SetTransparent();
             activelyDrawing = false;
@@ -303,7 +310,6 @@ namespace TestProject.Tools
             this.Topmost = true;
             if (parentToolbar != null)
             {
-                //parentToolbar.Activate();
                 parentToolbar.Topmost = true;
                 this.Topmost = false;
             }
@@ -313,9 +319,7 @@ namespace TestProject.Tools
             this.Topmost = true;
             if (parentToolbar != null)
             {
-                //parentToolbar.Activate();
                 parentToolbar.Topmost = true;
-                //this.Topmost = false;
             }
         }
 
@@ -336,6 +340,14 @@ namespace TestProject.Tools
         {
             var hwnd = new WindowInteropHelper(this).Handle;
             WindowsServices.SetExtendedWindowStyle(hwnd, originalExtendedStyle);
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Application.Current.Shutdown();
+            }
         }
     }
 }

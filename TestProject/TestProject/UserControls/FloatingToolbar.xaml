@@ -126,11 +126,11 @@
 										<Storyboard>
 											<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
-												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ButtonBorderMediumColor}" />
+												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
 											</ColorAnimationUsingKeyFrames>
 											<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
-												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ButtonBorderLightColor}" />
+												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderLightColor}" />
 											</ColorAnimationUsingKeyFrames>
 										</Storyboard>
 									</VisualState>
@@ -138,11 +138,11 @@
 										<Storyboard>
 											<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
-												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ButtonBorderLightColor}" />
+												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderLightColor}" />
 											</ColorAnimationUsingKeyFrames>
 											<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
                                                 Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
-												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ButtonBorderMediumColor}" />
+												<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
 											</ColorAnimationUsingKeyFrames>
 										</Storyboard>
 									</VisualState>

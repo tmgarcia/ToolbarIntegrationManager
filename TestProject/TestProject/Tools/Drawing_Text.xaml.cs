@@ -30,11 +30,11 @@ namespace TestProject.Tools
 
         private void Toggle_Checked(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.IBeam;
+
         }
         private void Toggle_Unchecked(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.Arrow;
+
         }
 
         

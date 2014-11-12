@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/toolbaricons/colorsiconintoolbar.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/toolbaricons/conversioniconintoolbar.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/toolbaricons/drawingiconintoolbar.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/toolbaricons/measureiconintoolbar.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cursors/cursoreraser.png")]
 
 

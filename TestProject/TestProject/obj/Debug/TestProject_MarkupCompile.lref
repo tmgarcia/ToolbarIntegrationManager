@@ -1,4 +1,4 @@
-﻿
+﻿T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_Eyedropper.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Colors_Sliders.xaml;;
@@ -13,7 +13,9 @@ FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Clear.xam
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Eraser.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_FillSelect.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Lines.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Overlay.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Pen.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_ReturnCursor.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Save.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Shapes.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_StrokeSelect.xaml;;
@@ -28,6 +30,4 @@ FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\FloatingTo
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\HSBASliders.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\HSLASliders.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\RGBASliders.xaml;;
-FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Overlay.xaml;;
-FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_ReturnCursor.xaml;;
 

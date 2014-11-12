@@ -46,7 +46,14 @@ namespace TestProject.Tools
 
         protected override void OnPreviewMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs e)
         {
-            this.DefaultDrawingAttributes.Color = strokeColor;
+            if (strokeColor.A == 0)
+            {
+                this.DefaultDrawingAttributes.Color = Color.FromArgb(255, 255, 255, 255);
+            }
+            else
+            {
+                this.DefaultDrawingAttributes.Color = strokeColor;
+            }
             if (StrokeMode == DrawingStrokeType.Text && !textBeingInput && EditingMode == InkCanvasEditingMode.Ink)
             {
                 textBeingInput = true;

@@ -6,7 +6,8 @@
 		AllowsTransparency="True"
 		ResizeMode="NoResize"
 		Background="Transparent"
-		Left="400">
+		Left="400"
+		KeyDown="Window_KeyDown">
 	<t:Drawing_InkCanvas x:Name="inkCanvas"
 						 Background="#01000000"/>
 </Window>

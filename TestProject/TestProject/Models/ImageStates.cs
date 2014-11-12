@@ -20,6 +20,7 @@ namespace TestProject.Models
                 activeImage.BeginInit();
                 activeImage.UriSource = new Uri("pack://application:,,,/TestProject;component/" + _activePath);
                 activeImage.EndInit();
+                
             } 
         }
         private string _activeHoverPath;

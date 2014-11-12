@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TestProject.Models;
 using TestProject.Tools;
 
@@ -31,7 +32,24 @@ namespace TestProject.Toolbars
             base.PreDisplaySetup();
             overlay.parentToolbar = this.display;
             overlay.Show();
+            this.display.MouseEnter += display_MouseEnter;
+            this.display.MouseLeave += display_MouseLeave;
         }
+
+        Cursor previousCursor;
+        void display_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            previousCursor = Mouse.OverrideCursor;
+            Mouse.OverrideCursor = Cursors.Arrow;
+        }
+        void display_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (previousCursor != null && Mouse.OverrideCursor == Cursors.Arrow)
+            {
+                Mouse.OverrideCursor = previousCursor;
+            }
+        }
+        
         protected override void ToolbarClosed(object sender, System.Windows.RoutedEventArgs e)
         {
             base.ToolbarClosed(sender, e);

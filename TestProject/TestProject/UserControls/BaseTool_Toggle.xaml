@@ -25,7 +25,7 @@
 								<Storyboard>
 									<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
 											Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-										<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ButtonBorderMediumColor}" />
+										<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
 									</ColorAnimationUsingKeyFrames>
 								</Storyboard>
 							</VisualState>
@@ -33,7 +33,7 @@
 								<Storyboard>
 									<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
 											Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
-										<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ButtonBorderLightColor}" />
+										<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderLightColor}" />
 									</ColorAnimationUsingKeyFrames>
 								</Storyboard>
 							</VisualState>
@@ -44,7 +44,7 @@
 								<Storyboard>
 									<ColorAnimationUsingKeyFrames Storyboard.TargetName="Symbol"
 											Storyboard.TargetProperty="(Image.Source).(DrawingImage.Drawing).(GeometryDrawing.Brush).(SolidColorBrush.Color)">
-										<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ButtonBorderMediumColor}" />
+										<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
 									</ColorAnimationUsingKeyFrames>
 								</Storyboard>
 							</VisualState>

@@ -14,45 +14,52 @@
 				<Setter Property="VerticalAlignment" Value="Center" />
 				<Setter Property="HorizontalAlignment" Value="Right"/>
 			</Style>
-			<Style TargetType="TextBox">
-				<Setter Property="FontSize" Value="10"/>
-				<Setter Property="Height" Value="20"/>
-			</Style>
 		</ResourceDictionary>
 	</UserControl.Resources>
-	<Grid ClipToBounds="False">
-		<Grid.Background>
-			<SolidColorBrush Color="{StaticResource ResourceKey=ToolbarBackgroundMediumColor}" />
-		</Grid.Background>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="1.5*"/>
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-			<ColumnDefinition />
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition />
-		</Grid.RowDefinitions>
-		<Label Grid.Row="0"
+	<Border BorderThickness="0.5">
+		<Border.BorderBrush>
+			<SolidColorBrush Color="{StaticResource ToolbarContentBorderDarkColor}"/>
+		</Border.BorderBrush>
+		<Grid ClipToBounds="False">
+			<Grid.Background>
+				<SolidColorBrush Color="{StaticResource ResourceKey=ToolbarBackgroundMediumColor}" />
+			</Grid.Background>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1.5*"/>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Label Grid.Row="0"
 			   Grid.Column="0"
 			   Grid.RowSpan="2"
 			   Content="UNICODE"
 			   VerticalAlignment="Center"/>
-		<Label Grid.Row="0"
+			<Label Grid.Row="0"
 				   Grid.Column="1"
 				   Content="Char"/>
-		<Label Grid.Row="0"
+			<Label Grid.Row="0"
 				   Grid.Column="3"
 				   Content="Dec"/>
-		<TextBox Grid.Row="0"
-					 Grid.Column="2"
-					 Margin="0,1"
-					 Name="charBox"/>
-		<TextBox Grid.Row="0"
-					 Grid.Column="4"
-					 Margin="0,1"
-					 Name="decBox"
-					 Text="{Binding ElementName=charBox, Path=Text, Converter={StaticResource ResourceKey=ASCIICon}, ConverterParameter=dec, Mode=TwoWay}"/>
-	</Grid>
+			<TextBox Grid.Row="0"
+				 Grid.Column="2"
+				 Margin="0,1"
+				 FontSize="10"
+				 Height="20"
+				 Name="charBox"
+				 MinWidth="30"/>
+			<TextBox Grid.Row="0"
+				 Grid.Column="4"
+				 Margin="2,0"
+				 Name="decBox"
+				 MinWidth="30"
+				 FontSize="10"
+				 Height="20"
+				 Text="{Binding ElementName=charBox, Path=Text, Converter={StaticResource ResourceKey=ASCIICon}, ConverterParameter=dec, Mode=TwoWay}"/>
+		</Grid>
+	</Border>
 </UserControl>
