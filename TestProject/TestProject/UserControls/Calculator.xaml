@@ -21,12 +21,14 @@
 		<TextBox Height="50"
 				 TextAlignment="Right"
 				 VerticalContentAlignment="Bottom"
-				  Name="DisplayTop"/>
+				  Name="DisplayTop"
+				 IsReadOnly="True"/>
 		<TextBox Height="50"
 				 TextAlignment="Right"
 				 TextWrapping="WrapWithOverflow"
 				 VerticalContentAlignment="Bottom"
-				 Name="DisplayBottom"/>
+				 Name="DisplayBottom"
+				 IsReadOnly="True"/>
 		<Grid Height="200">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition/>

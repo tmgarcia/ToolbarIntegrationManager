@@ -590,6 +590,60 @@
 					</GeometryDrawing>
 				</DrawingImage.Drawing>
 			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolBaseConversion">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 365.782,273.947L 365.782,272.592L 359.881,272.592L 359.881,272.551L 360.932,271.566C 362.332,270.237 363.432,269.012 364.234,267.893C 365.035,266.774 365.443,265.611 365.459,264.404C 365.468,263.413 365.151,262.552 364.509,261.821C 363.866,261.089 362.842,260.705 361.437,260.669C 360.676,260.676 359.98,260.792 359.35,261.017C 358.72,261.242 358.176,261.534 357.718,261.893L 358.284,263.152C 358.591,262.881 358.983,262.628 359.459,262.395C 359.935,262.162 360.473,262.038 361.073,262.023C 362.039,262.047 362.719,262.312 363.112,262.818C 363.505,263.325 363.694,263.929 363.68,264.63C 363.677,265.598 363.279,266.607 362.485,267.657C 361.692,268.707 360.46,270.024 358.789,271.607L 357.395,272.945L 357.395,273.947L 365.782,273.947 Z
+												  M 402.649,272.675C 403.939,272.656 405,272.295 405.829,271.593C 406.658,270.891 407.087,269.963 407.115,268.808C 407.108,268.012 406.873,267.331 406.411,266.765C 405.95,266.198 405.306,265.753 404.481,265.43L 404.481,265.37C 405.233,264.978 405.762,264.511 406.07,263.97C 406.378,263.43 406.527,262.878 406.516,262.315C 406.521,261.471 406.214,260.745 405.595,260.135C 404.976,259.526 404.019,259.206 402.724,259.177C 401.51,259.189 400.534,259.497 399.796,260.1C 399.059,260.703 398.68,261.528 398.66,262.576C 398.655,263.148 398.813,263.692 399.134,264.209C 399.455,264.726 399.967,265.16 400.671,265.511L 400.692,265.571C 399.952,265.913 399.364,266.375 398.93,266.958C 398.495,267.541 398.273,268.245 398.263,269.069C 398.273,270.055 398.659,270.894 399.419,271.588C 400.18,272.282 401.256,272.644 402.649,272.675 Z M 402.689,271.321C 401.836,271.3 401.176,271.05 400.709,270.572C 400.243,270.093 400.021,269.512 400.042,268.828C 400.044,268.198 400.248,267.648 400.653,267.179C 401.058,266.71 401.648,266.362 402.425,266.134C 403.33,266.374 404.039,266.714 404.553,267.154C 405.066,267.595 405.327,268.206 405.337,268.989C 405.327,269.675 405.087,270.232 404.616,270.66C 404.146,271.087 403.504,271.308 402.689,271.321 Z M 402.62,260.365C 403.44,260.388 404.031,260.612 404.393,261.038C 404.755,261.464 404.932,261.949 404.925,262.495C 404.912,263.089 404.713,263.585 404.328,263.983C 403.943,264.381 403.45,264.676 402.85,264.868C 402.054,264.673 401.425,264.384 400.961,264.001C 400.498,263.617 400.262,263.102 400.251,262.455C 400.255,261.876 400.458,261.386 400.862,260.988C 401.266,260.589 401.852,260.381 402.62,260.365 Z 
+												  M 397.332,313.962L 399.11,313.962L 399.11,300.851L 397.541,300.851L 394.664,302.326L 395.007,303.679L 397.291,302.442L 397.332,302.442L 397.332,313.962 Z 
+												  M 408.334,300.656C 406.991,300.666 405.906,301.251 405.077,302.411C 404.249,303.572 403.823,305.25 403.798,307.446C 403.837,309.612 404.245,311.27 405.02,312.418C 405.796,313.567 406.827,314.146 408.114,314.156C 409.563,314.146 410.679,313.552 411.462,312.373C 412.245,311.195 412.641,309.492 412.65,307.265C 412.642,305.173 412.265,303.553 411.52,302.404C 410.775,301.254 409.713,300.672 408.334,300.656 Z M 408.234,302.03C 409.14,302.051 409.806,302.536 410.235,303.484C 410.663,304.433 410.876,305.72 410.872,307.346C 410.874,309.029 410.655,310.351 410.217,311.312C 409.779,312.274 409.112,312.763 408.214,312.782C 407.405,312.772 406.766,312.31 406.296,311.395C 405.827,310.48 405.587,309.171 405.577,307.466C 405.592,305.686 405.842,304.336 406.329,303.417C 406.815,302.497 407.451,302.035 408.234,302.03 Z 
+												  M 383.025,260.115L 391.13,266.403L 383.025,272.692L 383.025,268.552L 376.161,268.552L 376.161,264.215L 383.025,264.227L 383.025,260.115 Z 
+												  M 409.563,286.24L 403.275,294.347L 396.985,286.24L 401.125,286.24L 401.125,279.378L 405.462,279.378L 405.451,286.24L 409.563,286.24 Z 
+												  M 382.582,313.61L 374.477,307.322L 382.582,301.033L 382.582,305.172L 389.446,305.172L 389.446,309.508L 382.582,309.498L 382.582,313.61 Z 
+												  M 356.069,287.482L 362.357,279.375L 368.647,287.482L 364.507,287.482L 364.507,294.345L 360.17,294.345L 360.181,287.482L 356.069,287.482 Z 
+												  M 355.502,313.654L 357.28,313.654L 357.28,300.543L 355.711,300.543L 352.834,302.018L 353.177,303.371L 355.461,302.135L 355.502,302.135L 355.502,313.654 Z 
+												  M 369.542,300.36C 369.215,300.353 368.783,300.387 368.246,300.462C 366.547,300.679 365.133,301.328 364.004,302.409C 363.344,303.048 362.81,303.863 362.404,304.855C 361.997,305.847 361.788,306.991 361.777,308.285C 361.794,309.999 362.219,311.35 363.051,312.337C 363.883,313.325 365.016,313.829 366.452,313.849C 367.837,313.806 368.909,313.337 369.667,312.442C 370.426,311.548 370.81,310.482 370.82,309.247C 370.802,307.957 370.434,306.932 369.718,306.172C 369.002,305.413 368.049,305.024 366.859,305.007C 366.123,305.019 365.485,305.17 364.945,305.46C 364.405,305.751 363.976,306.111 363.657,306.541L 363.596,306.541C 363.746,305.428 364.201,304.443 364.96,303.585C 365.719,302.728 366.801,302.17 368.206,301.914C 368.726,301.835 369.171,301.808 369.542,301.832L 369.542,300.36 Z M 366.452,312.474C 365.512,312.453 364.796,312.1 364.305,311.414C 363.814,310.729 363.557,309.84 363.535,308.746C 363.542,308.425 363.61,308.165 363.739,307.964C 363.993,307.485 364.347,307.1 364.802,306.809C 365.257,306.518 365.759,306.369 366.309,306.361C 367.145,306.369 367.807,306.634 368.295,307.155C 368.782,307.677 369.031,308.407 369.042,309.347C 369.031,310.293 368.793,311.047 368.328,311.61C 367.863,312.172 367.238,312.461 366.452,312.474 Z "/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolCalculator">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<CombinedGeometry GeometryCombineMode="Xor">
+								<CombinedGeometry.Geometry1>
+									<PathGeometry Figures="M 85.4824,60.1653L 85.4824,111.917C 85.4824,116.544 82.5368,120.331 76.1198,120.331L 42.7412,120.331L 9.36263,120.331C 2.94531,120.331 0,116.544 0,111.917L 0,60.1653L 0,8.41406C 0,3.78644 2.94531,0 9.36263,0L 42.7412,0L 76.1198,0C 82.5368,0 85.4824,3.78644 85.4824,8.41406L 85.4824,60.1653 Z "/>
+								</CombinedGeometry.Geometry1>
+								<CombinedGeometry.Geometry2>
+									<PathGeometry Figures="M 76.9476,23.3893L 76.9476,26.8151C 76.9476,32.8854 74.6289,37.8528 69.5768,37.8528L 43.2992,37.8528L 17.0215,37.8528C 11.9694,37.8528 9.65039,32.8854 9.65039,26.8151L 9.65039,23.3893L 9.65039,20.3542C 9.65039,14.2825 11.9694,9.31512 17.0215,9.31512L 43.2992,9.31512L 69.5768,9.31512C 74.6289,9.31512 76.9476,14.2825 76.9476,20.3542L 76.9476,23.3893 Z
+																   M 13.9502,48.7214C 16.2783,46.3932 24.792,46.3932 27.1201,48.7214C 28.9001,50.5013 28.9001,57.0104 27.1201,58.7903C 24.792,61.1185 16.2783,61.1185 13.9502,58.7903C 12.1702,57.0104 12.1702,50.5013 13.9502,48.7214 Z
+																   M 36.7142,48.7214C 39.0423,46.3932 47.556,46.3932 49.8841,48.7214C 51.6641,50.5013 51.6641,57.0104 49.8841,58.7903C 47.556,61.1185 39.0423,61.1185 36.7142,58.7903C 34.9342,57.0104 34.9342,50.5013 36.7142,48.7214 Z
+																   M 61.7165,48.7214C 64.0446,46.3932 72.5583,46.3932 74.8864,48.7214C 76.6663,50.5013 76.6663,57.0104 74.8864,58.7903C 72.5583,61.1185 64.0446,61.1185 61.7165,58.7903C 59.9365,57.0104 59.9365,50.5013 61.7165,48.7214 Z
+																   M 13.9502,65.8568C 16.2783,63.5286 24.792,63.5286 27.1201,65.8568C 28.9001,67.638 28.9001,74.1458 27.1201,75.9271C 24.792,78.2552 16.2783,78.2552 13.9502,75.9271C 12.1702,74.1458 12.1702,67.638 13.9502,65.8568 Z
+																   M 36.7142,65.8568C 39.0423,63.5286 47.556,63.5286 49.8841,65.8568C 51.6641,67.638 51.6641,74.1458 49.8841,75.9271C 47.556,78.2552 39.0423,78.2552 36.7142,75.9271C 34.9339,74.1458 34.9339,67.638 36.7142,65.8568 Z
+																   M 61.7165,65.8568C 64.0446,63.5286 72.5583,63.5286 74.8864,65.8568C 76.6667,67.638 76.6667,74.1458 74.8864,75.9271C 72.5583,78.2552 64.0446,78.2552 61.7165,75.9271C 59.9365,74.1458 59.9365,67.638 61.7165,65.8568 Z
+																   M 13.9502,82.362C 16.2783,80.0339 24.792,80.0339 27.1201,82.362C 28.9001,84.1432 28.9001,90.651 27.1201,92.431C 24.792,94.7591 16.2783,94.7591 13.9502,92.431C 12.1702,90.651 12.1702,84.1432 13.9502,82.362 Z 
+																   M 36.7142,82.362C 39.0423,80.0339 47.556,80.0339 49.8841,82.362C 51.6641,84.1432 51.6641,90.651 49.8841,92.431C 47.556,94.7591 39.0423,94.7591 36.7142,92.431C 34.9342,90.651 34.9342,84.1432 36.7142,82.362 Z
+																   M 61.7165,82.362C 64.0446,80.0339 72.5583,80.0339 74.8864,82.362C 76.6663,84.1432 76.6663,90.651 74.8864,92.431C 72.5583,94.7591 64.0446,94.7591 61.7165,92.431C 59.9365,90.651 59.9365,84.1432 61.7165,82.362 Z
+																   M 13.9502,99.7083C 16.2783,97.3802 24.792,97.3802 27.1201,99.7083C 28.9001,101.49 28.9001,107.997 27.1201,109.779C 24.792,112.107 16.2783,112.107 13.9502,109.779C 12.1702,107.997 12.1702,101.49 13.9502,99.7083 Z
+																   M 36.7142,99.7083C 39.0423,97.3802 47.556,97.3802 49.8841,99.7083C 51.6641,101.49 51.6641,107.997 49.8841,109.779C 47.556,112.107 39.0423,112.107 36.7142,109.779C 34.9342,107.997 34.9342,101.49 36.7142,99.7083 Z
+																   M 61.7165,99.7083C 64.0446,97.3802 72.5583,97.3802 74.8864,99.7083C 76.6663,101.49 76.6663,107.997 74.8864,109.779C 72.5583,112.107 64.0446,112.107 61.7165,109.779C 59.9365,107.997 59.9365,101.49 61.7165,99.7083 Z "/>
+								</CombinedGeometry.Geometry2>
+							</CombinedGeometry>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
 			<!--<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />-->
 
 
@@ -762,6 +816,7 @@
 				</Setter>
 			</Style>
 
+			<!--ComboBox-->
 			<ControlTemplate x:Key="ComboBoxToggleButton"
 							 TargetType="{x:Type ToggleButton}">
 				<Grid>
@@ -1004,6 +1059,19 @@
 									SnapsToDevicePixels="true"
 									Background="Transparent">
 								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal"/>
+										<VisualState x:Name="Disabled"/>
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																			  Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+													<EasingColorKeyFrame KeyTime="0"
+																		 Value="{StaticResource ToolbarContentMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
 									<VisualStateGroup x:Name="SelectionStates">
 										<VisualState x:Name="Unselected" />
 										<VisualState x:Name="Selected">
@@ -1033,6 +1101,7 @@
 				</Setter>
 			</Style>
 
+			<!--Slider-->
 			<Style x:Key="SliderButtonStyle"
 				   TargetType="{x:Type RepeatButton}">
 				<Setter Property="SnapsToDevicePixels"
@@ -1051,7 +1120,6 @@
 					</Setter.Value>
 				</Setter>
 			</Style>
-
 			<Style x:Key="SliderThumbStyle"
 				   TargetType="{x:Type Thumb}">
 				<Setter Property="SnapsToDevicePixels"
@@ -1072,9 +1140,9 @@
 														 EndPoint="0,1">
 										<LinearGradientBrush.GradientStops>
 											<GradientStopCollection>
-												<GradientStop Color="{DynamicResource BorderLightColor}"
+												<GradientStop Color="{DynamicResource ToolbarContentBorderLightColor}"
 															  Offset="0.0" />
-												<GradientStop Color="{DynamicResource BorderDarkColor}"
+												<GradientStop Color="{DynamicResource ToolbarContentBorderDarkColor}"
 															  Offset="1.0" />
 											</GradientStopCollection>
 										</LinearGradientBrush.GradientStops>
@@ -1083,9 +1151,9 @@
 								<Ellipse.Fill>
 									<LinearGradientBrush EndPoint="0.5,1"
 														 StartPoint="0.5,0">
-										<GradientStop Color="{DynamicResource ControlMediumColor}"
+										<GradientStop Color="{DynamicResource ToolbarContentMediumColor}"
 													  Offset="1" />
-										<GradientStop Color="{DynamicResource ControlLightColor}" />
+										<GradientStop Color="{DynamicResource ToolbarContentLightColor}" />
 									</LinearGradientBrush>
 								</Ellipse.Fill>
 								<VisualStateManager.VisualStateGroups>
@@ -1096,7 +1164,7 @@
 												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
 																			  Storyboard.TargetName="Ellipse">
 													<EasingColorKeyFrame KeyTime="0"
-																		 Value="{StaticResource ControlMouseOverColor}" />
+																		 Value="{StaticResource ToolbarContentLightColor}" />
 												</ColorAnimationUsingKeyFrames>
 											</Storyboard>
 										</VisualState>
@@ -1105,7 +1173,7 @@
 												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
 																			  Storyboard.TargetName="Ellipse">
 													<EasingColorKeyFrame KeyTime="0"
-																		 Value="{StaticResource ControlPressedColor}" />
+																		 Value="{StaticResource ToolbarContentDarkColor}" />
 												</ColorAnimationUsingKeyFrames>
 											</Storyboard>
 										</VisualState>
@@ -1114,7 +1182,7 @@
 												<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)"
 																			  Storyboard.TargetName="Ellipse">
 													<EasingColorKeyFrame KeyTime="0"
-																		 Value="{StaticResource DisabledControlDarkColor}" />
+																		 Value="{StaticResource ToolbarContentMediumColor}" />
 												</ColorAnimationUsingKeyFrames>
 											</Storyboard>
 										</VisualState>
@@ -1125,6 +1193,326 @@
 					</Setter.Value>
 				</Setter>
 			</Style>
+			<!--Horizontal Template-->
+			<ControlTemplate x:Key="HorizontalSlider"
+							 TargetType="{x:Type Slider}">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto"
+									   MinHeight="{TemplateBinding MinHeight}" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<TickBar x:Name="TopTick"
+							 SnapsToDevicePixels="True"
+							 Placement="Top"
+							 Height="4"
+							 Visibility="Collapsed">
+						<TickBar.Fill>
+							<SolidColorBrush Color="{DynamicResource SymbolMediumColor}" />
+						</TickBar.Fill>
+					</TickBar>
+					<Border x:Name="TrackBackground"
+							Margin="0"
+							CornerRadius="2"
+							MinHeight="4"
+							Grid.Row="1"
+							BorderThickness="1"
+							Background="{TemplateBinding Background}">
+						<Border.BorderBrush>
+							<LinearGradientBrush StartPoint="0,0"
+												 EndPoint="0,1">
+								<LinearGradientBrush.GradientStops>
+									<GradientStopCollection>
+										<GradientStop Color="{DynamicResource ToolbarContentBorderLightColor}"
+													  Offset="0.0" />
+										<GradientStop Color="{DynamicResource ToolbarContentBorderDarkColor}"
+													  Offset="1.0" />
+									</GradientStopCollection>
+								</LinearGradientBrush.GradientStops>
+							</LinearGradientBrush>
+						</Border.BorderBrush>
+					</Border>
+					<Track Grid.Row="1"
+						   x:Name="PART_Track">
+						<Track.DecreaseRepeatButton>
+							<RepeatButton Style="{StaticResource SliderButtonStyle}"
+										  Command="Slider.DecreaseLarge" />
+						</Track.DecreaseRepeatButton>
+						<Track.Thumb>
+							<Thumb Style="{StaticResource SliderThumbStyle}" />
+						</Track.Thumb>
+						<Track.IncreaseRepeatButton>
+							<RepeatButton Style="{StaticResource SliderButtonStyle}"
+										  Command="Slider.IncreaseLarge" />
+						</Track.IncreaseRepeatButton>
+					</Track>
+					<TickBar x:Name="BottomTick"
+							 SnapsToDevicePixels="True"
+							 Grid.Row="2"
+							 Fill="{TemplateBinding Foreground}"
+							 Placement="Bottom"
+							 Height="4"
+							 Visibility="Collapsed" />
+				</Grid>
+				<ControlTemplate.Triggers>
+					<Trigger Property="TickPlacement"
+							 Value="TopLeft">
+						<Setter TargetName="TopTick"
+								Property="Visibility"
+								Value="Visible" />
+					</Trigger>
+					<Trigger Property="TickPlacement"
+							 Value="BottomRight">
+						<Setter TargetName="BottomTick"
+								Property="Visibility"
+								Value="Visible" />
+					</Trigger>
+					<Trigger Property="TickPlacement"
+							 Value="Both">
+						<Setter TargetName="TopTick"
+								Property="Visibility"
+								Value="Visible" />
+						<Setter TargetName="BottomTick"
+								Property="Visibility"
+								Value="Visible" />
+					</Trigger>
+				</ControlTemplate.Triggers>
+			</ControlTemplate>
+			<!--Vertical Template-->
+			<ControlTemplate x:Key="VerticalSlider"
+							 TargetType="{x:Type Slider}">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto"
+										  MinWidth="{TemplateBinding MinWidth}" />
+						<ColumnDefinition Width="Auto" />
+					</Grid.ColumnDefinitions>
+					<TickBar x:Name="TopTick"
+							 SnapsToDevicePixels="True"
+							 Placement="Left"
+							 Width="4"
+							 Visibility="Collapsed">
+						<TickBar.Fill>
+							<SolidColorBrush Color="{DynamicResource SymbolMediumColor}" />
+						</TickBar.Fill>
+					</TickBar>
+					<Border x:Name="TrackBackground"
+							Margin="0"
+							CornerRadius="2"
+							MinWidth="4"
+							Grid.Column="1"
+							BorderThickness="1"
+							Background="{TemplateBinding Background}">
+						<Border.BorderBrush>
+							<LinearGradientBrush StartPoint="0,0"
+												 EndPoint="1,0">
+								<LinearGradientBrush.GradientStops>
+									<GradientStopCollection>
+										<GradientStop Color="{DynamicResource ToolbarContentBorderLightColor}"
+													  Offset="0.0" />
+										<GradientStop Color="{DynamicResource ToolbarContentBorderDarkColor}"
+													  Offset="1.0" />
+									</GradientStopCollection>
+								</LinearGradientBrush.GradientStops>
+							</LinearGradientBrush>
+
+						</Border.BorderBrush>
+					</Border>
+					<Track Grid.Column="1"
+						   x:Name="PART_Track">
+						<Track.DecreaseRepeatButton>
+							<RepeatButton Style="{StaticResource SliderButtonStyle}"
+										  Command="Slider.DecreaseLarge" />
+						</Track.DecreaseRepeatButton>
+						<Track.Thumb>
+							<Thumb Style="{StaticResource SliderThumbStyle}" />
+						</Track.Thumb>
+						<Track.IncreaseRepeatButton>
+							<RepeatButton Style="{StaticResource SliderButtonStyle}"
+										  Command="Slider.IncreaseLarge" />
+						</Track.IncreaseRepeatButton>
+					</Track>
+					<TickBar x:Name="BottomTick"
+							 SnapsToDevicePixels="True"
+							 Grid.Column="2"
+							 Fill="{TemplateBinding Foreground}"
+							 Placement="Right"
+							 Width="4"
+							 Visibility="Collapsed" />
+				</Grid>
+				<ControlTemplate.Triggers>
+					<Trigger Property="TickPlacement"
+							 Value="TopLeft">
+						<Setter TargetName="TopTick"
+								Property="Visibility"
+								Value="Visible" />
+					</Trigger>
+					<Trigger Property="TickPlacement"
+							 Value="BottomRight">
+						<Setter TargetName="BottomTick"
+								Property="Visibility"
+								Value="Visible" />
+					</Trigger>
+					<Trigger Property="TickPlacement"
+							 Value="Both">
+						<Setter TargetName="TopTick"
+								Property="Visibility"
+								Value="Visible" />
+						<Setter TargetName="BottomTick"
+								Property="Visibility"
+								Value="Visible" />
+					</Trigger>
+				</ControlTemplate.Triggers>
+			</ControlTemplate>
+			<Style TargetType="{x:Type Slider}">
+				<Setter Property="SnapsToDevicePixels"
+						Value="true" />
+				<Setter Property="OverridesDefaultStyle"
+						Value="true" />
+				<Style.Triggers>
+					<Trigger Property="Orientation"
+							 Value="Horizontal">
+						<Setter Property="MinWidth"
+								Value="104" />
+						<Setter Property="MinHeight"
+								Value="21" />
+						<Setter Property="Template"
+								Value="{StaticResource HorizontalSlider}" />
+					</Trigger>
+					<Trigger Property="Orientation"
+							 Value="Vertical">
+						<Setter Property="MinWidth"
+								Value="21" />
+						<Setter Property="MinHeight"
+								Value="104" />
+						<Setter Property="Template"
+								Value="{StaticResource VerticalSlider}" />
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+
+			<Style x:Key="{x:Type ListBox}"
+				   TargetType="ListBox">
+				<Setter Property="SnapsToDevicePixels"
+						Value="true" />
+				<Setter Property="OverridesDefaultStyle"
+						Value="true" />
+				<Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+						Value="Auto" />
+				<Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+						Value="Auto" />
+				<Setter Property="ScrollViewer.CanContentScroll"
+						Value="true" />
+				<Setter Property="MinWidth"
+						Value="10" />
+				<Setter Property="MinHeight"
+						Value="95" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="ListBox">
+							<Border Name="Border"
+									BorderThickness="1"
+									CornerRadius="2">
+								<Border.Background>
+									<SolidColorBrush Color="{StaticResource ToolbarContentLightColor}" />
+								</Border.Background>
+								<Border.BorderBrush>
+									<SolidColorBrush Color="{StaticResource ToolbarContentBorderMediumColor}" />
+								</Border.BorderBrush>
+								<ScrollViewer Margin="0"
+											  Focusable="false">
+									<StackPanel Margin="2"
+												IsItemsHost="True" />
+								</ScrollViewer>
+							</Border>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsEnabled"
+										 Value="false">
+									<Setter TargetName="Border"
+											Property="Background">
+										<Setter.Value>
+											<SolidColorBrush Color="{StaticResource ToolbarContentLightColor}" />
+										</Setter.Value>
+									</Setter>
+									<Setter TargetName="Border"
+											Property="BorderBrush">
+										<Setter.Value>
+											<SolidColorBrush Color="{DynamicResource ToolbarContentBorderLightColor}" />
+										</Setter.Value>
+
+									</Setter>
+								</Trigger>
+								<Trigger Property="IsGrouping"
+										 Value="true">
+									<Setter Property="ScrollViewer.CanContentScroll"
+											Value="false" />
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="{x:Type ListBoxItem}"
+				   TargetType="ListBoxItem">
+				<Setter Property="SnapsToDevicePixels"
+						Value="true" />
+				<Setter Property="OverridesDefaultStyle"
+						Value="true" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="ListBoxItem">
+							<Border x:Name="Border"
+									Padding="2"
+									SnapsToDevicePixels="true">
+								<Border.Background>
+									<SolidColorBrush Color="Transparent" />
+								</Border.Background>
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal"/>
+										<VisualState x:Name="Disabled"/>
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																			  Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+													<EasingColorKeyFrame KeyTime="0"
+																		 Value="{StaticResource ToolbarContentMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+									<VisualStateGroup x:Name="SelectionStates">
+										<VisualState x:Name="Unselected" />
+										<VisualState x:Name="Selected">
+											<Storyboard>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																			  Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+													<EasingColorKeyFrame KeyTime="0"
+																		 Value="{StaticResource ToolbarContentMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="SelectedUnfocused">
+											<Storyboard>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+																			  Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
+													<EasingColorKeyFrame KeyTime="0"
+																		 Value="{StaticResource ToolbarContentMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<ContentPresenter />
+							</Border>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

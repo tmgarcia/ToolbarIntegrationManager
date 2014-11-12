@@ -40,7 +40,7 @@ namespace TestProject.Tools
         Color strokeColor;
         double strokeWeight;
         DrawingStrokeType currentStrokeType = DrawingStrokeType.Pen;
-        bool activelyDrawing = true;
+        public bool activelyDrawing = true;
 
         public ToolbarWindow parentToolbar;
 
@@ -113,6 +113,7 @@ namespace TestProject.Tools
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
+            CollapseAll();
             StopDrawing();
         }
 
@@ -120,8 +121,8 @@ namespace TestProject.Tools
         {
             clearButton.toggle.toggleControl.IsChecked = false;
             inkCanvas.Strokes.Clear();
+            returnCursorButton.toggle.toggleControl.IsChecked = true;
         }
-
         void SaveButtonClicked(object sender, RoutedEventArgs e)
         {
             saveButton.toggle.toggleControl.IsChecked = false;
@@ -143,6 +144,7 @@ namespace TestProject.Tools
                 fs.Close();
                 inkCanvas.Background = new SolidColorBrush(Color.FromArgb(1,255,255,255));
             }
+            returnCursorButton.toggle.toggleControl.IsChecked = true;
         }
 
         void EraserToolActivated(object sender, RoutedEventArgs e)
@@ -270,6 +272,7 @@ namespace TestProject.Tools
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
+            returnCursorButton.toggle.toggleControl.IsChecked = false;
         }
 
         private void StartDrawing()

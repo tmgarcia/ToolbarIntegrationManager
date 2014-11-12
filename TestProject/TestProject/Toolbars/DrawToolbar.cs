@@ -44,7 +44,7 @@ namespace TestProject.Toolbars
         }
         void display_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            if (previousCursor != null && Mouse.OverrideCursor == Cursors.Arrow)
+            if (previousCursor != null && Mouse.OverrideCursor == Cursors.Arrow && overlay.activelyDrawing)
             {
                 Mouse.OverrideCursor = previousCursor;
             }
@@ -54,6 +54,7 @@ namespace TestProject.Toolbars
         {
             base.ToolbarClosed(sender, e);
             overlay.Hide();
+            Mouse.OverrideCursor = Cursors.Arrow;
         }
         //create and add tools
         private void SetupTools()

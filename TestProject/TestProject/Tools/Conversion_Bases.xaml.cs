@@ -28,7 +28,7 @@ namespace TestProject.Tools
         {
             currentBase = BaseMode.Decimal;
             InitializeComponent();
-            expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolSliders"));
+            expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolBaseConversion"));
             StackPanel content = expandable.PopupContent as StackPanel;
             Grid inner = content.Children[0] as Grid;
             NumberDisplay = inner.Children[0] as TextBox;

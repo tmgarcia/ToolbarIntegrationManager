@@ -23,7 +23,7 @@ namespace TestProject.Tools
         public Conversion_Calculator()
         {
             InitializeComponent();
-            expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolSliders"));
+            expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolCalculator"));
         }
     }
 }
