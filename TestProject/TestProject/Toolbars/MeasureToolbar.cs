@@ -21,7 +21,7 @@ namespace TestProject.Toolbars
             iconIH  = "measureIconInactiveHover.png";
             iconIP  = "measureIconInactivePressed.png";
             iconD   = "measureIconDisabled.png";
-            displayIconPath = "../Images/ToolbarIcons/measureIconInToolbar.png";
+            displayIconPath = Constants.ToolbarIconPath + "measureIconInToolbar.png";
             overlayWindow = new MeasuringOverlay();
             SetupLaunchIcon();
             SetupCommandButtons();

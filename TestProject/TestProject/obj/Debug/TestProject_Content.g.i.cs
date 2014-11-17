@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/cursors/cursoreraser.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/toolbaricons/notesiconintoolbar.png")]
 
 

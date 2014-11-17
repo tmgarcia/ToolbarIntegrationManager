@@ -79,6 +79,8 @@
     <Compile Include="Models\HSBAColorWrapper.cs" />
     <Compile Include="Models\HSLAColor.cs" />
     <Compile Include="Models\ImageStates.cs" />
+    <Compile Include="Models\QuickNote.cs" />
+    <Compile Include="Models\QuickNoteCollection.cs" />
     <Compile Include="Models\RGBAColor.cs" />
     <Compile Include="Models\ToolbarIcon.cs" />
     <Compile Include="Models\Tool.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Toolbars\ConversionToolbar.cs" />
     <Compile Include="Toolbars\DrawToolbar.cs" />
     <Compile Include="Toolbars\MeasureToolbar.cs" />
+    <Compile Include="Toolbars\NotesToolbar.cs" />
     <Compile Include="Tools\Colors_ColorDisplay.xaml.cs">
       <DependentUpon>Colors_ColorDisplay.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,9 @@
     <Compile Include="Tools\Measure_VerticalRuler.xaml.cs">
       <DependentUpon>Measure_VerticalRuler.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Notes_QuickNotes.xaml.cs">
+      <DependentUpon>Notes_QuickNotes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
     </Compile>
@@ -215,6 +221,9 @@
     </Compile>
     <Compile Include="UserControls\MeasuringOverlay.xaml.cs">
       <DependentUpon>MeasuringOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\QuickNoteWindow.xaml.cs">
+      <DependentUpon>QuickNoteWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\RGBASliders.xaml.cs">
       <DependentUpon>RGBASliders.xaml</DependentUpon>
@@ -360,6 +369,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Notes_QuickNotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ActiveInactiveImageButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -404,6 +417,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\QuickNoteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\RGBASliders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -434,6 +451,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -614,6 +632,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Cursors\CursorEraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\notesIconActive.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconActiveHover.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconActivePressed.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconDisabled.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconInactive.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconInactiveHover.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconInactivePressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\notesIconInToolbar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

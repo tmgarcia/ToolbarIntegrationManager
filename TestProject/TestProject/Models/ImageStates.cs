@@ -32,7 +32,7 @@ namespace TestProject.Models
                 _activeHoverPath = value;
                 activeHoverImage = new BitmapImage();
                 activeHoverImage.BeginInit();
-                activeHoverImage.UriSource = new Uri("pack://application:,,,/TestProject;component/" + _activeHoverPath);
+                activeHoverImage.UriSource = new Uri("pack://application:,,,/TestProject;component/" + _activeHoverPath);                
                 activeHoverImage.EndInit();
             }
         }

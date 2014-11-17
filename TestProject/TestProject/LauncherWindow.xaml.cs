@@ -25,7 +25,6 @@ namespace TestProject
         bool expanded;
         List<ColumnDefinition> expandedColumns;
         List<Models.Toolbar> toolbars;
-        int numToolbarIcons=4;
         int numColsPerIcon = 4;
         int totalCols;
 
@@ -39,19 +38,19 @@ namespace TestProject
         public MainWindow()
         {
             expanded = false;
-            totalCols = (numToolbarIcons * numColsPerIcon)+numToolbarIcons;
             InitializeComponent();
-            launcherWindow.Width = iconWidth + (2 * iconSpacing);
-            InitializeColumnDefs();
+            launcherWindow.Width = iconWidth + (2 * iconSpacing);//Launch icon width + spacing on left & right
             InitializeLauncherIcon();
             InitializeIcons();
+            totalCols = (toolbars.Count * numColsPerIcon) + toolbars.Count;//Num toolbars & num cols per icon, + 1 column in between each icon
+            InitializeColumnDefs();
             this.Deactivated += ToolbarWindow_Deactivated;
             this.Activated += ToolbarWindow_Activated;
 
             this.ShowInTaskbar = false;
 
             ni = new System.Windows.Forms.NotifyIcon();
-            ni.Icon = new System.Drawing.Icon("../../Images/launcher.ico");
+            ni.Icon = new System.Drawing.Icon(Constants.SolutionRoot + "Images/launcher.ico");
             ni.Visible = true;
             ni.DoubleClick +=
                 delegate(object sender, EventArgs args)
@@ -115,11 +114,13 @@ namespace TestProject
             toolbars.Add(t3);
             Toolbar t4 = new ConversionToolbar();
             toolbars.Add(t4);
+            Toolbar t5 = new NotesToolbar();
+            toolbars.Add(t5);
 
 
-            int startCol = numColsPerIcon + 2;
-            int row = 1;
-            for (int i = 0; i < numToolbarIcons; i++)
+            int startCol = numColsPerIcon + 2;//2 = 1 col on the left of the launcher icon & 1 on the right
+            int row = 1; //row 0 is for the command buttons
+            for (int i = 0; i < toolbars.Count; i++)
             {
                 int col = startCol + (i * numColsPerIcon) + i;
                 Grid.SetRow(toolbars[i].icon.GetButtonControl(), row);
@@ -134,7 +135,9 @@ namespace TestProject
         protected override void OnStateChanged(EventArgs e)
         {
             if (WindowState == WindowState.Minimized)
+            {
                 this.Hide();
+            }
 
             base.OnStateChanged(e);
         }
@@ -161,13 +164,13 @@ namespace TestProject
 
         private void Expand()
         {
-            launcherWindow.Width += ((numToolbarIcons * iconWidth) + (numToolbarIcons * iconSpacing));
+            launcherWindow.Width += ((toolbars.Count * iconWidth) + (toolbars.Count * iconSpacing));
             Grid.SetColumnSpan(backBorder, expandedColumns.Count + 6);
             foreach (ColumnDefinition c in expandedColumns)
             {
                 launcherGrid.ColumnDefinitions.Add(c);
             }
-            int startCol = numColsPerIcon+4;
+            int startCol = numColsPerIcon+4;//what is this 4 for?!
             int row = 0;
             foreach (Toolbar b in toolbars)
             {
@@ -178,8 +181,8 @@ namespace TestProject
         }
         private void Collapse()
         {
-            launcherWindow.Width -= (numToolbarIcons * (iconWidth + iconSpacing));
-            Grid.SetColumnSpan(backBorder,6);
+            launcherWindow.Width -= (toolbars.Count * (iconWidth + iconSpacing));
+            Grid.SetColumnSpan(backBorder, toolbars.Count+2);//2 = one extra column at each end
             foreach (ColumnDefinition c in expandedColumns)
             {
                 launcherGrid.ColumnDefinitions.Remove(c);

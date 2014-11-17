@@ -68,6 +68,11 @@
     <Compile Include="Enums\DrawingStrokeTypes.cs" />
     <Compile Include="HSLAColor.cs" />
     <Compile Include="HSBAColor.cs" />
+    <Compile Include="QuickNote.cs" />
+    <Compile Include="QuickNoteCollection.cs" />
+    <Compile Include="QuickNotesTest.xaml.cs">
+      <DependentUpon>QuickNotesTest.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RGBAColor.cs" />
     <Compile Include="SimpleView.xaml.cs">
       <DependentUpon>SimpleView.xaml</DependentUpon>
@@ -107,6 +112,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="QuickNotesTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SimpleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

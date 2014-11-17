@@ -119,3 +119,7 @@ T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Overlay.baml
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_ReturnCursor.g.cs
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_ReturnCursor.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\QuickNoteWindow.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_QuickNotes.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\QuickNoteWindow.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_QuickNotes.baml

@@ -33,7 +33,7 @@ namespace TestProject.Models
         {
             isActive = false;
             tools = new List<Tool>();
-            displayIconPath = "../Images/ToolbarIcons/toolbarIconTest.png";
+            displayIconPath = Constants.SolutionRoot + "Images/ToolbarIcons/toolbarIconTest.png";
         }
         protected void SetupLaunchIcon()
         {

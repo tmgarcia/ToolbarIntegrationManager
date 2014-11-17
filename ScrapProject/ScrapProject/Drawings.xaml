@@ -690,22 +690,7 @@
 						</DrawingImage.Drawing>
 					</DrawingImage>
 				</Image.Source>
-			</Image>			<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="800" Height="600">
-				<Path Width="85.4824" Height="120.331" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Fill="#FF414042" Data="F1             M 85.4824,60.1653L 85.4824,111.917C 85.4824,116.544 82.5368,120.331 76.1198,120.331L 42.7412,120.331L 9.36263,120.331C 2.94531,120.331 0,116.544 0,111.917L 0,60.1653L 0,8.41406C 0,3.78644 2.94531,0 9.36263,0L 42.7412,0L 76.1198,0C 82.5368,0 85.4824,3.78644 85.4824,8.41406L 85.4824,60.1653 Z "/>
-				<Path Width="67.2972" Height="28.5377" Canvas.Left="9.65039" Canvas.Top="9.31512" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 76.9476,23.3893L 76.9476,26.8151C 76.9476,32.8854 74.6289,37.8528 69.5768,37.8528L 43.2992,37.8528L 17.0215,37.8528C 11.9694,37.8528 9.65039,32.8854 9.65039,26.8151L 9.65039,23.3893L 9.65039,20.3542C 9.65039,14.2825 11.9694,9.31512 17.0215,9.31512L 43.2992,9.31512L 69.5768,9.31512C 74.6289,9.31512 76.9476,14.2825 76.9476,20.3542L 76.9476,23.3893 Z "/>
-				<Path Width="15.8398" Height="13.5612" Canvas.Left="12.6152" Canvas.Top="46.9753" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 13.9502,48.7214C 16.2783,46.3932 24.792,46.3932 27.1201,48.7214C 28.9001,50.5013 28.9001,57.0104 27.1201,58.7903C 24.792,61.1185 16.2783,61.1185 13.9502,58.7903C 12.1702,57.0104 12.1702,50.5013 13.9502,48.7214 Z "/>
-				<Path Width="15.8398" Height="13.5612" Canvas.Left="35.3792" Canvas.Top="46.9753" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 36.7142,48.7214C 39.0423,46.3932 47.556,46.3932 49.8841,48.7214C 51.6641,50.5013 51.6641,57.0104 49.8841,58.7903C 47.556,61.1185 39.0423,61.1185 36.7142,58.7903C 34.9342,57.0104 34.9342,50.5013 36.7142,48.7214 Z "/>
-				<Path Width="15.8398" Height="13.5612" Canvas.Left="60.3815" Canvas.Top="46.9753" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 61.7165,48.7214C 64.0446,46.3932 72.5583,46.3932 74.8864,48.7214C 76.6663,50.5013 76.6663,57.0104 74.8864,58.7903C 72.5583,61.1185 64.0446,61.1185 61.7165,58.7903C 59.9365,57.0104 59.9365,50.5013 61.7165,48.7214 Z "/>
-				<Path Width="15.8398" Height="13.5625" Canvas.Left="12.6152" Canvas.Top="64.1107" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 13.9502,65.8568C 16.2783,63.5286 24.792,63.5286 27.1201,65.8568C 28.9001,67.638 28.9001,74.1458 27.1201,75.9271C 24.792,78.2552 16.2783,78.2552 13.9502,75.9271C 12.1702,74.1458 12.1702,67.638 13.9502,65.8568 Z "/>
-				<Path Width="15.8401" Height="13.5625" Canvas.Left="35.379" Canvas.Top="64.1107" Stretch="Fill" Fill="#FF5D5D5D" Data="F1  M 36.7142,65.8568C 39.0423,63.5286 47.556,63.5286 49.8841,65.8568C 51.6641,67.638 51.6641,74.1458 49.8841,75.9271C 47.556,78.2552 39.0423,78.2552 36.7142,75.9271C 34.9339,74.1458 34.9339,67.638 36.7142,65.8568 Z "/>
-				<Path Width="15.8401" Height="13.5625" Canvas.Left="60.3815" Canvas.Top="64.1107" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 61.7165,65.8568C 64.0446,63.5286 72.5583,63.5286 74.8864,65.8568C 76.6667,67.638 76.6667,74.1458 74.8864,75.9271C 72.5583,78.2552 64.0446,78.2552 61.7165,75.9271C 59.9365,74.1458 59.9365,67.638 61.7165,65.8568 Z "/>
-				<Path Width="15.8398" Height="13.5612" Canvas.Left="12.6152" Canvas.Top="80.6159" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 13.9502,82.362C 16.2783,80.0339 24.792,80.0339 27.1201,82.362C 28.9001,84.1432 28.9001,90.651 27.1201,92.431C 24.792,94.7591 16.2783,94.7591 13.9502,92.431C 12.1702,90.651 12.1702,84.1432 13.9502,82.362 Z "/>
-				<Path Width="15.8398" Height="13.5612" Canvas.Left="35.3792" Canvas.Top="80.6159" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 36.7142,82.362C 39.0423,80.0339 47.556,80.0339 49.8841,82.362C 51.6641,84.1432 51.6641,90.651 49.8841,92.431C 47.556,94.7591 39.0423,94.7591 36.7142,92.431C 34.9342,90.651 34.9342,84.1432 36.7142,82.362 Z "/>
-				<Path Width="15.8398" Height="13.5612" Canvas.Left="60.3815" Canvas.Top="80.6159" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 61.7165,82.362C 64.0446,80.0339 72.5583,80.0339 74.8864,82.362C 76.6663,84.1432 76.6663,90.651 74.8864,92.431C 72.5583,94.7591 64.0446,94.7591 61.7165,92.431C 59.9365,90.651 59.9365,84.1432 61.7165,82.362 Z "/>
-				<Path Width="15.8398" Height="13.5625" Canvas.Left="12.6152" Canvas.Top="97.9622" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 13.9502,99.7083C 16.2783,97.3802 24.792,97.3802 27.1201,99.7083C 28.9001,101.49 28.9001,107.997 27.1201,109.779C 24.792,112.107 16.2783,112.107 13.9502,109.779C 12.1702,107.997 12.1702,101.49 13.9502,99.7083 Z "/>
-				<Path Width="15.8398" Height="13.5625" Canvas.Left="35.3792" Canvas.Top="97.9622" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 36.7142,99.7083C 39.0423,97.3802 47.556,97.3802 49.8841,99.7083C 51.6641,101.49 51.6641,107.997 49.8841,109.779C 47.556,112.107 39.0423,112.107 36.7142,109.779C 34.9342,107.997 34.9342,101.49 36.7142,99.7083 Z "/>
-				<Path Width="15.8398" Height="13.5625" Canvas.Left="60.3815" Canvas.Top="97.9622" Stretch="Fill" Fill="#FF5D5D5D" Data="F1 M 61.7165,99.7083C 64.0446,97.3802 72.5583,97.3802 74.8864,99.7083C 76.6663,101.49 76.6663,107.997 74.8864,109.779C 72.5583,112.107 64.0446,112.107 61.7165,109.779C 59.9365,107.997 59.9365,101.49 61.7165,99.7083 Z "/>
-			</Canvas>			<Image Grid.Column="7"
+			</Image>			<Image Grid.Column="7"
 					Grid.Row="1">
 				<Image.Source>
 					<DrawingImage>
@@ -740,6 +725,52 @@
 						</DrawingImage.Drawing>
 					</DrawingImage>
 				</Image.Source>
-			</Image>					</Grid>
+			</Image>			<Image Grid.Column="7"
+			   Grid.Row="2">
+				<Image.Source>
+					<DrawingImage>
+						<DrawingImage.Drawing>
+							<GeometryDrawing>
+								<GeometryDrawing.Brush>
+									<SolidColorBrush Color="Black"/>
+								</GeometryDrawing.Brush>
+								<GeometryDrawing.Geometry>
+									<CombinedGeometry GeometryCombineMode="Xor">
+										<CombinedGeometry.Geometry1>
+											<PathGeometry Figures="M 25.6113,40.112L 0,40.112L 0,0L 40.112,0L 40.112,26.6094L 25.6113,40.112 Z "/>
+										</CombinedGeometry.Geometry1>
+										<CombinedGeometry.Geometry2>
+											<PathGeometry Figures="M 22.8053,24.0286L 22.834,36.056L 4,36.056L 4,4.05597L 36,4.05597L 36,23.9922L 22.8053,24.0286 Z M 26.7493,28.0833L 26.7493,33.6107L 32.8053,28.0833L 26.7493,28.0833 Z "/>
+										</CombinedGeometry.Geometry2>
+									</CombinedGeometry>
+								</GeometryDrawing.Geometry>
+							</GeometryDrawing>
+						</DrawingImage.Drawing>
+					</DrawingImage>
+				</Image.Source>
+			</Image>			<Image Grid.Column="7"
+			   Grid.Row="3">
+				<Image.Source>
+					<DrawingImage>
+						<DrawingImage.Drawing>
+							<GeometryDrawing>
+								<GeometryDrawing.Brush>
+									<SolidColorBrush Color="Black"/>
+								</GeometryDrawing.Brush>
+								<GeometryDrawing.Geometry>
+									<CombinedGeometry GeometryCombineMode="Xor">
+										<CombinedGeometry.Geometry1>
+											<PathGeometry Figures="M0,3.17578 h21.1458 v3.17969 H0 Z M7.60221,0 h7.04688 v2.50653 H7.60221 Z M 10.5736,34.5508L 17.5527,34.5508L 21.1465,7.32684L 10.5736,7.32684L 0,7.32684L 3.59375,34.5508L 10.5736,34.5508 Z "/>
+										</CombinedGeometry.Geometry1>
+										<CombinedGeometry.Geometry2>
+											<PathGeometry Figures="M9.90625,8.93878 h1.333 v24 H9.90625 Z M 15.2396,32.9388L 13.9063,32.9388L 16.5729,8.93878L 17.9063,8.93878L 15.2396,32.9388 Z M 7.23958,32.9388L 5.90625,32.9388L 3.23958,8.93878L 4.57292,8.93878L 7.23958,32.9388 Z "/>
+										</CombinedGeometry.Geometry2>
+									</CombinedGeometry>
+								</GeometryDrawing.Geometry>
+							</GeometryDrawing>
+						</DrawingImage.Drawing>
+					</DrawingImage>
+				</Image.Source>
+			</Image>		</Grid>
 	</Grid>
 </Window>

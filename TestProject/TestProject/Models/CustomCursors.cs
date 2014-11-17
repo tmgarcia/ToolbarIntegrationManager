@@ -39,7 +39,7 @@ namespace TestProject.Models
         public static Cursor Cursor_EmptyCircle(int diameter)
         {
             System.Drawing.Size s = new System.Drawing.Size(diameter, diameter);
-            System.Drawing.Image prebmp = new System.Drawing.Bitmap("../../Images/Cursors/CursorCircle.png");
+            System.Drawing.Image prebmp = new System.Drawing.Bitmap(Constants.SolutionRoot + "Images/Cursors/CursorCircle.png");
             System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(prebmp, s);
             Cursor cur = InternalCreateCursor(bmp, diameter/2, diameter/2);
             bmp.Dispose();
@@ -49,7 +49,7 @@ namespace TestProject.Models
         public static Cursor Cursor_EmptySquare(int size)
         {
             System.Drawing.Size s = new System.Drawing.Size(size, size);
-            System.Drawing.Image prebmp = new System.Drawing.Bitmap("../../Images/Cursors/CursorSquare.png");
+            System.Drawing.Image prebmp = new System.Drawing.Bitmap(Constants.SolutionRoot + "Images/Cursors/CursorSquare.png");
             System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(prebmp, s);
             Cursor cur = InternalCreateCursor(bmp, size / 2, size / 2);
             bmp.Dispose();
@@ -58,7 +58,7 @@ namespace TestProject.Models
         }
         public static Cursor Cursor_Eraser()
         {
-            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap("../../Images/Cursors/CursorEraser.png");
+            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(Constants.SolutionRoot + "Images/Cursors/CursorEraser.png");
             Cursor cur = InternalCreateCursor(bmp, 7, 7);
             bmp.Dispose();
             return cur;

@@ -644,6 +644,46 @@
 					</GeometryDrawing>
 				</DrawingImage.Drawing>
 			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolNote">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<CombinedGeometry GeometryCombineMode="Xor">
+								<CombinedGeometry.Geometry1>
+									<PathGeometry Figures="M 25.6113,40.112L 0,40.112L 0,0L 40.112,0L 40.112,26.6094L 25.6113,40.112 Z "/>
+								</CombinedGeometry.Geometry1>
+								<CombinedGeometry.Geometry2>
+									<PathGeometry Figures="M 22.8053,24.0286L 22.834,36.056L 4,36.056L 4,4.05597L 36,4.05597L 36,23.9922L 22.8053,24.0286 Z M 26.7493,28.0833L 26.7493,33.6107L 32.8053,28.0833L 26.7493,28.0833 Z "/>
+								</CombinedGeometry.Geometry2>
+							</CombinedGeometry>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolTrash">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<CombinedGeometry GeometryCombineMode="Xor">
+								<CombinedGeometry.Geometry1>
+									<PathGeometry Figures="M0,3.17578 h21.1458 v3.17969 H0 Z M7.60221,0 h7.04688 v2.50653 H7.60221 Z M 10.5736,34.5508L 17.5527,34.5508L 21.1465,7.32684L 10.5736,7.32684L 0,7.32684L 3.59375,34.5508L 10.5736,34.5508 Z "/>
+								</CombinedGeometry.Geometry1>
+								<CombinedGeometry.Geometry2>
+									<PathGeometry Figures="M9.90625,8.93878 h1.333 v24 H9.90625 Z M 15.2396,32.9388L 13.9063,32.9388L 16.5729,8.93878L 17.9063,8.93878L 15.2396,32.9388 Z M 7.23958,32.9388L 5.90625,32.9388L 3.23958,8.93878L 4.57292,8.93878L 7.23958,32.9388 Z "/>
+								</CombinedGeometry.Geometry2>
+							</CombinedGeometry>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
 			<!--<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />-->
 
 

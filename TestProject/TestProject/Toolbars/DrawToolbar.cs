@@ -21,7 +21,7 @@ namespace TestProject.Toolbars
             iconIH  = "drawingIconInactiveHover.png";
             iconIP  = "drawingIconInactivePressed.png";
             iconD   = "drawingIconDisabled.png";
-            displayIconPath = "../Images/ToolbarIcons/drawingIconInToolbar.png";
+            displayIconPath = Constants.ToolbarIconPath + "drawingIconInToolbar.png";
             SetupLaunchIcon();
             SetupCommandButtons();
             SetupTools();

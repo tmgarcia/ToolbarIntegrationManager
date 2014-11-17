@@ -20,7 +20,7 @@ namespace TestProject.Toolbars
             iconIH  = "conversionIconInactiveHover.png";
             iconIP  = "conversionIconInactivePressed.png";
             iconD   = "conversionIconDisabled.png";
-            displayIconPath = "../Images/ToolbarIcons/conversionIconInToolbar.png";
+            displayIconPath =Constants.ToolbarIconPath + "conversionIconInToolbar.png";
             SetupLaunchIcon();
             SetupCommandButtons();
             SetupTools();

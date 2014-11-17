@@ -33,5 +33,7 @@ namespace TestProject
 
         public static string ToolbarIconPath = "Images/ToolbarIcons/";
         public static string CommandButtonPath = "Images/CommandButtons/";
+        public static string SolutionRoot = System.AppDomain.CurrentDomain.BaseDirectory + "../../";
+        public static string QuickNoteSavePath = System.AppDomain.CurrentDomain.BaseDirectory + "QuickNotes/";
     }
 }
