@@ -29,7 +29,8 @@
 									  ResizeDirection="Columns"/>
 					</Grid>
 					<StackPanel Orientation="Horizontal">
-						<RadioButton Checked="BinSelect_Checked"/>
+						<RadioButton Checked="BinSelect_Checked"
+									 IsChecked="True"/>
 						<Label Content="Bin"/>
 						<RadioButton Checked="OctSelect_Checked"/>
 						<Label Content="Oct"/>

@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_Save.xaml
     /// </summary>
-    public partial class Drawing_Save : UserControl
+    public partial class Drawing_Save : UserControl, IDeactivatableTool
     {
         public Drawing_Save()
         {
@@ -36,6 +37,16 @@ namespace TestProject.Tools
         private void Toggle_Unchecked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

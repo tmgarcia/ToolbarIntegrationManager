@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 using TestProject.UserControls;
 
 namespace TestProject.Tools
@@ -19,7 +20,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Measure_BoxSelector.xaml
     /// </summary>
-    public partial class Measure_BoxSelector : UserControl
+    public partial class Measure_BoxSelector : UserControl, IDeactivatableTool
     {
         private FloatingSelectionBox box;
         bool boxActive;
@@ -57,6 +58,16 @@ namespace TestProject.Tools
         void toggleControl_Checked(object sender, RoutedEventArgs e)
         {
             box.Show();
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

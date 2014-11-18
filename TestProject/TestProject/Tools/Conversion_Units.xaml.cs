@@ -12,18 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Conversion_Units.xaml
     /// </summary>
-    public partial class Conversion_Units : UserControl
+    public partial class Conversion_Units : UserControl, IDeactivatableTool
     {
         public Conversion_Units()
         {
             InitializeComponent();
             expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolSliders"));
+
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
 
         }
     }

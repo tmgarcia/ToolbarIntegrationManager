@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 using TestProject.UserControls;
 
 namespace TestProject.Tools
@@ -21,7 +22,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Measure_GridDisplay.xaml
     /// </summary>
-    public partial class Measure_GridDisplay : UserControl
+    public partial class Measure_GridDisplay : UserControl, IDeactivatableTool
     {
         public bool gridVisible;
         private Button showButton;
@@ -172,5 +173,15 @@ namespace TestProject.Tools
             }
         }
 
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

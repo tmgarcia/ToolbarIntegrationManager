@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_FillSelect.xaml
     /// </summary>
-    public partial class Drawing_FillSelect : UserControl
+    public partial class Drawing_FillSelect : UserControl, IDeactivatableTool
     {
         public static readonly RoutedEvent FillColorSelectedEvent = EventManager.RegisterRoutedEvent("FillColorSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_FillSelect));
         public event RoutedEventHandler FillColorSelected
@@ -66,5 +67,15 @@ namespace TestProject.Tools
             this.RaiseEvent(new RoutedEventArgs(FillColorSelectedEvent, this));
         }
 
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
+        }
     }
 }

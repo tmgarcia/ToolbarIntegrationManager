@@ -12,18 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Conversion_Calculator.xaml
     /// </summary>
-    public partial class Conversion_Calculator : UserControl
+    public partial class Conversion_Calculator : UserControl, IDeactivatableTool
     {
         public Conversion_Calculator()
         {
             InitializeComponent();
             expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolCalculator"));
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }

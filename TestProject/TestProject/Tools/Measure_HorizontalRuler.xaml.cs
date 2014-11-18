@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 using TestProject.UserControls;
 
 namespace TestProject.Tools
@@ -19,7 +20,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Measure_HorizontalRuler.xaml
     /// </summary>
-    public partial class Measure_HorizontalRuler : UserControl
+    public partial class Measure_HorizontalRuler : UserControl, IDeactivatableTool
     {
         private MeasuringOverlay overlay;
         public Measure_HorizontalRuler(MeasuringOverlay overlay)
@@ -45,6 +46,16 @@ namespace TestProject.Tools
                 overlay.ActivateOverlay();
             }
             overlay.ShowHorizontalRuler();
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

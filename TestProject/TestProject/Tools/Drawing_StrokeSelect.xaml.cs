@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_StrokeSelect.xaml
     /// </summary>
-    public partial class Drawing_StrokeSelect : UserControl
+    public partial class Drawing_StrokeSelect : UserControl, IDeactivatableTool
     {
         public static readonly RoutedEvent StrokeColorSelectedEvent = EventManager.RegisterRoutedEvent("StrokeColorSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_StrokeSelect));
         public event RoutedEventHandler StrokeColorSelected
@@ -65,6 +66,16 @@ namespace TestProject.Tools
             outerBorderBackground.Color = (Color)colorChoiceDisplay.SelectedItem;
             currentColor = (Color)colorChoiceDisplay.SelectedItem;
             this.RaiseEvent(new RoutedEventArgs(StrokeColorSelectedEvent, this));
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

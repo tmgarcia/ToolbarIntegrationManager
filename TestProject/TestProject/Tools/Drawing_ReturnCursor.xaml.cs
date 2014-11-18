@@ -12,18 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_ReturnCursor.xaml
     /// </summary>
-    public partial class Drawing_ReturnCursor : UserControl
+    public partial class Drawing_ReturnCursor : UserControl, IDeactivatableTool
     {
         public Drawing_ReturnCursor()
         {
             InitializeComponent();
             toggle.SetSymbol((DrawingImage)Application.Current.FindResource("SymbolPointer"));
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_Eraser.xaml
     /// </summary>
-    public partial class Drawing_Eraser : UserControl
+    public partial class Drawing_Eraser : UserControl, IDeactivatableTool
     {
         public Drawing_Eraser()
         {
@@ -34,6 +35,16 @@ namespace TestProject.Tools
         }
 
         private void Toggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
         {
 
         }

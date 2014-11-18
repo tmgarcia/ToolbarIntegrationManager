@@ -13,13 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Enums;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_Shapes.xaml
     /// </summary>
-    public partial class Drawing_Shapes : UserControl
+    public partial class Drawing_Shapes : UserControl, IDeactivatableTool
     {
         public static readonly RoutedEvent ShapeSelectedEvent = EventManager.RegisterRoutedEvent("ShapeSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_Shapes));
         public event RoutedEventHandler ShapeSelected
@@ -49,6 +50,16 @@ namespace TestProject.Tools
         {
             selectedStrokeType = DrawingStrokeType.Shape_Triangle;
             this.RaiseEvent(new RoutedEventArgs(ShapeSelectedEvent, this));
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -14,13 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Converters;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Conversion_UnitsInner.xaml
     /// </summary>
-    public partial class Conversion_UnitsInner : UserControl
+    public partial class Conversion_UnitsInner : UserControl, IDeactivatableTool
     {
         List<string> angleUnits;
         List<string> lengthUnits;
@@ -82,6 +83,16 @@ namespace TestProject.Tools
             toValueBinding.Bindings.Add(new Binding { Source = ToSelect, Path = new PropertyPath("SelectedItem") });
             toValueBinding.Bindings.Add(new Binding { Source = FromValue, Path = new PropertyPath("Text") });
             BindingOperations.SetBinding(ToValue, TextBox.TextProperty, toValueBinding);
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }

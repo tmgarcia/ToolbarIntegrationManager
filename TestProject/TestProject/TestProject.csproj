@@ -78,6 +78,7 @@
     <Compile Include="Models\HSBAColor.cs" />
     <Compile Include="Models\HSBAColorWrapper.cs" />
     <Compile Include="Models\HSLAColor.cs" />
+    <Compile Include="Models\IDeactivatableTool.cs" />
     <Compile Include="Models\ImageStates.cs" />
     <Compile Include="Models\QuickNote.cs" />
     <Compile Include="Models\QuickNoteCollection.cs" />

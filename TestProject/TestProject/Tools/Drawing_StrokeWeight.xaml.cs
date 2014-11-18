@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_StrokeWeight.xaml
     /// </summary>
-    public partial class Drawing_StrokeWeight : UserControl
+    public partial class Drawing_StrokeWeight : UserControl, IDeactivatableTool
     {
         public static readonly RoutedEvent WeightChangedEvent = EventManager.RegisterRoutedEvent("WeightChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_StrokeWeight));
         public event RoutedEventHandler WeightChanged
@@ -38,6 +39,16 @@ namespace TestProject.Tools
         {
             currentWeight = e.NewValue;
             this.RaiseEvent(new RoutedEventArgs(WeightChangedEvent, this));
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

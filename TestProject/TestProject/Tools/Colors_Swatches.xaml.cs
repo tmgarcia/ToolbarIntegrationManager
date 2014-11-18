@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Colors_Swatches.xaml
     /// </summary>
-    public partial class Colors_Swatches : UserControl
+    public partial class Colors_Swatches : UserControl, IDeactivatableTool
     {
         SolidColorBrush CurrentColorBrush;
         public Colors_Swatches(SolidColorBrush currentBrush)
@@ -112,5 +113,15 @@ namespace TestProject.Tools
         }
 
 
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
+        }
     }
 }

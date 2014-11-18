@@ -20,7 +20,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Notes_QuickNotes.xaml
     /// </summary>
-    public partial class Notes_QuickNotes : UserControl
+    public partial class Notes_QuickNotes : UserControl, IDeactivatableTool
     {
         public QuickNoteCollection noteCollection;
         ListBox noteDisplay;
@@ -111,6 +111,16 @@ namespace TestProject.Tools
                 q.SaveNoteDocumentToFile();
                 noteCollection.notes.Add(q);
             }
+        }
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

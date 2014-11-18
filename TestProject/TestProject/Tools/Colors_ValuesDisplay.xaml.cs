@@ -22,7 +22,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Colors_ValuesDisplay.xaml
     /// </summary>
-    public partial class Colors_ValuesDisplay : UserControl
+    public partial class Colors_ValuesDisplay : UserControl, IDeactivatableTool
     {
         HSBAColorWrapper currentHSBA;
         SolidColorBrush currentBrush;
@@ -210,6 +210,16 @@ namespace TestProject.Tools
                 c.B = i;
                 currentHSBA.Color = c;
             }
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }

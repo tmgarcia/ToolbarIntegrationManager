@@ -13,13 +13,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Conversion_Bases.xaml
     /// </summary>
-    public partial class Conversion_Bases : UserControl
+    public partial class Conversion_Bases : UserControl, IDeactivatableTool
     {
         private enum BaseMode { Binary=2, Octal=8, Decimal=10, Hexidecimal=16 }
         private BaseMode currentBase;
@@ -235,6 +236,16 @@ namespace TestProject.Tools
                 }
             }
             return valid;
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }

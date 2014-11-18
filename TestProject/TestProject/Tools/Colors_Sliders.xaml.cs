@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Converters;
+using TestProject.Models;
 using TestProject.UserControls;
 
 namespace TestProject.Tools
@@ -20,7 +21,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Colors_Sliders.xaml
     /// </summary>
-    public partial class Colors_Sliders : UserControl
+    public partial class Colors_Sliders : UserControl, IDeactivatableTool
     {
         MultiBinding rgbaBinding;
         MultiBinding hslaBinding;
@@ -127,6 +128,16 @@ namespace TestProject.Tools
             hslaSliders.Visibility = System.Windows.Visibility.Visible;
             hslaSliders.SetToColor(ColorDisplayBrush.Color);
             BindingOperations.SetBinding(ColorDisplayBrush, SolidColorBrush.ColorProperty, hslaBinding);
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }

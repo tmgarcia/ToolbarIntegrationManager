@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 using TestProject.UserControls;
 
 namespace TestProject.Tools
@@ -20,7 +21,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Colors_Eyedropper.xaml
     /// </summary>
-    public partial class Colors_Eyedropper : UserControl
+    public partial class Colors_Eyedropper : UserControl, IDeactivatableTool
     {
         SolidColorBrush ColorDisplayBrush;
         public Colors_Eyedropper(SolidColorBrush currentBrush)
@@ -76,6 +77,16 @@ namespace TestProject.Tools
                 selectedColor = Color.FromArgb(255, pixels[2], pixels[1], pixels[0]);
             }
             return selectedColor;
-        } 
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
+        }
     }
 }

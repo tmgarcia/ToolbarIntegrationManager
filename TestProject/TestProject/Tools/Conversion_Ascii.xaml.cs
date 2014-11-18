@@ -12,19 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Conversion_Ascii.xaml
     /// </summary>
-    public partial class Conversion_Ascii : UserControl
+    public partial class Conversion_Ascii : UserControl, IDeactivatableTool
     {
         public Conversion_Ascii()
         {
             InitializeComponent();
             Height = Constants.ToolButtonHeight;
             Width = 200;
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }

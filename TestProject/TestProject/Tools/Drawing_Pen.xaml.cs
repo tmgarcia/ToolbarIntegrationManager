@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_Pen.xaml
     /// </summary>
-    public partial class Drawing_Pen : UserControl
+    public partial class Drawing_Pen : UserControl, IDeactivatableTool
     {
         public Drawing_Pen()
         {
@@ -36,6 +37,16 @@ namespace TestProject.Tools
             //Mouse.OverrideCursor = Cursors.Arrow;
         }
 
-        
+
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

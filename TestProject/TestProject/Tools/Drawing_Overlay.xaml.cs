@@ -22,7 +22,7 @@ namespace TestProject.Tools
     /// <summary>
     /// Interaction logic for Drawing_Overlay.xaml
     /// </summary>
-    public partial class Drawing_Overlay : Window
+    public partial class Drawing_Overlay : Window, IDeactivatableTool
     {
         Drawing_FillSelect fillSelect;
         Drawing_StrokeSelect strokeSelect;
@@ -351,6 +351,16 @@ namespace TestProject.Tools
             {
                 Application.Current.Shutdown();
             }
+        }
+
+        public new void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
         }
     }
 }

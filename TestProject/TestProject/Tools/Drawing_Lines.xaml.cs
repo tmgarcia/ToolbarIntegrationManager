@@ -13,13 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Enums;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Drawing_Lines.xaml
     /// </summary>
-    public partial class Drawing_Lines : UserControl
+    public partial class Drawing_Lines : UserControl, IDeactivatableTool
     {
         public static readonly RoutedEvent LineSelectedEvent = EventManager.RegisterRoutedEvent("LineSelected", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(Drawing_Lines));
         public event RoutedEventHandler LineSelected
@@ -58,6 +59,16 @@ namespace TestProject.Tools
         {
             selectedStrokeType = DrawingStrokeType.Line_Coord3D;
             this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }

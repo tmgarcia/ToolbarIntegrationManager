@@ -14,13 +14,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Measure_MouseCoords.xaml
     /// </summary>
-    public partial class Measure_MouseCoords : UserControl
+    public partial class Measure_MouseCoords : UserControl, IDeactivatableTool
     {
         public class MouseTrackEventArgs : EventArgs
         {
@@ -127,6 +128,16 @@ namespace TestProject.Tools
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr GetModuleHandle(string lpModuleName);
+
+        public void Activate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Deactivate()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

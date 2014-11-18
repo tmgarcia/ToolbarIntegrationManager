@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Models;
 
 namespace TestProject.Tools
 {
     /// <summary>
     /// Interaction logic for Colors_ColorDisplay.xaml
     /// </summary>
-    public partial class Colors_ColorDisplay : UserControl
+    public partial class Colors_ColorDisplay : UserControl, IDeactivatableTool
     {
         public Colors_ColorDisplay()
         {
@@ -41,6 +42,16 @@ namespace TestProject.Tools
                 //DrdagDrop.DoDragDrop(dragSource-source of data, data, allowedEffects DragDropEffects.Copy);
                 DragDrop.DoDragDrop(rectangle, rectangle.Fill.ToString(), DragDropEffects.Copy);
             }
+        }
+
+        public void Activate()
+        {
+
+        }
+
+        public void Deactivate()
+        {
+
         }
     }
 }
