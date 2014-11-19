@@ -29,12 +29,12 @@ namespace TestProject.Tools
 
         public void Activate()
         {
-            throw new NotImplementedException();
+
         }
 
         public void Deactivate()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

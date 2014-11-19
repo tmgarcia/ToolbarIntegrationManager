@@ -68,6 +68,7 @@ namespace TestProject.Models
         {
             foreach (Tool t in tools)
             {
+                t.Activate();
                 display.toolbar.Items.Add(t.userControl);
             }
         }
@@ -94,6 +95,10 @@ namespace TestProject.Models
             isActive = false;
             commandButtons.SetToInactiveState();
             icon.SetInactive();
+            foreach (Tool t in tools)
+            {
+                t.Deactivate();
+            }
         }
 
     }

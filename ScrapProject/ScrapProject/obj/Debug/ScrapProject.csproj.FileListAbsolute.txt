@@ -27,3 +27,5 @@ T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\Drawing.baml
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\Drawing.g.cs
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\SimpleView.baml
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\SimpleView.g.cs
+T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\QuickNotesTest.baml
+T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\QuickNotesTest.g.cs

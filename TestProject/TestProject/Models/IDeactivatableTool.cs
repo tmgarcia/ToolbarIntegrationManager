@@ -8,7 +8,7 @@ namespace TestProject.Models
 {
     public interface IDeactivatableTool
     {
-        public void Activate();
-        public void Deactivate();
+        void Activate();
+        void Deactivate();
     }
 }

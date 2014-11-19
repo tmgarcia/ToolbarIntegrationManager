@@ -27,8 +27,8 @@ namespace ScrapProject
             //d.Show();
             //Sliders s = new Sliders();
             //s.Show();
-            //SimpleView sv = new SimpleView();
-            //sv.Show();
+            SimpleView sv = new SimpleView();
+            sv.Show();
         }
     }
 }

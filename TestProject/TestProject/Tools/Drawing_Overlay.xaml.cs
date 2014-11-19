@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using TestProject.Enums;
 using TestProject.UserControls;
 using TestProject.Models;
+using TestProject.Win32API;
 
 namespace TestProject.Tools
 {
@@ -330,19 +331,19 @@ namespace TestProject.Tools
         {
             base.OnSourceInitialized(e);
             var hwnd = new WindowInteropHelper(this).Handle;
-            originalExtendedStyle = WindowsServices.GetExtendedWindowStyle(hwnd);
+            originalExtendedStyle = Win32Tools.GetExtendedWindowStyle(hwnd);
             inkCanvas.Background = new SolidColorBrush(Color.FromArgb(0, 255, 255, 255));
             SetTransparent();
         }
         private void SetTransparent()
         {
             var hwnd = new WindowInteropHelper(this).Handle;
-            WindowsServices.SetWindowExTransparent(hwnd);
+            Win32Tools.SetWindowExTransparent(hwnd);
         }
         private void UnsetTransparent()
         {
             var hwnd = new WindowInteropHelper(this).Handle;
-            WindowsServices.SetExtendedWindowStyle(hwnd, originalExtendedStyle);
+            Win32Tools.SetExtendedWindowStyle(hwnd, originalExtendedStyle);
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -355,12 +356,12 @@ namespace TestProject.Tools
 
         public new void Activate()
         {
-            throw new NotImplementedException();
+
         }
 
         public void Deactivate()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

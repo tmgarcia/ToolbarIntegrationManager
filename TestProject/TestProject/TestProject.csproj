@@ -237,7 +237,6 @@
     </Compile>
     <Compile Include="Win32API\GDITools.cs" />
     <Compile Include="Win32API\Win32Tools.cs" />
-    <Compile Include="WindowsServices.cs" />
     <Page Include="LauncherWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

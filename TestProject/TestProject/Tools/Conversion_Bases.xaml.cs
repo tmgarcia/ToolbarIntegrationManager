@@ -37,25 +37,37 @@ namespace TestProject.Tools
 
         private void BinSelect_Checked(object sender, RoutedEventArgs e)
         {
-            NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 2);
+            if (NumberDisplay != null)
+            {
+                NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 2);
+            }
             currentBase = BaseMode.Binary;
         }
 
         private void OctSelect_Checked(object sender, RoutedEventArgs e)
         {
-            NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 8);
+            if (NumberDisplay != null)
+            {
+                NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 8);
+            }
             currentBase = BaseMode.Octal;
         }
 
         private void DecSelect_Checked(object sender, RoutedEventArgs e)
         {
-            NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 10);
+            if (NumberDisplay != null)
+            {
+                NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 10);
+            }
             currentBase = BaseMode.Decimal;
         }
 
         private void HexSelect_Checked(object sender, RoutedEventArgs e)
         {
-            NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 16);
+            if (NumberDisplay != null)
+            {
+                NumberDisplay.Text = ConvertBase(NumberDisplay.Text, (int)currentBase, 16);
+            }
             currentBase = BaseMode.Hexidecimal;
         }
 

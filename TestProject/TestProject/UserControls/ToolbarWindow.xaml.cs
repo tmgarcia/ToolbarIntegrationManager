@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestProject.Win32API;
 
 namespace TestProject.UserControls
 {
@@ -84,7 +85,7 @@ namespace TestProject.UserControls
         {
             base.OnSourceInitialized(e);
             var hwnd = new WindowInteropHelper(this).Handle;
-            WindowsServices.SetWindowExTop(hwnd);
+            Win32Tools.SetWindowExTop(hwnd);
         }
     }
 }

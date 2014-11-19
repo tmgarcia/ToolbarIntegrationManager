@@ -62,6 +62,7 @@
     <Compile Include="CustomDynamicRenderer.cs" />
     <Compile Include="CustomRenderingInkCanvas.cs" />
     <Compile Include="CustomStroke.cs" />
+    <Compile Include="DBIConverter.cs" />
     <Compile Include="Drawing.xaml.cs">
       <DependentUpon>Drawing.xaml</DependentUpon>
     </Compile>

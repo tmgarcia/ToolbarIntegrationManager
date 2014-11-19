@@ -18,5 +18,19 @@ namespace TestProject.Models
             userControl = control;
         }
         public UIElement userControl;
+        public void Deactivate()
+        {
+            if (((IDeactivatableTool)userControl) != null)
+            {
+                ((IDeactivatableTool)userControl).Deactivate();
+            }
+        }
+        public void Activate()
+        {
+            if (((IDeactivatableTool)userControl) != null)
+            {
+                ((IDeactivatableTool)userControl).Activate();
+            }
+        }
     }
 }

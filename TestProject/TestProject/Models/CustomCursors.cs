@@ -7,6 +7,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.IO;
 using System.Windows;
+using TestProject.Win32API;
 
 namespace TestProject.Models
 {
@@ -14,11 +15,6 @@ namespace TestProject.Models
     {
         class SafeIconHandle : SafeHandleZeroOrMinusOneIsInvalid
         {
-            [DllImport("user32.dll", SetLastError = true)]
-            [return: MarshalAs(UnmanagedType.Bool)]
-            internal static extern bool DestroyIcon(
-                [In] IntPtr hIcon);
-
             private SafeIconHandle()
                 : base(true)
             {
@@ -32,7 +28,7 @@ namespace TestProject.Models
 
             protected override bool ReleaseHandle()
             {
-                return DestroyIcon(this.handle);
+                return Win32Tools.DestroyIcon(this.handle);
             }
         }
 
@@ -63,33 +59,17 @@ namespace TestProject.Models
             bmp.Dispose();
             return cur;
         }
-        private struct IconInfo
-        {
-            public bool fIcon;
-            public int xHotspot;
-            public int yHotspot;
-            public IntPtr hbmMask;
-            public IntPtr hbmColor;
-        }
-
-        [DllImport("user32.dll")]
-        private static extern IntPtr CreateIconIndirect(ref IconInfo icon);
-
-        [DllImport("user32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool GetIconInfo(IntPtr hIcon, ref IconInfo pIconInfo);
-
 
         private static Cursor InternalCreateCursor(System.Drawing.Bitmap bmp,
             int xHotSpot, int yHotSpot)
         {
-            IconInfo tmp = new IconInfo();
-            GetIconInfo(bmp.GetHicon(), ref tmp);
+            Win32Tools.ICONINFO tmp = new Win32Tools.ICONINFO();
+            Win32Tools.GetIconInfo(bmp.GetHicon(), ref tmp);
             tmp.xHotspot = xHotSpot;
             tmp.yHotspot = yHotSpot;
             tmp.fIcon = false;
 
-            IntPtr ptr = CreateIconIndirect(ref tmp);
+            IntPtr ptr = Win32Tools.CreateIconIndirect(ref tmp);
             SafeIconHandle handle = new SafeIconHandle(ptr);
             return CursorInteropHelper.Create(handle);
         }

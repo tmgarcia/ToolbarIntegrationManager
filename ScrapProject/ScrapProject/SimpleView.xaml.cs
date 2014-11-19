@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -21,91 +23,178 @@ namespace ScrapProject
     /// </summary>
     public partial class SimpleView : Window
     {
+        private enum ClipboardMessages
+        {
+            WM_CLIPBOARDUPDATE = 0x031D,
+            WM_DRAWCLIPBOARD = 0x0308
+        }
+
         public SimpleView()
         {
             InitializeComponent();
-            Loaded += new RoutedEventHandler(SimpleView_Loaded);
-            Unloaded += new RoutedEventHandler(SimpleView_Unloaded);
         }
 
-        void SimpleView_Loaded(object sender, RoutedEventArgs e)
+        protected override void OnSourceInitialized(EventArgs e)
         {
-            _hookID = SetHook(_proc);
+            //Console.WriteLine("ONSOURCEINITIALIZED");
+            base.OnSourceInitialized(e);
+            IntPtr hwnd = new WindowInteropHelper(this).Handle;   
+            HwndSource.FromHwnd(hwnd).AddHook(new HwndSourceHook(WndProc));
+            AddClipboardFormatListener(hwnd);
         }
 
-        void SimpleView_Unloaded(object sender, RoutedEventArgs e)
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            UnhookWindowsHookEx(_hookID);
-        }
-
-        private static LowLevelMouseProc _proc = HookCallback;
-        private static IntPtr _hookID = IntPtr.Zero;
-
-        private static IntPtr SetHook(LowLevelMouseProc proc)
-        {
-            using (Process curProcess = Process.GetCurrentProcess())
-            using (ProcessModule curModule = curProcess.MainModule)
+            if (msg == (int)ClipboardMessages.WM_CLIPBOARDUPDATE)
             {
-                return SetWindowsHookEx(WH_MOUSE_LL, proc,
-                  GetModuleHandle(curModule.ModuleName), 0);
+                //Console.WriteLine("WM_CLIPBOARDUPDATE");
+                UpdateDisplayClipboard();
+            }
+            return IntPtr.Zero;
+        }
+        private void UpdateDisplayClipboard()
+        {
+            IDataObject data = Clipboard.GetDataObject();
+            if (data != null)
+            {
+                try
+                {
+                    string[] formats = data.GetFormats();
+                    string sourceString = "";
+                    if (formats.Contains("HTML Format"))
+                    {
+                        string html = data.GetData("HTML Format") as string;
+                        string metaSourceString = "<meta name=generator content=";
+                        string imageSourceString = "src=";
+                        string siteSourceString = "sourceurl:";
+                        if (html.ToLower().Contains(metaSourceString))
+                        {
+                            int start = html.ToLower().IndexOf(metaSourceString) + metaSourceString.Length + 1;//1 for the frist "
+                            int end = html.ToLower().IndexOf("\"", start);
+                            int length = end - start;
+                            sourceString = html.Substring(start, length);
+                        }
+                        else if (html.ToLower().Contains(imageSourceString))
+                        {
+                            int start = html.ToLower().IndexOf(imageSourceString) + imageSourceString.Length + 1;
+                            int end = html.ToLower().IndexOf("\"", start);
+                            int length = end - start;
+                            sourceString = html.Substring(start, length);
+                        }
+                        else if (html.ToLower().Contains(siteSourceString))
+                        {
+                            int start = html.ToLower().IndexOf(siteSourceString) + siteSourceString.Length;
+                            int end = html.ToLower().IndexOf('<', start) - start;
+                            sourceString = html.Substring(start, end);
+                        }
+                    }
+                    if (!String.IsNullOrWhiteSpace(sourceString))
+                    {
+                        itemStackPanel.Children.Add(new Label() { Content = sourceString });
+                    }
+                    int snipLength = 25;
+                    if (formats.Contains("DeviceIndependentBitmap"))
+                    {
+                        ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
+                        if (i != null)
+                        {
+                            Image dbi = new Image();
+                            dbi.Source = i;
+                            itemStackPanel.Children.Add(dbi);
+                        }
+                    }
+                    else if (formats.Contains("UnicodeText"))
+                    {
+                        string uni = data.GetData("UnicodeText") as string;
+                        //if (uni.Length > snipLength)
+                        //{
+                        //    uni = uni.Substring(0, snipLength);
+                        //}
+                        itemStackPanel.Children.Add(new Label() { Content = uni });
+                    }
+                    else if (formats.Contains("Text"))
+                    {
+                        string txt = data.GetData("Text") as string;
+                        //if (txt.Length > snipLength)
+                        //{
+                        //    txt = txt.Substring(0, snipLength);
+                        //}
+                        itemStackPanel.Children.Add(new Label() { Content = txt });
+                    }
+                    //itemStackPanel.Children.Add();
+                }
+                catch (System.Runtime.InteropServices.COMException)
+                {
+                    System.Threading.Thread.Sleep(0);
+                    UpdateDisplayClipboard();
+                }
             }
         }
+        //private void UpdateDisplayClipboard()
+        //{
+        //    IDataObject data = Clipboard.GetDataObject();
+        //    if (data != null)
+        //    {
+        //        string[] formats = data.GetFormats();
 
-        private delegate IntPtr LowLevelMouseProc(int nCode, IntPtr wParam, IntPtr lParam);
+        //        formatView.Text = "";
+        //        textView.Text = "";
+        //        foreach (string format in formats)
+        //        {
+        //            Console.WriteLine(format);
+        //            formatView.Text += format + ":\n";
+        //            if (format == "DeviceIndependentBitmap")
+        //            {
+        //                ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
+        //                if (i != null)
+        //                {
+        //                    imageView.Source = i;
+        //                }
+        //            }
+        //            //imageView
+        //            if (!format.Contains("moz"))
+        //            {
+        //                string s = data.GetData(format) as string;
+        //                if (!String.IsNullOrWhiteSpace(s))
+        //                {
+        //                    if (format.ToLower().Contains("html"))
+        //                    {
+        //                        string sFixed = FixHtml(s);
+        //                        htmlView.NavigateToString(sFixed);
+        //                        textView.Text += "HTML FIXED" + ": \n";
+        //                        textView.Text += "\t" + sFixed + "\n";
+        //                    }
+        //                    textView.Text += format + ": \n";
+        //                    textView.Text += "\t" + s + "\n";
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
-        private static IntPtr HookCallback(
-          int nCode, IntPtr wParam, IntPtr lParam)
+        public string FixHtml(string HTML)
         {
-            if (nCode >= 0 && MouseMessages.WM_MOUSEMOVE == (MouseMessages)wParam)
+            string ret = "";
+            StringBuilder sb = new StringBuilder();
+            char[] s = HTML.ToCharArray();
+            foreach (char c in s)
             {
-                MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
-                Debug.WriteLine(hookStruct.pt.x + ", " + hookStruct.pt.y);
+                if (Convert.ToInt32(c) > 127)
+                    sb.Append("&#" + Convert.ToInt32(c) + ";");
+                else
+                    sb.Append(c);
             }
-            return CallNextHookEx(_hookID, nCode, wParam, lParam);
+            ret =  sb.ToString();
+            if(ret.Contains("<META content=\"IE"))
+            {
+                ret = ret.Remove(ret.IndexOf("<!DOCTYPE"));
+            }
+            return ret;
         }
-
-        private const int WH_MOUSE_LL = 14;
-
-        private enum MouseMessages
-        {
-            WM_LBUTTONDOWN = 0x0201,
-            WM_LBUTTONUP = 0x0202,
-            WM_MOUSEMOVE = 0x0200,
-            WM_MOUSEWHEEL = 0x020A,
-            WM_RBUTTONDOWN = 0x0204,
-            WM_RBUTTONUP = 0x0205
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct POINT
-        {
-            public int x;
-            public int y;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct MSLLHOOKSTRUCT
-        {
-            public POINT pt;
-            public uint mouseData;
-            public uint flags;
-            public uint time;
-            public IntPtr dwExtraInfo;
-        }
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr SetWindowsHookEx(int idHook,
-          LowLevelMouseProc lpfn, IntPtr hMod, uint dwThreadId);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll")]
+        public static extern IntPtr SetClipboardViewer(IntPtr hwnd);
+        [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool UnhookWindowsHookEx(IntPtr hhk);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode,
-          IntPtr wParam, IntPtr lParam);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr GetModuleHandle(string lpModuleName);
+        public static extern bool AddClipboardFormatListener(IntPtr hwnd);
     }
 }
