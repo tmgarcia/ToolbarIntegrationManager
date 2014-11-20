@@ -22,13 +22,26 @@ namespace TestProject.UserControls
     /// </summary>
     public partial class ClipboardDataObjectDisplay : UserControl
     {
+        public class FailedObjectEventArgs : RoutedEventArgs
+        {
+            //RoutedEvent routedEvent, object source
+            public FailedObjectEventArgs(RoutedEvent routedEvent, object source) : base(routedEvent, source) { }
+            public IDataObject FailedObject { get; set; }
+            public string FailMessage { get; set; }
+        }
         public static readonly RoutedEvent FailedDataObjectDisplayEvent = EventManager.RegisterRoutedEvent("FailedDataObjectDisplay", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ClipboardDataObjectDisplay));
         public event RoutedEventHandler FailedDataObjectDisplay
         {
             add { AddHandler(FailedDataObjectDisplayEvent, value); }
             remove { RemoveHandler(FailedDataObjectDisplayEvent, value); }
         }
-        IDataObject dataObject;
+        public static readonly RoutedEvent SuccessfulDataObjectDisplayEvent = EventManager.RegisterRoutedEvent("SuccessfulDataObjectDisplay", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(ClipboardDataObjectDisplay));
+        public event RoutedEventHandler SuccessfulDataObjectDisplay
+        {
+            add { AddHandler(SuccessfulDataObjectDisplayEvent, value); }
+            remove { RemoveHandler(SuccessfulDataObjectDisplayEvent, value); }
+        }
+        public IDataObject dataObject;
         int previewTextLength = 30;
         int previewSourceLength = 25;
         public bool selectable = true;
@@ -37,29 +50,28 @@ namespace TestProject.UserControls
         {
             InitializeComponent();
             //SetupDisplay();
-            //if (!selectable)
-            //{
-            //    this.IsHitTestVisible = false;
-            //}
         }
 
         //parent check if null before put in list
         public void SetupDisplay()
         {
+            Console.WriteLine("START SETUP DISPLAY");
             dataObject = this.DataContext as IDataObject;
             try
             {
+                Console.WriteLine("START TRY");
                 string[] formats = dataObject.GetFormats();
                 if (formats.Contains("FileDrop"))
                 {
-                    DisplayUnselectableMessage("File Data Objects not currently supported.");
-                    Console.WriteLine("FILE");
+                    Console.WriteLine("CONTAINS FILEDROP");
+                    SendFailedDataObjectMessage("File data objects not currently supported.");
                 }
                 else
                 {
                     string sourceString = FindSourceString(formats);
                     if (!String.IsNullOrWhiteSpace(sourceString))
                     {
+                        Console.WriteLine("DISPLAYING SOURCE STRING");
                         if (sourceString.Length > previewSourceLength)
                         {
                             sourceString = sourceString.Substring(0, previewSourceLength) + " ...";
@@ -67,17 +79,19 @@ namespace TestProject.UserControls
                         sourceString = "Source: " + sourceString;
                         TextBlock src = new TextBlock() { 
                             Text = sourceString, 
-                            Foreground = new SolidColorBrush(Colors.DarkGray), 
+                            Foreground = new SolidColorBrush(Colors.DarkBlue), 
                             TextWrapping=System.Windows.TextWrapping.Wrap
                         };
                         displayStackPanel.Children.Add(src);
                     }
                     if (formats.Contains("DeviceIndependentBitmap"))
                     {
+                        Console.WriteLine("DISPLAYING PREVIEW IMAGE");
                         DisplayPreviewImage();
                     }
                     else if (formats.Contains("UnicodeText"))
                     {
+                        Console.WriteLine("DISPLAYING UNICODE TEXT");
                         string uni = dataObject.GetData("UnicodeText") as string;
                         if (uni.Length > previewTextLength)
                         {
@@ -93,6 +107,7 @@ namespace TestProject.UserControls
                     }
                     else if (formats.Contains("Text"))
                     {
+                        Console.WriteLine("DISPLAYING TEXT");
                         string txt = dataObject.GetData("Text") as string;
                         if (txt.Length > previewTextLength)
                         {
@@ -106,39 +121,36 @@ namespace TestProject.UserControls
                         };
                         displayStackPanel.Children.Add(text);
                     }
+                    RaiseEvent(new RoutedEventArgs(SuccessfulDataObjectDisplayEvent, this));
                 }
+                Console.WriteLine("END TRY");
             }
             catch (System.OutOfMemoryException)
             {
-                dataObject = null;
-                DisplayUnselectableMessage("Data Object too large.");
+                Console.WriteLine("CATCH OUTOFMEMORYEXCEPTION");
+                SendFailedDataObjectMessage("Data Object too large.");
             }
             catch (System.Runtime.InteropServices.COMException)
             {
-                selectable = false;
-                RaiseEvent(new RoutedEventArgs(FailedDataObjectDisplayEvent, dataObject));
+                Console.WriteLine("CATCH INTEROP COMEXCEPTION");
+                SendFailedDataObjectMessage("Clipboard temporarily inaccesable.");
             }
             //catch (System.Exception)
             //{
             //    RaiseEvent(new RoutedEventArgs(FailedDataObjectDisplayEvent, dataObject));
             //}
+            Console.WriteLine("END SETUP DISPLAY");
         }
 
-        private void DisplayUnselectableMessage(string message)
+        private void SendFailedDataObjectMessage(string message)
         {
-            selectable = false;
-            TextBlock messageLabel = new TextBlock()
-            {
-                Text = message,
-                Foreground = new SolidColorBrush(Color.FromRgb(100, 0, 0)),
-                TextWrapping = System.Windows.TextWrapping.Wrap,
-                FontStyle = System.Windows.FontStyles.Italic
-            };
-            displayStackPanel.Children.Add(messageLabel);
+            Console.WriteLine("SEND FAILED DATA OBJECT MESSAGE");
+            RaiseEvent(new FailedObjectEventArgs(FailedDataObjectDisplayEvent, this) { FailedObject = dataObject, FailMessage = message });
         }
 
         private void DisplayPreviewImage()
         {
+            Console.WriteLine("START DISPLAY PREVIEW IMAGE");
             ImageSource i = DBIConverter.ImageFromDBIMemStream(dataObject.GetData("DeviceIndependentBitmap") as MemoryStream);
             if (i != null)
             {
@@ -161,9 +173,11 @@ namespace TestProject.UserControls
                 g.Children.Add(dbi);
                 displayStackPanel.Children.Add(g);
             }
+            Console.WriteLine("END DISPLAY PREVIEW IMAGE");
         }
         private string FindSourceString(string[] formats)
         {
+            Console.WriteLine("START FIND SOURCE STRING");
             string sourceString = "";
             if (formats.Contains("HTML Format"))
             {
@@ -192,6 +206,7 @@ namespace TestProject.UserControls
                     sourceString = html.Substring(start, end);
                 }
             }
+            Console.WriteLine("END FIND SOURCE STRING");
             return sourceString;
         }
     }

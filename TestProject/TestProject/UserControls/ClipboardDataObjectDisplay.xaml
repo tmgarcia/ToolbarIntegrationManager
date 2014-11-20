@@ -10,35 +10,7 @@
 				<SolidColorBrush Color="{StaticResource ToolbarContentBorderMediumColor}"/>
 			</Border.BorderBrush>
 			<StackPanel Name="displayStackPanel">
-				
 			</StackPanel>
-			<!--<ListBoxItem IsHitTestVisible="False">
-			<Border BorderThickness="1"
-					BorderBrush="Black">
-				<StackPanel>
-					<Label Content="Source: Microsoft OneNote"/>
-					<Grid Width="200"
-						  Height="50">
-						<Grid.Clip>
-							<RectangleGeometry Rect="0,0,200,100"/>
-						</Grid.Clip>
-						<Grid.OpacityMask>
-							<LinearGradientBrush StartPoint="0,0"
-									 EndPoint="0,1">
-								<GradientStop Offset="0" Color="Transparent"/>
-								<GradientStop Offset="0.5" Color="Black"/>
-								<GradientStop Offset="1" Color="Transparent"/>
-							</LinearGradientBrush>
-						</Grid.OpacityMask>
-						<Image Source="..\Images\ToolbarIcons\measureIconInactive.png"
-							   VerticalAlignment="Center"
-							   HorizontalAlignment="Center"
-							   Stretch="None">
-						</Image>
-					</Grid>
-				</StackPanel>
-			</Border>
-		</ListBoxItem>-->
 		</Border>
 	</Grid>
 </UserControl>

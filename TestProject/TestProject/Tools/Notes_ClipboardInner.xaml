@@ -4,16 +4,39 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 			 xmlns:uc="clr-namespace:TestProject.UserControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-	<ListBox Name="clipboardListBox">
-		<ListBox.ItemTemplate>
-			<DataTemplate>
-				<uc:ClipboardDataObjectDisplay Width="200" 
-											   Height="60" 
-											   DataContext="{Binding}"
-											   Name="DataObjectDisplay"/>
-			</DataTemplate>
-		</ListBox.ItemTemplate>
-	</ListBox>
+             mc:Ignorable="d">
+	<StackPanel>
+		<StackPanel.Background>
+			<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
+		</StackPanel.Background>
+		<TextBlock Name="TestText"/>
+		<StackPanel Orientation="Horizontal">
+			<Label Content="Max Entries: "
+				   Name="maxEntriesLabel"/>
+			<Label Content="Current:"
+				   Name="currentEntiresLabel"/>
+			<Label Content="{Binding ElementName=clipboardListBox, Path=Items.Count}"
+				   Name="currentEntiresNumber"/>
+		</StackPanel>
+		<Label Visibility="Collapsed"
+			   Name="warningLabel"
+			   Foreground="DarkRed"/>
+		<ListBox Name="clipboardListBox"
+				 MinWidth="210"
+				MinHeight="30"
+				 SelectionMode="Single">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid IsHitTestVisible="True">
+						<uc:ClipboardDataObjectDisplay Width="200" 
+													   Height="60" 
+													   DataContext="{Binding}"
+													   Name="DataObjectDisplay"
+													   MouseDoubleClick="DataObjectDisplay_MouseDoubleClick"
+													   IsHitTestVisible="True"/>
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</StackPanel>
 </UserControl>

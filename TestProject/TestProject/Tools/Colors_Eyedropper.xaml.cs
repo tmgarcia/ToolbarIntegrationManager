@@ -65,8 +65,8 @@ namespace TestProject.Tools
             Color selectedColor = Color.FromRgb(250, 0, 0);
             var transform = PresentationSource.FromVisual(this).CompositionTarget.TransformFromDevice;
             System.Drawing.Point pnt = System.Windows.Forms.Control.MousePosition;
-            Point p = new System.Windows.Point(pnt.X, pnt.Y);
-            Point point = transform.Transform(p);
+            System.Windows.Point p = new System.Windows.Point(pnt.X, pnt.Y);
+            System.Windows.Point point = transform.Transform(p);
 
             if ((point.X <= image.PixelWidth) && (point.Y <= image.PixelHeight))
             {
