@@ -121,6 +121,14 @@ namespace TestProject.Win32API
         [DllImport("user32.dll")]
         public static extern IntPtr SetClipboardViewer(IntPtr hwnd);
 
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool AddClipboardFormatListener(IntPtr hwnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
+
         #endregion
 
         #region Class Functions

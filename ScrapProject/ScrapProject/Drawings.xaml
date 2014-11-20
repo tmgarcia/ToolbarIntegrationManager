@@ -14,6 +14,7 @@
 				<ColumnDefinition />
 				<ColumnDefinition />
 				<ColumnDefinition />
+				<ColumnDefinition />
 			</Grid.ColumnDefinitions>
 			<Grid.RowDefinitions>
 				<RowDefinition />
@@ -771,6 +772,92 @@
 						</DrawingImage.Drawing>
 					</DrawingImage>
 				</Image.Source>
-			</Image>		</Grid>
+			</Image>			<Rectangle Grid.Column="7"
+					   Grid.Row="4">
+				<Rectangle.Fill>					<DrawingBrush>						<DrawingBrush.Drawing>
+							<DrawingGroup>
+								<GeometryDrawing Geometry="M0,0 H10 V10 H 0 Z">
+									<GeometryDrawing.Brush>
+										<SolidColorBrush Color="Transparent"/>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+								<GeometryDrawing Geometry="M2,10 h 6 v -5 H 2 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+											<GradientStop Offset="1" Color="Transparent"/>
+											<GradientStop Offset="0" Color="Yellow"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+								<GeometryDrawing Geometry="M2,0 h6 V 5 H2 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+											<GradientStop Offset="0" Color="Green"/>
+											<GradientStop Offset="1" Color="Transparent"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+
+								<GeometryDrawing Geometry="M0,2 H 5 v 6 H 0 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+											<GradientStop Offset="0" Color="Blue"/>
+											<GradientStop Offset="1" Color="Transparent"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+								<GeometryDrawing Geometry="M10,2 H5 v 6 H 10 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+											<GradientStop Offset="0" Color="Red"/>
+											<GradientStop Offset="1" Color="Transparent"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+							</DrawingGroup>
+						</DrawingBrush.Drawing>					</DrawingBrush>				</Rectangle.Fill>			</Rectangle>			<Rectangle Grid.Column="8"
+					   Grid.Row="4">
+				<Rectangle.Fill>					<DrawingBrush>						<DrawingBrush.Drawing>
+							<DrawingGroup>
+								<GeometryDrawing Geometry="M0,0 H10 V10 H 0 Z">
+									<GeometryDrawing.Brush>
+										<SolidColorBrush Color="Blue"/>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+								<GeometryDrawing Geometry="M2,10 h 6 v -5 H 2 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+											<GradientStop Offset="1" Color="Black"/>
+											<GradientStop Offset="0" Color="Transparent"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+								<GeometryDrawing Geometry="M2,0 h6 V 5 H2 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+											<GradientStop Offset="0" Color="Transparent"/>
+											<GradientStop Offset="1" Color="Black"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+
+								<GeometryDrawing Geometry="M0,2 H 5 v 6 H 0 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+											<GradientStop Offset="0" Color="Transparent"/>
+											<GradientStop Offset="1" Color="Black"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+								<GeometryDrawing Geometry="M10,2 H5 v 6 H 10 Z">
+									<GeometryDrawing.Brush>
+										<LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+											<GradientStop Offset="0" Color="Transparent"/>
+											<GradientStop Offset="1" Color="Black"/>
+										</LinearGradientBrush>
+									</GeometryDrawing.Brush>
+								</GeometryDrawing>
+							</DrawingGroup>
+						</DrawingBrush.Drawing>					</DrawingBrush>				</Rectangle.Fill>			</Rectangle>		</Grid>
 	</Grid>
 </Window>

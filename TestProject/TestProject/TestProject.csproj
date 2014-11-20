@@ -175,6 +175,12 @@
     <Compile Include="Tools\Measure_BoxSelector.xaml.cs">
       <DependentUpon>Measure_BoxSelector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Notes_Clipboard.xaml.cs">
+      <DependentUpon>Notes_Clipboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Notes_ClipboardInner.xaml.cs">
+      <DependentUpon>Notes_ClipboardInner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Measure_GridDisplay.xaml.cs">
       <DependentUpon>Measure_GridDisplay.xaml</DependentUpon>
     </Compile>
@@ -195,6 +201,9 @@
     </Compile>
     <Compile Include="UserControls\Calculator.xaml.cs">
       <DependentUpon>Calculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClipboardDataObjectDisplay.xaml.cs">
+      <DependentUpon>ClipboardDataObjectDisplay.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\EnabledSymbolButton.xaml.cs">
       <DependentUpon>EnabledSymbolButton.xaml</DependentUpon>
@@ -235,6 +244,7 @@
     <Compile Include="UserControls\ToolbarWindow.xaml.cs">
       <DependentUpon>ToolbarWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Win32API\DBIConverter.cs" />
     <Compile Include="Win32API\GDITools.cs" />
     <Compile Include="Win32API\Win32Tools.cs" />
     <Page Include="LauncherWindow.xaml">
@@ -353,6 +363,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Notes_Clipboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Notes_ClipboardInner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tools\Measure_GridDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -378,6 +396,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Calculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ClipboardDataObjectDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

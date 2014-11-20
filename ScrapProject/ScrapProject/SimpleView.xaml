@@ -16,11 +16,11 @@
 		<ScrollViewer Width="550"
 					Height="900"
 					  HorizontalScrollBarVisibility="Auto"
-					  VerticalScrollBarVisibility="Auto">
-			<StackPanel 
-					Background="LightGray"
-					Name="itemStackPanel">
-				<!--<GroupBox Header="Image">
+					  VerticalScrollBarVisibility="Auto"
+					  HorizontalContentAlignment="Left">
+			<StackPanel Background="LightGray"
+						Name="itemStackPanel">
+				<GroupBox Header="Image">
 				<Image Name="imageView">
 				</Image>
 			</GroupBox>
@@ -40,7 +40,7 @@
 						   ScrollViewer.HorizontalScrollBarVisibility="Visible">
 					</TextBlock>
 				</ScrollViewer>
-			</GroupBox>-->
+			</GroupBox>
 			</StackPanel>
 		</ScrollViewer>
 	</StackPanel>

@@ -92,13 +92,13 @@ namespace TestProject.Models
         }
         protected virtual void ToolbarClosed(object sender, System.Windows.RoutedEventArgs e)
         {
-            isActive = false;
-            commandButtons.SetToInactiveState();
-            icon.SetInactive();
             foreach (Tool t in tools)
             {
                 t.Deactivate();
             }
+            isActive = false;
+            commandButtons.SetToInactiveState();
+            icon.SetInactive();
         }
 
     }
