@@ -52,138 +52,138 @@ namespace ScrapProject
             }
             return IntPtr.Zero;
         }
-        private void UpdateDisplayClipboard()
-        {
-            IDataObject data = Clipboard.GetDataObject();
-            if (data != null)
-            {
-                try
-                {
-                    string[] formats = data.GetFormats();
-                    string sourceString = "";
-                    if (formats.Contains("HTML Format"))
-                    {
-                        string html = data.GetData("HTML Format") as string;
-                        string metaSourceString = "<meta name=generator content=";
-                        string imageSourceString = "src=";
-                        string siteSourceString = "sourceurl:";
-                        if (html.ToLower().Contains(metaSourceString))
-                        {
-                            int start = html.ToLower().IndexOf(metaSourceString) + metaSourceString.Length + 1;//1 for the frist "
-                            int end = html.ToLower().IndexOf("\"", start);
-                            int length = end - start;
-                            sourceString = html.Substring(start, length);
-                        }
-                        else if (html.ToLower().Contains(imageSourceString))
-                        {
-                            int start = html.ToLower().IndexOf(imageSourceString) + imageSourceString.Length + 1;
-                            int end = html.ToLower().IndexOf("\"", start);
-                            int length = end - start;
-                            sourceString = html.Substring(start, length);
-                        }
-                        else if (html.ToLower().Contains(siteSourceString))
-                        {
-                            int start = html.ToLower().IndexOf(siteSourceString) + siteSourceString.Length;
-                            int end = html.ToLower().IndexOf('<', start) - start;
-                            sourceString = html.Substring(start, end);
-                        }
-                    }
-                    if (!String.IsNullOrWhiteSpace(sourceString))
-                    {
-                        itemStackPanel.Children.Add(new Label() { Content = sourceString });
-                    }
-                    int snipLength = 25;
-                    if (formats.Contains("DeviceIndependentBitmap"))
-                    {
-                        ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
-                        if (i != null)
-                        {
-                            Image dbi = new Image();
-                            dbi.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
-                            dbi.Source = i;
-                            itemStackPanel.Children.Add(dbi);
-                        }
-                    }
-                    else if (formats.Contains("UnicodeText"))
-                    {
-                        string uni = data.GetData("UnicodeText") as string;
-                        //if (uni.Length > snipLength)
-                        //{
-                        //    uni = uni.Substring(0, snipLength);
-                        //}
-                        itemStackPanel.Children.Add(new Label() { Content = uni });
-                    }
-                    else if (formats.Contains("Text"))
-                    {
-                        string txt = data.GetData("Text") as string;
-                        //if (txt.Length > snipLength)
-                        //{
-                        //    txt = txt.Substring(0, snipLength);
-                        //}
-                        itemStackPanel.Children.Add(new Label() { Content = txt });
-                    }
-                    //itemStackPanel.Children.Add();
-                }
-                catch (System.Runtime.InteropServices.COMException)
-                {
-                    System.Threading.Thread.Sleep(0);
-                    UpdateDisplayClipboard();
-                }
-            }
-        }
         //private void UpdateDisplayClipboard()
         //{
         //    IDataObject data = Clipboard.GetDataObject();
-        //    try
+        //    if (data != null)
         //    {
-        //        if (data != null)
+        //        try
         //        {
         //            string[] formats = data.GetFormats();
-
-        //            formatView.Text = "";
-        //            textView.Text = "";
-        //            foreach (string format in formats)
+        //            string sourceString = "";
+        //            if (formats.Contains("HTML Format"))
         //            {
-        //                Console.WriteLine(format);
-        //                formatView.Text += format + ":\n";
-        //                if (format == "DeviceIndependentBitmap")
+        //                string html = data.GetData("HTML Format") as string;
+        //                string metaSourceString = "<meta name=generator content=";
+        //                string imageSourceString = "src=";
+        //                string siteSourceString = "sourceurl:";
+        //                if (html.ToLower().Contains(metaSourceString))
         //                {
-        //                    ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
-        //                    if (i != null)
-        //                    {
-        //                        imageView.Source = i;
-        //                    }
+        //                    int start = html.ToLower().IndexOf(metaSourceString) + metaSourceString.Length + 1;//1 for the frist "
+        //                    int end = html.ToLower().IndexOf("\"", start);
+        //                    int length = end - start;
+        //                    sourceString = html.Substring(start, length);
         //                }
-        //                //imageView
-        //                if (!format.Contains("moz"))
+        //                else if (html.ToLower().Contains(imageSourceString))
         //                {
-        //                    string s = data.GetData(format) as string;
-        //                    if (!String.IsNullOrWhiteSpace(s))
-        //                    {
-        //                        if (format.ToLower().Contains("html"))
-        //                        {
-        //                            string sFixed = FixHtml(s);
-        //                            htmlView.NavigateToString(sFixed);
-        //                            //textView.Text += "HTML FIXED" + ": \n";
-        //                            //textView.Text += "\t" + sFixed + "\n";
-        //                        }
-        //                        textView.Text += format + ": \n";
-        //                        textView.Text += "\t" + s + "\n";
-        //                    }
+        //                    int start = html.ToLower().IndexOf(imageSourceString) + imageSourceString.Length + 1;
+        //                    int end = html.ToLower().IndexOf("\"", start);
+        //                    int length = end - start;
+        //                    sourceString = html.Substring(start, length);
+        //                }
+        //                else if (html.ToLower().Contains(siteSourceString))
+        //                {
+        //                    int start = html.ToLower().IndexOf(siteSourceString) + siteSourceString.Length;
+        //                    int end = html.ToLower().IndexOf('<', start) - start;
+        //                    sourceString = html.Substring(start, end);
         //                }
         //            }
+        //            if (!String.IsNullOrWhiteSpace(sourceString))
+        //            {
+        //                itemStackPanel.Children.Add(new Label() { Content = sourceString });
+        //            }
+        //            int snipLength = 25;
+        //            if (formats.Contains("DeviceIndependentBitmap"))
+        //            {
+        //                ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
+        //                if (i != null)
+        //                {
+        //                    Image dbi = new Image();
+        //                    dbi.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+        //                    dbi.Source = i;
+        //                    itemStackPanel.Children.Add(dbi);
+        //                }
+        //            }
+        //            else if (formats.Contains("UnicodeText"))
+        //            {
+        //                string uni = data.GetData("UnicodeText") as string;
+        //                //if (uni.Length > snipLength)
+        //                //{
+        //                //    uni = uni.Substring(0, snipLength);
+        //                //}
+        //                itemStackPanel.Children.Add(new Label() { Content = uni });
+        //            }
+        //            else if (formats.Contains("Text"))
+        //            {
+        //                string txt = data.GetData("Text") as string;
+        //                //if (txt.Length > snipLength)
+        //                //{
+        //                //    txt = txt.Substring(0, snipLength);
+        //                //}
+        //                itemStackPanel.Children.Add(new Label() { Content = txt });
+        //            }
+        //            //itemStackPanel.Children.Add();
+        //        }
+        //        catch (System.Runtime.InteropServices.COMException)
+        //        {
+        //            System.Threading.Thread.Sleep(0);
+        //            UpdateDisplayClipboard();
         //        }
         //    }
-        //    catch(System.OutOfMemoryException)
-        //    {
-        //        data = null;
-        //    }
-        //    catch (System.Runtime.InteropServices.COMException)
-        //    {
-        //        System.Threading.Thread.Sleep(0);
-        //        UpdateDisplayClipboard();
-        //    }
         //}
+        private void UpdateDisplayClipboard()
+        {
+            IDataObject data = Clipboard.GetDataObject();
+            try
+            {
+                if (data != null)
+                {
+                    string[] formats = data.GetFormats();
+
+                    formatView.Text = "";
+                    textView.Text = "";
+                    foreach (string format in formats)
+                    {
+                        Console.WriteLine(format);
+                        formatView.Text += format + ":\n";
+                        if (format == "DeviceIndependentBitmap")
+                        {
+                            ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
+                            if (i != null)
+                            {
+                                imageView.Source = i;
+                            }
+                        }
+                        //imageView
+                        if (!format.Contains("moz"))
+                        {
+                            string s = data.GetData(format) as string;
+                            if (!String.IsNullOrWhiteSpace(s))
+                            {
+                                if (format.ToLower().Contains("html"))
+                                {
+                                    string sFixed = FixHtml(s);
+                                    htmlView.NavigateToString(sFixed);
+                                    //textView.Text += "HTML FIXED" + ": \n";
+                                    //textView.Text += "\t" + sFixed + "\n";
+                                }
+                                textView.Text += format + ": \n";
+                                textView.Text += "\t" + s + "\n";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (System.OutOfMemoryException)
+            {
+                data = null;
+            }
+            catch (System.Runtime.InteropServices.COMException)
+            {
+                System.Threading.Thread.Sleep(0);
+                UpdateDisplayClipboard();
+            }
+        }
 
         public string FixHtml(string HTML)
         {

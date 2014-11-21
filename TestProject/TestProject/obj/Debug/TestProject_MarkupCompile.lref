@@ -12,6 +12,7 @@ FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Conversion_UnitsI
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Clear.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Eraser.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_FillSelect.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Highlighter.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Lines.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Overlay.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Pen.xaml;;
@@ -22,15 +23,16 @@ FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_StrokeSel
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_StrokeWeight.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Drawing_Text.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_BoxSelector.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Notes_Clipboard.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Notes_ClipboardInner.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_GridDisplay.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_HorizontalRuler.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Measure_VerticalRuler.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Notes_QuickNotes.xaml;;
+FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Notes_ScreenClipping.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\BaseTool_Expandable.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\FloatingToolbar.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\HSBASliders.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\HSLASliders.xaml;;
 FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\UserControls\RGBASliders.xaml;;
-FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Notes_Clipboard.xaml;;
-FT:\School\Capstone-TaylorGarcia\TestProject\TestProject\Tools\Notes_ClipboardInner.xaml;;
 

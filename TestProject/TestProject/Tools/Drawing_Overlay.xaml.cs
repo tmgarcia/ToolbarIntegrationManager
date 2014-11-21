@@ -36,6 +36,7 @@ namespace TestProject.Tools
         Drawing_Clear clearButton;
         Drawing_Save saveButton;
         Drawing_ReturnCursor returnCursorButton;
+        Drawing_Highlighter highlighterTool;
 
         Color fillColor;
         Color strokeColor;
@@ -47,10 +48,10 @@ namespace TestProject.Tools
 
         private int originalExtendedStyle;
         public Drawing_Overlay(ToolbarWindow parent,
-            Drawing_FillSelect fillSelect,Drawing_StrokeSelect strokeSelect,
-            Drawing_StrokeWeight weightSlider,Drawing_Shapes shapeSelect,Drawing_Lines lineSelect,
-            Drawing_Text textTool,Drawing_Pen penTool,Drawing_Eraser eraserTool,
-            Drawing_Clear clearButton,Drawing_Save saveButton, Drawing_ReturnCursor returnCursorButton)
+            Drawing_FillSelect fillSelect, Drawing_StrokeSelect strokeSelect,
+            Drawing_StrokeWeight weightSlider, Drawing_Shapes shapeSelect, Drawing_Lines lineSelect,
+            Drawing_Text textTool, Drawing_Pen penTool, Drawing_Eraser eraserTool,
+            Drawing_Clear clearButton, Drawing_Save saveButton, Drawing_ReturnCursor returnCursorButton, Drawing_Highlighter highlighterTool)
         {
             InitializeComponent();
             this.WindowState = System.Windows.WindowState.Maximized;
@@ -107,10 +108,15 @@ namespace TestProject.Tools
 
             this.returnCursorButton = returnCursorButton;
             returnCursorButton.toggle.toggleControl.Checked += ReturnCursorActivated;
+
+            this.highlighterTool = highlighterTool;
+            highlighterTool.toggle.toggleControl.Checked += HighlighterToolActivated;
+            highlighterTool.toggle.toggleControl.Unchecked += HighlighterToolDeactivated;
         }
 
         void ReturnCursorActivated(object sender, RoutedEventArgs e)
         {
+            highlighterTool.toggle.toggleControl.IsChecked = false;
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
@@ -151,6 +157,7 @@ namespace TestProject.Tools
         void EraserToolActivated(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = CustomCursors.Cursor_Eraser();
+            highlighterTool.toggle.toggleControl.IsChecked = false;
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             returnCursorButton.toggle.toggleControl.IsChecked = false;
@@ -165,10 +172,27 @@ namespace TestProject.Tools
             inkCanvas.EditingMode = InkCanvasEditingMode.Ink;
             StopDrawing();
         }
-
+        void HighlighterToolActivated(object sender, RoutedEventArgs e)
+        {
+            Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight + 4);
+            penTool.toggle.toggleControl.IsChecked = false;
+            textTool.toggle.toggleControl.IsChecked = false;
+            eraserTool.toggle.toggleControl.IsChecked = false;
+            returnCursorButton.toggle.toggleControl.IsChecked = false;
+            currentStrokeType = DrawingStrokeType.Pen;
+            inkCanvas.DefaultDrawingAttributes.IsHighlighter = true;
+            CollapseAll();
+            StartDrawing();
+        }
+        void HighlighterToolDeactivated(object sender, RoutedEventArgs e)
+        {
+            inkCanvas.DefaultDrawingAttributes.IsHighlighter = false;
+            StopDrawing();
+        }
         void PenToolActivated(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight+4);
+            highlighterTool.toggle.toggleControl.IsChecked = false;
             textTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
             returnCursorButton.toggle.toggleControl.IsChecked = false;
@@ -184,6 +208,7 @@ namespace TestProject.Tools
         void TextToolActivated(object sender, RoutedEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.IBeam;
+            highlighterTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
             returnCursorButton.toggle.toggleControl.IsChecked = false;
@@ -219,7 +244,7 @@ namespace TestProject.Tools
             inkCanvas.DefaultDrawingAttributes.Width = strokeWeight;
             inkCanvas.DefaultDrawingAttributes.Height = strokeWeight;
 
-            if ((bool)penTool.toggle.toggleControl.IsChecked)
+            if ((bool)penTool.toggle.toggleControl.IsChecked || (bool)highlighterTool.toggle.toggleControl.IsChecked)
             {
                 Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight + 4);
             }
@@ -270,6 +295,7 @@ namespace TestProject.Tools
         }
         private void UnToggleAll()
         {
+            highlighterTool.toggle.toggleControl.IsChecked = false;
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;

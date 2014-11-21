@@ -129,3 +129,9 @@ T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_Cl
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_ClipboardInner.g.cs
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_Clipboard.baml
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_ClipboardInner.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\ScreenClippingOverlay.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_ScreenClipping.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\UserControls\ScreenClippingOverlay.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes_ScreenClipping.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Highlighter.g.cs
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Drawing_Highlighter.baml

@@ -66,12 +66,13 @@ namespace TestProject.Toolbars
             Drawing_Lines lines = new Drawing_Lines();
             Drawing_Text text = new Drawing_Text();
             Drawing_Pen pen = new Drawing_Pen();
+            Drawing_Highlighter high = new Drawing_Highlighter();
             Drawing_Eraser eraser = new Drawing_Eraser();
             Drawing_ReturnCursor ret = new Drawing_ReturnCursor();
             Drawing_Clear clear = new Drawing_Clear();
             Drawing_Save save = new Drawing_Save();
 
-            overlay = new Drawing_Overlay(this.display, fill, stroke, weight, shapes, lines, text, pen, eraser, clear, save, ret);
+            overlay = new Drawing_Overlay(this.display, fill, stroke, weight, shapes, lines, text, pen, eraser, clear, save, ret, high);
             overlay.Hide();
             tools.Add(new Tool(fill));
             tools.Add(new Tool(stroke));
@@ -80,6 +81,7 @@ namespace TestProject.Toolbars
             tools.Add(new Tool(lines));
             tools.Add(new Tool(text));
             tools.Add(new Tool(pen));
+            tools.Add(new Tool(high));
             tools.Add(new Tool(eraser));
             tools.Add(new Tool(ret));
             tools.Add(new Tool(clear));

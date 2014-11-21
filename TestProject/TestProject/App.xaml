@@ -684,6 +684,26 @@
 					</GeometryDrawing>
 				</DrawingImage.Drawing>
 			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolMarker">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<CombinedGeometry GeometryCombineMode="Xor">
+								<CombinedGeometry.Geometry1>
+									<PathGeometry Figures="M 2.88932,41.3516C 4.0306,38.8854 5.26628,36.25 5.64128,35.5742C 6.20768,34.5547 5.82357,32.0261 6.10417,30.8594C 6.26563,30.1875 7.42383,28.3685 7.42383,28.3685L 8.33984,27.4518L 7.75065,26.8633L 34.6139,0L 46.8132,12.1979L 19.9492,39.0625L 19.36,38.4727L 18.4967,39.3359C 18.4967,39.3359 16.7207,40.4297 16.0703,40.5911C 14.8724,40.8867 12.2858,40.5794 11.2305,41.1653C 9.91471,41.8945 7.6276,42.9792 5.52018,43.9479L 4.47201,45.0703L 0,44.082L 2.88932,41.3516 Z "/>
+								</CombinedGeometry.Geometry1>
+								<CombinedGeometry.Geometry2>
+									<PathGeometry Figures="M 3.42969,41.2708C 4.56706,39.0065 5.79753,36.5886 6.16536,35.9648C 6.7207,35.0261 6.49609,32.7773 6.80208,31.72C 6.97852,31.1107 8.10156,29.4258 8.10156,29.4258L 8.96484,28.5625L 18.3184,37.9167L 17.5046,38.7292C 17.5046,38.7292 15.8633,39.7943 15.2728,39.9688C 14.1855,40.2903 11.8828,40.1354 10.9102,40.7109C 9.69596,41.4258 7.59701,42.5052 5.66341,43.4739L 3.42969,41.2708 Z"/>
+								</CombinedGeometry.Geometry2>
+							</CombinedGeometry>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
 			<!--<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />-->
 
 

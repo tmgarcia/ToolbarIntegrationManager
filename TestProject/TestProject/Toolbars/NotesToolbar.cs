@@ -40,9 +40,11 @@ namespace TestProject.Toolbars
         {
             quickNoteCollection = new QuickNoteCollection();
             Notes_QuickNotes qnotes = new Notes_QuickNotes(quickNoteCollection);
-            //Notes_Clipboard clip = new Notes_Clipboard();
+            Notes_ScreenClipping clipping = new Notes_ScreenClipping();
+            Notes_Clipboard clip = new Notes_Clipboard();
             tools.Add(new Tool(qnotes));
-            //tools.Add(new Tool(clip));
+            tools.Add(new Tool(clipping));
+            tools.Add(new Tool(clip));
         }
     }
 }

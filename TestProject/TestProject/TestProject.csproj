@@ -83,6 +83,8 @@
     <Compile Include="Models\QuickNote.cs" />
     <Compile Include="Models\QuickNoteCollection.cs" />
     <Compile Include="Models\RGBAColor.cs" />
+    <Compile Include="Models\ScreenClipInk_DynamicRenderer.cs" />
+    <Compile Include="Models\ScreenClipInk_InkCanvas.cs" />
     <Compile Include="Models\ToolbarIcon.cs" />
     <Compile Include="Models\Tool.cs" />
     <Compile Include="Models\Toolbar.cs" />
@@ -143,6 +145,9 @@
     <Compile Include="Tools\Drawing_FillSelect.xaml.cs">
       <DependentUpon>Drawing_FillSelect.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Drawing_Highlighter.xaml.cs">
+      <DependentUpon>Drawing_Highlighter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Drawing_InkCanvas.cs" />
     <Compile Include="Tools\Drawing_Lines.xaml.cs">
       <DependentUpon>Drawing_Lines.xaml</DependentUpon>
@@ -196,6 +201,9 @@
     <Compile Include="Tools\Notes_QuickNotes.xaml.cs">
       <DependentUpon>Notes_QuickNotes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tools\Notes_ScreenClipping.xaml.cs">
+      <DependentUpon>Notes_ScreenClipping.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
       <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
     </Compile>
@@ -237,6 +245,9 @@
     </Compile>
     <Compile Include="UserControls\RGBASliders.xaml.cs">
       <DependentUpon>RGBASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScreenClippingOverlay.xaml.cs">
+      <DependentUpon>ScreenClippingOverlay.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ThreeStateEnabledButton.xaml.cs">
       <DependentUpon>ThreeStateEnabledButton.xaml</DependentUpon>
@@ -323,6 +334,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Drawing_Highlighter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tools\Drawing_Lines.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -391,6 +406,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tools\Notes_ScreenClipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\ActiveInactiveImageButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -444,6 +463,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\RGBASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ScreenClippingOverlay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
