@@ -21,7 +21,7 @@
 		</Border>
 		<uc:BaseTool_Expandable x:Name="expandable">
 			<uc:BaseTool_Expandable.PopupContent>
-				<ListBox SelectionChanged="ListBox_SelectionChanged"
+				<uc:OrientableListBox SelectionChanged="ListBox_SelectionChanged"
 							SelectionMode="Single"
 							Width="50">
 					<ListBox.Background>
@@ -39,7 +39,7 @@
 							</StackPanel>
 						</DataTemplate>
 					</ListBox.ItemTemplate>
-				</ListBox>
+				</uc:OrientableListBox>
 			</uc:BaseTool_Expandable.PopupContent>
 		</uc:BaseTool_Expandable>
 	</Grid>

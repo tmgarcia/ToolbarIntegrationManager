@@ -240,6 +240,7 @@
     <Compile Include="UserControls\MeasuringOverlay.xaml.cs">
       <DependentUpon>MeasuringOverlay.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\OrientableListBox.cs" />
     <Compile Include="UserControls\QuickNoteWindow.xaml.cs">
       <DependentUpon>QuickNoteWindow.xaml</DependentUpon>
     </Compile>

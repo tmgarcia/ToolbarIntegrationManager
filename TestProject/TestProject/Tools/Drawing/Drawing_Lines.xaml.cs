@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Enums;
 using TestProject.Models;
+using TestProject.UserControls;
 
 namespace TestProject.Tools
 {
@@ -29,12 +30,14 @@ namespace TestProject.Tools
             remove { RemoveHandler(LineSelectedEvent, value); }
         }
 
+        ListBox lineChoice;
         public DrawingStrokeType selectedStrokeType;
         public Drawing_Lines()
         {
             InitializeComponent();
             expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolLineDiagonal"));
             expandable.Toggle.toggleControl.ToolTip = "Lines";
+            lineChoice = expandable.PopupContent as ListBox;
         }
         private void Line_Selected(object sender, RoutedEventArgs e)
         {
@@ -75,12 +78,20 @@ namespace TestProject.Tools
 
         public void ReorientHorizontal()
         {
-
+            lineChoice.Width = 40;
+            lineChoice.Height = Double.NaN;
+            ((OrientableListBox)lineChoice).Orientation = Orientation.Vertical;
+            expandable.SetPlacementModeBottom();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void ReorientVertical()
         {
-
+            lineChoice.Height = 40;
+            lineChoice.Width = Double.NaN;
+            ((OrientableListBox)lineChoice).Orientation = Orientation.Horizontal;
+            expandable.SetPlacementModeRight();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void Collapse()

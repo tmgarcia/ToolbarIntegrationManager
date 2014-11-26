@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Models;
+using TestProject.UserControls;
 
 namespace TestProject.Tools
 {
@@ -82,12 +83,20 @@ namespace TestProject.Tools
 
         public void ReorientHorizontal()
         {
-
+            ((OrientableListBox)colorChoiceDisplay).Orientation = Orientation.Vertical;
+            colorChoiceDisplay.Width = 50;
+            colorChoiceDisplay.Height = Double.NaN;
+            expandable.SetPlacementModeBottom();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void ReorientVertical()
         {
-
+            colorChoiceDisplay.Height = 30;
+            colorChoiceDisplay.Width = Double.NaN;
+            ((OrientableListBox)colorChoiceDisplay).Orientation = Orientation.Horizontal;
+            expandable.SetPlacementModeRight();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void Collapse()

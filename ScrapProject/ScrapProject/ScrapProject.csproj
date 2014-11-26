@@ -53,6 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClipboardDemo.xaml.cs">
+      <DependentUpon>ClipboardDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ColorToHSBASliderGradients.cs" />
     <Compile Include="Converters\ColorToHSLASliderGradients.cs" />
     <Compile Include="Converters\ColorToRGBASliderGradient.cs" />
@@ -90,6 +93,10 @@
     <Compile Include="UserControls\RGBASliders.xaml.cs">
       <DependentUpon>RGBASliders.xaml</DependentUpon>
     </Compile>
+    <Page Include="ClipboardDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Drawing.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Models;
+using TestProject.UserControls;
 
 namespace TestProject.Tools
 {
@@ -82,17 +83,46 @@ namespace TestProject.Tools
 
         public void ReorientHorizontal()
         {
-
+            ((OrientableListBox)colorChoiceDisplay).Orientation = Orientation.Vertical;
+            colorChoiceDisplay.Width = 50;
+            colorChoiceDisplay.Height = Double.NaN;
+            expandable.SetPlacementModeBottom();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void ReorientVertical()
         {
-
+            colorChoiceDisplay.Height = 30;
+            colorChoiceDisplay.Width = Double.NaN;
+            ((OrientableListBox)colorChoiceDisplay).Orientation = Orientation.Horizontal;
+            expandable.SetPlacementModeRight();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void Collapse()
         {
 
+        }
+
+        private childItem FindVisualChild<childItem>(DependencyObject obj) where childItem : DependencyObject
+        {
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(obj); i++)
+            {
+                DependencyObject child = VisualTreeHelper.GetChild(obj, i);
+                if (child != null && child is childItem)
+                {
+                    return (childItem)child;
+                }
+                else
+                {
+                    childItem childOfChild = FindVisualChild<childItem>(child);
+                    if (childOfChild != null)
+                    {
+                        return childOfChild;
+                    }
+                }
+            }
+            return null;
         }
     }
 }

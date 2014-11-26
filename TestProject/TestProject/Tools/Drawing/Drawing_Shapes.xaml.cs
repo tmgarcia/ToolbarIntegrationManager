@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Enums;
 using TestProject.Models;
+using TestProject.UserControls;
 
 namespace TestProject.Tools
 {
@@ -29,12 +30,14 @@ namespace TestProject.Tools
             remove { RemoveHandler(ShapeSelectedEvent, value); }
         }
 
+        ListBox shapeChoice;
         public DrawingStrokeType selectedStrokeType;
         public Drawing_Shapes()
         {
             InitializeComponent();
             expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolShapes"));
             expandable.Toggle.toggleControl.ToolTip = "Shapes";
+            shapeChoice = expandable.PopupContent as ListBox;
         }
 
         private void Square_Selected(object sender, RoutedEventArgs e)
@@ -66,12 +69,20 @@ namespace TestProject.Tools
 
         public void ReorientHorizontal()
         {
-
+            shapeChoice.Width = 40;
+            shapeChoice.Height = Double.NaN;
+            ((OrientableListBox)shapeChoice).Orientation = Orientation.Vertical;
+            expandable.SetPlacementModeBottom();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void ReorientVertical()
         {
-
+            shapeChoice.Height= 40;
+            shapeChoice.Width = Double.NaN;
+            ((OrientableListBox)shapeChoice).Orientation = Orientation.Horizontal;
+            expandable.SetPlacementModeRight();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void Collapse()

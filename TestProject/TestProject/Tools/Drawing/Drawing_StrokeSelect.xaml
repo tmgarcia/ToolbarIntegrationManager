@@ -21,25 +21,26 @@
 		</Border>
 		<uc:BaseTool_Expandable x:Name="expandable">
 			<uc:BaseTool_Expandable.PopupContent>
-				<ListBox SelectionChanged="ListBox_SelectionChanged"
-							SelectionMode="Single"
-							Width="50">
+				<uc:OrientableListBox SelectionChanged="ListBox_SelectionChanged"
+									  SelectionMode="Single"
+									  Width="50">
 					<ListBox.Background>
 						<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
 					</ListBox.Background>
 					<ListBox.ItemTemplate>
 						<DataTemplate>
-							<StackPanel>
+							<Grid Height="Auto"
+								  Width="Auto">
 								<Rectangle Height="20"
 										Width="40">
 									<Rectangle.Fill>
 										<Binding Converter="{StaticResource ResourceKey=ColorToBrush}"/>
 									</Rectangle.Fill>
 								</Rectangle>
-							</StackPanel>
+							</Grid>
 						</DataTemplate>
 					</ListBox.ItemTemplate>
-				</ListBox>
+				</uc:OrientableListBox>
 			</uc:BaseTool_Expandable.PopupContent>
 		</uc:BaseTool_Expandable>
 	</Grid>
