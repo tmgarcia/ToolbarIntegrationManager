@@ -32,5 +32,26 @@ namespace TestProject.Models
                 ((IDeactivatableTool)userControl).Activate();
             }
         }
+        public void OrientHorizontal()
+        {
+            if (((IDeactivatableTool)userControl) != null)
+            {
+                ((IDeactivatableTool)userControl).ReorientHorizontal();
+            }
+        }
+        public void OrientVertical()
+        {
+            if (((IDeactivatableTool)userControl) != null)
+            {
+                ((IDeactivatableTool)userControl).ReorientVertical();
+            }
+        }
+        public void Collapse()
+        {
+            if (((IDeactivatableTool)userControl) != null)
+            {
+                ((IDeactivatableTool)userControl).Collapse();
+            }
+        }
     }
 }

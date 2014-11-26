@@ -55,15 +55,12 @@ namespace TestProject.UserControls
         //parent check if null before put in list
         public void SetupDisplay()
         {
-            Console.WriteLine("START SETUP DISPLAY");
             dataObject = this.DataContext as IDataObject;
             try
             {
-                Console.WriteLine("START TRY");
                 string[] formats = dataObject.GetFormats();
                 if (formats.Contains("FileDrop"))
                 {
-                    Console.WriteLine("CONTAINS FILEDROP");
                     SendFailedDataObjectMessage("File data objects not currently supported.");
                 }
                 else
@@ -71,7 +68,6 @@ namespace TestProject.UserControls
                     string sourceString = FindSourceString(formats);
                     if (!String.IsNullOrWhiteSpace(sourceString))
                     {
-                        Console.WriteLine("DISPLAYING SOURCE STRING");
                         if (sourceString.Length > previewSourceLength)
                         {
                             sourceString = sourceString.Substring(0, previewSourceLength) + " ...";
@@ -86,12 +82,10 @@ namespace TestProject.UserControls
                     }
                     if (formats.Contains("DeviceIndependentBitmap"))
                     {
-                        Console.WriteLine("DISPLAYING PREVIEW IMAGE");
                         DisplayPreviewImage();
                     }
                     else if (formats.Contains("UnicodeText"))
                     {
-                        Console.WriteLine("DISPLAYING UNICODE TEXT");
                         string uni = dataObject.GetData("UnicodeText") as string;
                         if (uni.Length > previewTextLength)
                         {
@@ -107,7 +101,6 @@ namespace TestProject.UserControls
                     }
                     else if (formats.Contains("Text"))
                     {
-                        Console.WriteLine("DISPLAYING TEXT");
                         string txt = dataObject.GetData("Text") as string;
                         if (txt.Length > previewTextLength)
                         {
@@ -123,34 +116,28 @@ namespace TestProject.UserControls
                     }
                     RaiseEvent(new RoutedEventArgs(SuccessfulDataObjectDisplayEvent, this));
                 }
-                Console.WriteLine("END TRY");
             }
             catch (System.OutOfMemoryException)
             {
-                Console.WriteLine("CATCH OUTOFMEMORYEXCEPTION");
                 SendFailedDataObjectMessage("Data Object too large.");
             }
             catch (System.Runtime.InteropServices.COMException)
             {
-                Console.WriteLine("CATCH INTEROP COMEXCEPTION");
                 SendFailedDataObjectMessage("Clipboard temporarily inaccesable.");
             }
             //catch (System.Exception)
             //{
             //    RaiseEvent(new RoutedEventArgs(FailedDataObjectDisplayEvent, dataObject));
             //}
-            Console.WriteLine("END SETUP DISPLAY");
         }
 
         private void SendFailedDataObjectMessage(string message)
         {
-            Console.WriteLine("SEND FAILED DATA OBJECT MESSAGE");
             RaiseEvent(new FailedObjectEventArgs(FailedDataObjectDisplayEvent, this) { FailedObject = dataObject, FailMessage = message });
         }
 
         private void DisplayPreviewImage()
         {
-            Console.WriteLine("START DISPLAY PREVIEW IMAGE");
             ImageSource i = DBIConverter.ImageFromDBIMemStream(dataObject.GetData("DeviceIndependentBitmap") as MemoryStream);
             if (i != null)
             {
@@ -173,11 +160,9 @@ namespace TestProject.UserControls
                 g.Children.Add(dbi);
                 displayStackPanel.Children.Add(g);
             }
-            Console.WriteLine("END DISPLAY PREVIEW IMAGE");
         }
         private string FindSourceString(string[] formats)
         {
-            Console.WriteLine("START FIND SOURCE STRING");
             string sourceString = "";
             if (formats.Contains("HTML Format"))
             {
@@ -206,7 +191,6 @@ namespace TestProject.UserControls
                     sourceString = html.Substring(start, end);
                 }
             }
-            Console.WriteLine("END FIND SOURCE STRING");
             return sourceString;
         }
     }

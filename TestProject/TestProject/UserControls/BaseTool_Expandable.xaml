@@ -14,8 +14,17 @@
 			   IsOpen="False"
 			   PlacementTarget="{Binding ElementName=Toggle}"
 			   StaysOpen="True"
-			   Focusable="True">
-			<ContentControl Content="{Binding PopupContent, ElementName=control}" />
+			   Focusable="True"
+			   AllowsTransparency="True">
+			<Border BorderThickness="1">
+				<Border.BorderBrush>
+					<SolidColorBrush Color="{StaticResource ToolbarBackgroundDarkColor}"/>
+				</Border.BorderBrush>
+				<ContentControl Content="{Binding PopupContent, ElementName=control}"/>
+				<Border.Background>
+					<SolidColorBrush Color="{StaticResource ToolbarBackgroundMediumColor}"/>
+				</Border.Background>
+			</Border>
 		</Popup>
 	</StackPanel>
 </UserControl>

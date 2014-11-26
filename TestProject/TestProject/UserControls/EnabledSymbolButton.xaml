@@ -17,7 +17,13 @@
 					<SolidColorBrush Color="Transparent" />
 				</Border.BorderBrush>
 				<Image Name="Symbol" 
-					   VerticalAlignment="Bottom"/>
+					   VerticalAlignment="Bottom">
+					<Image.Effect>
+						<DropShadowEffect BlurRadius="2"
+										  ShadowDepth="0"
+										  Color="#FFFF"/>
+					</Image.Effect>
+				</Image>
 				<VisualStateManager.VisualStateGroups>
 					<VisualStateGroup x:Name="CommonStates">
 						<VisualState x:Name="Normal" />

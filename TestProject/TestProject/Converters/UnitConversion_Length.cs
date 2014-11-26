@@ -35,22 +35,22 @@ namespace TestProject.Converters
                 switch (fromUnit)
                 {
                     case "Centimeters":
-                        //toValue = ConvertFromDegrees(fromNum, toUnit);
+                        toValue = ConvertFromCentimeters(fromNum, toUnit);
                         break;
                     case "Feet":
-                        //toValue = ConvertFromRadians(fromNum, toUnit);
+                        toValue = ConvertFromFeet(fromNum, toUnit);
                         break;
                     case "Inches":
-                        //toValue = ConvertFromGradians(fromNum, toUnit);
+                        toValue = ConvertFromInches(fromNum, toUnit);
                         break;
                     case "Kilometers":
-                        //toValue = ConvertFromGradians(fromNum, toUnit);
+                        toValue = ConvertFromKilometers(fromNum, toUnit);
                         break;
                     case "Meters":
-                        //toValue = ConvertFromGradians(fromNum, toUnit);
+                        toValue = ConvertFromMeters(fromNum, toUnit);
                         break;
                     case "Miles":
-                        //toValue = ConvertFromGradians(fromNum, toUnit);
+                        toValue = ConvertFromMiles(fromNum, toUnit);
                         break;
                     case "Milimeters":
                         //toValue = ConvertFromGradians(fromNum, toUnit);
@@ -130,30 +130,195 @@ namespace TestProject.Converters
                     toVal = feet;
                     break;
                 case "Inches":
-
+                    toVal = feet * 12.0f;
                     break;
                 case "Kilometers":
-
+                    toVal = feet * 0.0003048f;
                     break;
                 case "Meters":
-
+                    toVal = feet * 0.3048f;
                     break;
                 case "Miles":
-
+                    toVal = feet * 0.000189394f;
                     break;
                 case "Milimeters":
-
+                    toVal = feet * 304.8f;
                     break;
                 case "Nanometers":
-
+                    toVal = feet * 304800000.0f;
                     break;
                 case "PICA":
-
+                    toVal = feet * 72.27f;
                     break;
                 case "Yard":
-
+                    toVal = feet / 3.0f;
                     break;
             }
+            returnString = "" + toVal;
+            return returnString;
+        }
+
+        private string ConvertFromInches(float inches, string toUnit)
+        {
+            string returnString = "";
+            float toVal = inches;
+            switch (toUnit)
+            {
+                case "Centimeters":
+                    toVal = inches * 2.54f;
+                    break;
+                case "Feet":
+                    toVal = inches / 12.0f;
+                    break;
+                case "Inches":
+                    toVal = inches;
+                    break;
+                case "Kilometers":
+                    toVal = inches * 0.0000254f;
+                    break;
+                case "Meters":
+                    toVal = inches * 0.0254f;
+                    break;
+                case "Miles":
+                    toVal = inches * 0.000015783f;
+                    break;
+                case "Milimeters":
+                    toVal = inches * 25.4f;
+                    break;
+                case "Nanometers":
+                    toVal = inches * 25400000.0f;
+                    break;
+                case "PICA":
+                    toVal = inches * 6.0f;
+                    break;
+                case "Yard":
+                    toVal = inches * 0.0277778f;
+                    break;
+            }
+            returnString = "" + toVal;
+            return returnString;
+        }
+
+        private string ConvertFromKilometers(float kilometers, string toUnit)
+        {
+            string returnString = "";
+            float toVal = kilometers;
+            switch (toUnit)
+            {
+                case "Centimeters":
+                    toVal = kilometers * 100000.0f;
+                    break;
+                case "Feet":
+                    toVal = kilometers * 3280.84f;
+                    break;
+                case "Inches":
+                    toVal = kilometers * 39370.1f;
+                    break;
+                case "Kilometers":
+                    toVal = kilometers;
+                    break;
+                case "Meters":
+                    toVal = kilometers * 1000.0f;
+                    break;
+                case "Miles":
+                    toVal = kilometers * 0.621371f;
+                    break;
+                case "Milimeters":
+                    toVal = kilometers * 1000000.0f;
+                    break;
+                case "Nanometers":
+                    toVal = kilometers * 1000000000000.0f;
+                    break;
+                case "PICA":
+                    toVal = kilometers * 237106.30158f;
+                    break;
+                case "Yard":
+                    toVal = kilometers * 1093.61f;
+                    break;
+            }
+            returnString = "" + toVal;
+            return returnString;
+        }
+
+        private string ConvertFromMeters(float meters, string toUnit)
+        {
+            string returnString = "";
+            float toVal = meters;
+            switch (toUnit)
+            {
+                case "Centimeters":
+                    toVal = meters * 100.0f;
+                    break;
+                case "Feet":
+                    toVal = meters * 3.28084f;
+                    break;
+                case "Inches":
+                    toVal = meters * 39.3701f;
+                    break;
+                case "Kilometers":
+                    toVal = meters * 0.001f;
+                    break;
+                case "Meters":
+                    toVal = meters;
+                    break;
+                case "Miles":
+                    toVal = meters * 0.000621371f;
+                    break;
+                case "Milimeters":
+                    toVal = meters * 1000.0f;
+                    break;
+                case "Nanometers":
+                    toVal = meters * 1000000000.0f;
+                    break;
+                case "PICA":
+                    toVal = meters * 237.10630158f;
+                    break;
+                case "Yard":
+                    toVal = meters * 1.09361f;
+                    break;
+            }
+            returnString = "" + toVal;
+            return returnString;
+        }
+
+        private string ConvertFromMiles(float miles, string toUnit)
+        {
+            string returnString = "";
+            float toVal = miles;
+            switch (toUnit)
+            {
+                case "Centimeters":
+                    toVal = miles * 160934.0f;
+                    break;
+                case "Feet":
+                    toVal = miles * 5280.0f;
+                    break;
+                case "Inches":
+                    toVal = miles * 63360.0f;
+                    break;
+                case "Kilometers":
+                    toVal = miles * 1.60934f;
+                    break;
+                case "Meters":
+                    toVal = miles * 1609.34f;
+                    break;
+                case "Miles":
+                    toVal = miles;
+                    break;
+                case "Milimeters":
+                    toVal = miles * 1609000.0f;
+                    break;
+                case "Nanometers":
+                    toVal = miles * 1609344000000.0f;
+                    break;
+                case "PICA":
+                    toVal = miles * 381585.6038f;
+                    break;
+                case "Yard":
+                    toVal = miles * 1760.0f;
+                    break;
+            }
+            returnString = "" + toVal;
             return returnString;
         }
 

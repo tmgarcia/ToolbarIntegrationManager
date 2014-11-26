@@ -10,5 +10,8 @@ namespace TestProject.Models
     {
         void Activate();
         void Deactivate();
+        void ReorientHorizontal();
+        void ReorientVertical();
+        void Collapse();
     }
 }

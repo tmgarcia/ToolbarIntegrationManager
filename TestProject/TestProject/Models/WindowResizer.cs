@@ -50,13 +50,13 @@ namespace TestProject.Models
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
         {
-            Debug.WriteLine("WndProc messages: " + msg.ToString());
+            //Debug.WriteLine("WndProc messages: " + msg.ToString());
             //
             // Check incoming window system messages
             //
             if (msg == WM_SYSCOMMAND)
             {
-                Debug.WriteLine("WndProc messages: " + msg.ToString());
+                //Debug.WriteLine("WndProc messages: " + msg.ToString());
             }
 
             return IntPtr.Zero;

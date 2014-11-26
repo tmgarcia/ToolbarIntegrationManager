@@ -102,106 +102,106 @@
     <Compile Include="Toolbars\DrawToolbar.cs" />
     <Compile Include="Toolbars\MeasureToolbar.cs" />
     <Compile Include="Toolbars\NotesToolbar.cs" />
-    <Compile Include="Tools\Colors_ColorDisplay.xaml.cs">
+    <Compile Include="Tools\Colors\Colors_ColorDisplay.xaml.cs">
       <DependentUpon>Colors_ColorDisplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Colors_Eyedropper.xaml.cs">
+    <Compile Include="Tools\Colors\Colors_Eyedropper.xaml.cs">
       <DependentUpon>Colors_Eyedropper.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Colors_Sliders.xaml.cs">
+    <Compile Include="Tools\Colors\Colors_Sliders.xaml.cs">
       <DependentUpon>Colors_Sliders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Colors_Swatches.xaml.cs">
+    <Compile Include="Tools\Colors\Colors_Swatches.xaml.cs">
       <DependentUpon>Colors_Swatches.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Colors_ValuesDisplay.xaml.cs">
+    <Compile Include="Tools\Colors\Colors_ValuesDisplay.xaml.cs">
       <DependentUpon>Colors_ValuesDisplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Conversion_Ascii.xaml.cs">
+    <Compile Include="Tools\Conversion\Conversion_Ascii.xaml.cs">
       <DependentUpon>Conversion_Ascii.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Conversion_Bases.xaml.cs">
+    <Compile Include="Tools\Conversion\Conversion_Bases.xaml.cs">
       <DependentUpon>Conversion_Bases.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Conversion_Calculator.xaml.cs">
+    <Compile Include="Tools\Conversion\Conversion_Calculator.xaml.cs">
       <DependentUpon>Conversion_Calculator.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Conversion_Unicode.xaml.cs">
+    <Compile Include="Tools\Conversion\Conversion_Unicode.xaml.cs">
       <DependentUpon>Conversion_Unicode.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Conversion_Units.xaml.cs">
+    <Compile Include="Tools\Conversion\Conversion_Units.xaml.cs">
       <DependentUpon>Conversion_Units.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Conversion_UnitsInner.xaml.cs">
+    <Compile Include="Tools\Conversion\Conversion_UnitsInner.xaml.cs">
       <DependentUpon>Conversion_UnitsInner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Clear.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Clear.xaml.cs">
       <DependentUpon>Drawing_Clear.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_DynamicRenderer.cs" />
-    <Compile Include="Tools\Drawing_Eraser.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_DynamicRenderer.cs" />
+    <Compile Include="Tools\Drawing\Drawing_Eraser.xaml.cs">
       <DependentUpon>Drawing_Eraser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_FillSelect.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_FillSelect.xaml.cs">
       <DependentUpon>Drawing_FillSelect.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Highlighter.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Highlighter.xaml.cs">
       <DependentUpon>Drawing_Highlighter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_InkCanvas.cs" />
-    <Compile Include="Tools\Drawing_Lines.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_InkCanvas.cs" />
+    <Compile Include="Tools\Drawing\Drawing_Lines.xaml.cs">
       <DependentUpon>Drawing_Lines.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Overlay.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Overlay.xaml.cs">
       <DependentUpon>Drawing_Overlay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Pen.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Pen.xaml.cs">
       <DependentUpon>Drawing_Pen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_ReturnCursor.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_ReturnCursor.xaml.cs">
       <DependentUpon>Drawing_ReturnCursor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Save.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Save.xaml.cs">
       <DependentUpon>Drawing_Save.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Shapes.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Shapes.xaml.cs">
       <DependentUpon>Drawing_Shapes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Stroke.cs" />
-    <Compile Include="Tools\Drawing_StrokeSelect.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Stroke.cs" />
+    <Compile Include="Tools\Drawing\Drawing_StrokeSelect.xaml.cs">
       <DependentUpon>Drawing_StrokeSelect.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_StrokeWeight.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_StrokeWeight.xaml.cs">
       <DependentUpon>Drawing_StrokeWeight.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Drawing_Text.xaml.cs">
+    <Compile Include="Tools\Drawing\Drawing_Text.xaml.cs">
       <DependentUpon>Drawing_Text.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Measure_BoxSelector.xaml.cs">
+    <Compile Include="Tools\Measure\Measure_BoxSelector.xaml.cs">
       <DependentUpon>Measure_BoxSelector.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Notes_Clipboard.xaml.cs">
+    <Compile Include="Tools\Notes\Notes_Clipboard.xaml.cs">
       <DependentUpon>Notes_Clipboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Notes_ClipboardInner.xaml.cs">
+    <Compile Include="Tools\Notes\Notes_ClipboardInner.xaml.cs">
       <DependentUpon>Notes_ClipboardInner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Measure_GridDisplay.xaml.cs">
+    <Compile Include="Tools\Measure\Measure_GridDisplay.xaml.cs">
       <DependentUpon>Measure_GridDisplay.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Measure_HorizontalRuler.xaml.cs">
+    <Compile Include="Tools\Measure\Measure_HorizontalRuler.xaml.cs">
       <DependentUpon>Measure_HorizontalRuler.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Measure_MouseCoords.xaml.cs">
+    <Compile Include="Tools\Measure\Measure_MouseCoords.xaml.cs">
       <DependentUpon>Measure_MouseCoords.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Measure_VerticalRuler.xaml.cs">
+    <Compile Include="Tools\Measure\Measure_VerticalRuler.xaml.cs">
       <DependentUpon>Measure_VerticalRuler.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Notes_QuickNotes.xaml.cs">
+    <Compile Include="Tools\Notes\Notes_QuickNotes.xaml.cs">
       <DependentUpon>Notes_QuickNotes.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tools\Notes_ScreenClipping.xaml.cs">
+    <Compile Include="Tools\Notes\Notes_ScreenClipping.xaml.cs">
       <DependentUpon>Notes_ScreenClipping.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
@@ -278,135 +278,135 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Colors_ColorDisplay.xaml">
+    <Page Include="Tools\Colors\Colors_ColorDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Colors_Eyedropper.xaml">
+    <Page Include="Tools\Colors\Colors_Eyedropper.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Colors_Sliders.xaml">
+    <Page Include="Tools\Colors\Colors_Sliders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Colors_Swatches.xaml">
+    <Page Include="Tools\Colors\Colors_Swatches.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Colors_ValuesDisplay.xaml">
+    <Page Include="Tools\Colors\Colors_ValuesDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Conversion_Ascii.xaml">
+    <Page Include="Tools\Conversion\Conversion_Ascii.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Conversion_Bases.xaml">
+    <Page Include="Tools\Conversion\Conversion_Bases.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Conversion_Calculator.xaml">
+    <Page Include="Tools\Conversion\Conversion_Calculator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Conversion_Unicode.xaml">
+    <Page Include="Tools\Conversion\Conversion_Unicode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Conversion_Units.xaml">
+    <Page Include="Tools\Conversion\Conversion_Units.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Conversion_UnitsInner.xaml">
+    <Page Include="Tools\Conversion\Conversion_UnitsInner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Clear.xaml">
+    <Page Include="Tools\Drawing\Drawing_Clear.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Eraser.xaml">
+    <Page Include="Tools\Drawing\Drawing_Eraser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_FillSelect.xaml">
+    <Page Include="Tools\Drawing\Drawing_FillSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Highlighter.xaml">
+    <Page Include="Tools\Drawing\Drawing_Highlighter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Lines.xaml">
+    <Page Include="Tools\Drawing\Drawing_Lines.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Overlay.xaml">
+    <Page Include="Tools\Drawing\Drawing_Overlay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Pen.xaml">
+    <Page Include="Tools\Drawing\Drawing_Pen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_ReturnCursor.xaml">
+    <Page Include="Tools\Drawing\Drawing_ReturnCursor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Save.xaml">
+    <Page Include="Tools\Drawing\Drawing_Save.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Shapes.xaml">
+    <Page Include="Tools\Drawing\Drawing_Shapes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_StrokeSelect.xaml">
+    <Page Include="Tools\Drawing\Drawing_StrokeSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_StrokeWeight.xaml">
+    <Page Include="Tools\Drawing\Drawing_StrokeWeight.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Drawing_Text.xaml">
+    <Page Include="Tools\Drawing\Drawing_Text.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Measure_BoxSelector.xaml">
+    <Page Include="Tools\Measure\Measure_BoxSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Notes_Clipboard.xaml">
+    <Page Include="Tools\Notes\Notes_Clipboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Notes_ClipboardInner.xaml">
+    <Page Include="Tools\Notes\Notes_ClipboardInner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Measure_GridDisplay.xaml">
+    <Page Include="Tools\Measure\Measure_GridDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Measure_HorizontalRuler.xaml">
+    <Page Include="Tools\Measure\Measure_HorizontalRuler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Measure_MouseCoords.xaml">
+    <Page Include="Tools\Measure\Measure_MouseCoords.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Measure_VerticalRuler.xaml">
+    <Page Include="Tools\Measure\Measure_VerticalRuler.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Notes_QuickNotes.xaml">
+    <Page Include="Tools\Notes\Notes_QuickNotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tools\Notes_ScreenClipping.xaml">
+    <Page Include="Tools\Notes\Notes_ScreenClipping.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -38,28 +38,35 @@ namespace TestProject.Converters
             string ret = "";
             int ascii = 0;
             char c = ' ';
-            switch ((string)parameter)
+            try
             {
-                case "bin":
-                    ascii = System.Convert.ToInt32(val, 2);
-                    c  = System.Convert.ToChar(ascii);
-                    break;
-                case "dec":
-                    ascii = System.Convert.ToInt32(val, 10);
-                    c  = System.Convert.ToChar(ascii);
-                    break;
-                case "hex":
-                    ascii = System.Convert.ToInt32(val, 16);
-                    c  = System.Convert.ToChar(ascii);
-                    break;
+                switch ((string)parameter)
+                {
+                    case "bin":
+                        ascii = System.Convert.ToInt32(val, 2);
+                        c = System.Convert.ToChar(ascii);
+                        break;
+                    case "dec":
+                        ascii = System.Convert.ToInt32(val, 10);
+                        c = System.Convert.ToChar(ascii);
+                        break;
+                    case "hex":
+                        ascii = System.Convert.ToInt32(val, 16);
+                        c = System.Convert.ToChar(ascii);
+                        break;
+                }
+                if (char.IsControl(c))
+                {
+                    ret = "CTRL";
+                }
+                else
+                {
+                    ret += c;
+                }
             }
-            if (char.IsControl(c))
+            catch (System.OverflowException)
             {
-                ret = "CTRL";
-            }
-            else
-            {
-                ret += c;
+                ret = "NA";
             }
             return ret;
         }

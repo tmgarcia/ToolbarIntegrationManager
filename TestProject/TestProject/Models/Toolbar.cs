@@ -74,7 +74,10 @@ namespace TestProject.Models
         }
         protected virtual void PostDisplaySetup()
         {
-
+            foreach (Tool t in tools)
+            {
+                t.OrientHorizontal();
+            }
         }
         protected void launchIcon_Click(object sender, RoutedEventArgs e)
         {

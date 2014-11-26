@@ -33,17 +33,17 @@ namespace TestProject.Toolbars
         private void SetupTools()
         {
             Conversion_Ascii ascii = new Conversion_Ascii();
-            Conversion_Unicode uni = new Conversion_Unicode();
+            //Conversion_Unicode uni = new Conversion_Unicode();
             Conversion_Bases bases = new Conversion_Bases();
             Conversion_Units units = new Conversion_Units();
             Conversion_Calculator calc = new Conversion_Calculator();
             Tool a = new Tool(ascii);
-            Tool u = new Tool(uni);
+            //Tool u = new Tool(uni);
             Tool b = new Tool(bases);
             Tool un = new Tool(units);
             Tool c = new Tool(calc);
             tools.Add(a);
-            tools.Add(u);
+            //tools.Add(u);
             tools.Add(b);
             tools.Add(un);
             tools.Add(c);

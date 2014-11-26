@@ -704,6 +704,43 @@
 					</GeometryDrawing>
 				</DrawingImage.Drawing>
 			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolCycleArrows">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 21.0973,9.84637L 8.7015,9.84637C 8.7015,9.84637 6.97135,9.76434 6.43066,10.2292C 5.74316,10.8203 5.84668,12.0208 5.84668,12.0208L 5.84668,15.4792L 0.0139974,15.4792L 0.0139974,9.84637C 0.0139974,9.84637 -0.236003,7.58331 1.389,6.14581C 3.12207,4.61328 5.84733,4.9375 5.84733,4.9375L 21.0973,4.9375L 21.0973,0L 33.9307,7.10284L 21.0973,14.6667L 21.0973,9.84637 Z
+															M 12.8333,18.2995L 25.2292,18.2995C 25.2292,18.2995 26.9593,18.3815 27.5,17.9167C 28.1875,17.3255 28.084,16.125 28.084,16.125L 28.084,12.6667L 33.9167,12.6667L 33.9167,18.2995C 33.9167,18.2995 34.1667,20.5625 32.5417,22C 30.8086,23.5325 28.0833,23.2083 28.0833,23.2083L 12.8333,23.2083L 12.8333,28.1458L 0,21.043L 12.8333,13.4792L 12.8333,18.2995 Z  "/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
+
+			<DrawingImage x:Key="SymbolScreenClipping">
+				<DrawingImage.Drawing>
+					<GeometryDrawing>
+						<GeometryDrawing.Brush>
+							<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />
+						</GeometryDrawing.Brush>
+						<GeometryDrawing.Geometry>
+							<PathGeometry Figures="M 416.344,305.01L 416.344,308.344L 413.01,308.344 Z
+												  M 390.716,310.344L 383.284,310.344L 383.284,306.344L 390.716,306.344L 390.716,310.344 Z M 375.853,310.344L 368.421,310.344L 368.421,306.344L 375.853,306.344L 375.853,310.344 Z M 405.579,310.344L 398.147,310.344L 398.147,306.344L 405.579,306.344L 405.579,310.344 Z 
+												  M 360.99,308.344L 357.656,308.344L 357.656,305.01 Z
+												  M 355.656,282.715L 355.656,275.283L 359.656,275.283L 359.656,282.715L 355.656,282.715 Z M 355.656,267.852L 355.656,260.42L 359.656,260.42L 359.656,267.852L 355.656,267.852 Z M 355.656,297.578L 355.656,290.147L 359.656,290.147L 359.656,297.578L 355.656,297.578 Z 
+												  M 357.656,252.99L 357.656,249.656L 360.99,249.656 Z
+												  M 383.284,247.656L 390.716,247.656L 390.716,251.656L 383.284,251.656L 383.284,247.656 Z M 398.147,247.656L 405.579,247.656L 405.579,251.656L 398.147,251.656L 398.147,247.656 Z M 368.421,247.656L 375.853,247.656L 375.853,251.656L 368.421,251.656L 368.421,247.656 Z
+												  M 413.01,249.656L 416.344,249.656L 416.344,252.99 Z
+												  M 418.344,275.285L 418.344,282.717L 414.344,282.717L 414.344,275.285L 418.344,275.285 Z M 418.344,290.148L 418.344,297.58L 414.344,297.58L 414.344,290.148L 418.344,290.148 Z M 418.344,260.422L 418.344,267.853L 414.344,267.853L 414.344,260.422L 418.344,260.422 Z 
+												  M 414.177,291.01 h4.33331 v34.667 H414.177 Z
+												  M 399.01,306.177 h34.6668 v4.33331 H399.01"
+												  FillRule="Nonzero"/>
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingImage.Drawing>
+			</DrawingImage>
 			<!--<SolidColorBrush Color="{StaticResource SymbolMediumColor}" />-->
 
 
@@ -1573,6 +1610,81 @@
 				</Setter>
 			</Style>
 
+			<Style x:Key="BasicButtonBase"
+					TargetType="{x:Type ButtonBase}">
+				<Setter Property="SnapsToDevicePixels" Value="True" />
+				<Setter Property="OverridesDefaultStyle" Value="True" />
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type ButtonBase}">
+							<Border Name="Border"
+								BorderThickness="1">
+								<Border.Background>
+									<LinearGradientBrush StartPoint="0,0"
+													 EndPoint="0,1">
+										<GradientStop Color="{StaticResource ToolbarContentLightColor}" Offset="0"/>
+										<GradientStop Color="{StaticResource ToolbarContentLightColor}" Offset="1"/>
+									</LinearGradientBrush>
+								</Border.Background>
+								<Border.BorderBrush>
+									<SolidColorBrush Color="{StaticResource ToolbarContentBorderMediumColor}"/>
+								</Border.BorderBrush>
+								<VisualStateManager.VisualStateGroups>
+									<VisualStateGroup x:Name="CommonStates">
+										<VisualState x:Name="Normal" />
+										<VisualState x:Name="Pressed">
+											<Storyboard>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+													<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+													<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderDarkColor}" />
+												</ColorAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="MouseOver">
+											<Storyboard>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+													<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+													<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+										<VisualState x:Name="Disabled" >
+											<Storyboard>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)">
+													<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+												<ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)">
+													<EasingColorKeyFrame KeyTime="0" Value="{DynamicResource ToolbarContentBorderMediumColor}" />
+												</ColorAnimationUsingKeyFrames>
+											</Storyboard>
+										</VisualState>
+									</VisualStateGroup>
+								</VisualStateManager.VisualStateGroups>
+								<ContentPresenter Margin="1"
+											  HorizontalAlignment="Center"
+											  VerticalAlignment="Center" 
+											  RecognizesAccessKey="True"/>
+							</Border>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style x:Key="BasicButton"
+					BasedOn="{StaticResource BasicButtonBase}"
+					TargetType="{x:Type Button}">
+			</Style>
+			
+			
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

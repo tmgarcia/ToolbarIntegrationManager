@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="TestProject.Tools.Drawing_Shapes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:uc="clr-namespace:TestProject.UserControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <Grid>
+		<uc:BaseTool_Expandable x:Name="expandable">
+			<uc:BaseTool_Expandable.PopupContent>
+				<ListBox Width="40">
+					<ListBox.Background>
+						<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
+					</ListBox.Background>
+					<ListBoxItem Selected="Square_Selected"
+								 HorizontalContentAlignment="Center"
+								 Margin="0,2"
+								 ToolTip="Rectangle">
+						<Image Source="{StaticResource SymbolSquare}"
+							   Width="20"
+							   HorizontalAlignment="Center"/>
+					</ListBoxItem>
+					<ListBoxItem Selected="Circle_Selected"
+								 HorizontalContentAlignment="Center"
+								 Margin="0,2"
+								 ToolTip="Circle">
+						<Image Source="{StaticResource SymbolCircle}"
+							   Width="20"
+							   HorizontalAlignment="Center"/>
+					</ListBoxItem>
+					<ListBoxItem Selected="Triangle_Selected"
+								 HorizontalContentAlignment="Center"
+								 Margin="0,2"
+								 ToolTip="Triangle">
+						<Image Source="{StaticResource SymbolTriangle}"
+							   Width="20"
+							   HorizontalAlignment="Center"/>
+					</ListBoxItem>
+				</ListBox>
+			</uc:BaseTool_Expandable.PopupContent>
+		</uc:BaseTool_Expandable>
+	</Grid>
+</UserControl>

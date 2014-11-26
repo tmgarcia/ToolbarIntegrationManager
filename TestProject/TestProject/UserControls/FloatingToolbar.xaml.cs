@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestProject.Enums;
+using TestProject.Models;
 
 namespace TestProject.UserControls
 {
@@ -87,11 +88,13 @@ namespace TestProject.UserControls
             {
                 orientation = DisplayOrientations.Vertical;
                 orientVertical();
+                ReorientTools();
             }
             else
             {
                 orientation = DisplayOrientations.Horizontal;
                 orientHorizontal();
+                ReorientTools();
             }
         }
 
@@ -110,6 +113,17 @@ namespace TestProject.UserControls
             else
             {
                 toolbarControl.Height = Double.NaN;
+            }
+
+            if (this.Items.Count > 0)
+            {
+                foreach (var item in this.Items)
+                {
+                    if (((IDeactivatableTool)item) != null)
+                    {
+                        ((IDeactivatableTool)item).Collapse();
+                    }
+                }
             }
         }
         private void expand()
@@ -211,6 +225,40 @@ namespace TestProject.UserControls
             LinearGradientBrush BorderBackgroundBrush = (LinearGradientBrush)(toolbarControl.Template.FindName("BorderBackgroundBrush", toolbarControl));
             BorderBackgroundBrush.StartPoint = Constants.HorizontalGradientStart;
             BorderBackgroundBrush.EndPoint = Constants.HorizontalGradientEnd;
+        }
+
+        private void ReorientTools()
+        {
+            if (this.Items.Count > 0)
+            {
+                foreach (var item in this.Items)
+                {
+                    if (((IDeactivatableTool)item) != null)
+                    {
+                        if (orientation == DisplayOrientations.Vertical)
+                        {
+                            ((IDeactivatableTool)item).ReorientVertical();
+                        }
+                        else
+                        {
+                            ((IDeactivatableTool)item).ReorientHorizontal();
+                        }
+                    }
+                }
+            }
+        }
+        private void CollapesTools()
+        {
+            if (this.Items.Count > 0)
+            {
+                foreach (var item in this.Items)
+                {
+                    if (((IDeactivatableTool)item) != null)
+                    {
+                        ((IDeactivatableTool)item).Collapse();
+                    }
+                }
+            }
         }
     }
 }
