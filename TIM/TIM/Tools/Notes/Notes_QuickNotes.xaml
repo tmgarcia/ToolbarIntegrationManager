@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="TIM.Tools.Notes_QuickNotes"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+			 xmlns:con="clr-namespace:TIM.Converters"
+			 xmlns:uc="clr-namespace:TIM.UserControls">
+	<uc:BaseTool_Expandable x:Name="expandable">
+		<uc:BaseTool_Expandable.PopupContent>
+			<StackPanel Width="150">
+				<StackPanel.Background>
+					<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
+				</StackPanel.Background>
+				<Grid Height="20"
+					  Width="145">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition/>
+						<ColumnDefinition Width="3*"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<Button Content="+"
+							Grid.Column="0"
+							Click="AddButton_Click"
+							Style="{DynamicResource ResourceKey=BasicButton}"/>
+					<Button Content="[]"
+							Grid.Column="2"
+							Click="DeleteButton_Click"
+							Style="{DynamicResource ResourceKey=BasicButton}"/>
+				</Grid>
+				<ListBox MouseDoubleClick="NoteDisplay_MouseDoubleClick"
+						 MinHeight="50">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<Label Content="{Binding Path=Snippet}"
+								   FontSize="8" />
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</StackPanel>
+		</uc:BaseTool_Expandable.PopupContent>
+	</uc:BaseTool_Expandable>
+</UserControl>

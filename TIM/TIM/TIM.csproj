@@ -1,0 +1,757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69930E9B-769E-414C-A9BE-EC020B4C5FE1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TIM</RootNamespace>
+    <AssemblyName>TIM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://ftp.gametaylor.com/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.gametaylor.com/Files/</InstallUrl>
+    <ProductName>TIM</ProductName>
+    <PublisherName>Taylor Garcia</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>TIM.htm</WebPage>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>27731C1156EE05F49DC97808B2CDE85F345B7068</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TestProject_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Converters\ASCIIConverter.cs" />
+    <Compile Include="Converters\ColorToBrushConverter.cs" />
+    <Compile Include="Converters\NumberFormatToString.cs" />
+    <Compile Include="Converters\ColorToDisplayHSBA.cs" />
+    <Compile Include="Converters\ColorToHSBASliderGradients.cs" />
+    <Compile Include="Converters\ColorToHSLASliderGradients.cs" />
+    <Compile Include="Converters\ColorToRGBASliderGradients.cs" />
+    <Compile Include="Converters\HSBAToColor.cs" />
+    <Compile Include="Converters\HSLAToColor.cs" />
+    <Compile Include="Converters\RGBAToColor.cs" />
+    <Compile Include="Converters\UnitConversion_Angles.cs" />
+    <Compile Include="Converters\UnitConversion_Length.cs" />
+    <Compile Include="Enums\CommandButtonTypes.cs" />
+    <Compile Include="Enums\DisplayOrientations.cs" />
+    <Compile Include="Enums\DisplayStates.cs" />
+    <Compile Include="Enums\DrawingStrokeType.cs" />
+    <Compile Include="Models\CommandButton.cs" />
+    <Compile Include="Models\CustomCursors.cs" />
+    <Compile Include="Models\HSBAColor.cs" />
+    <Compile Include="Models\HSBAColorWrapper.cs" />
+    <Compile Include="Models\HSLAColor.cs" />
+    <Compile Include="Models\IDeactivatableTool.cs" />
+    <Compile Include="Models\ImageStates.cs" />
+    <Compile Include="Models\QuickNote.cs" />
+    <Compile Include="Models\QuickNoteCollection.cs" />
+    <Compile Include="Models\RGBAColor.cs" />
+    <Compile Include="Models\ScreenClipInk_DynamicRenderer.cs" />
+    <Compile Include="Models\ScreenClipInk_InkCanvas.cs" />
+    <Compile Include="Models\ToolbarIcon.cs" />
+    <Compile Include="Models\Tool.cs" />
+    <Compile Include="Models\Toolbar.cs" />
+    <Compile Include="Models\ToolbarIconCommandButtons.cs" />
+    <Compile Include="Models\WindowResizer.cs" />
+    <Compile Include="ScreenCapturer.cs" />
+    <Compile Include="TestControl.xaml.cs">
+      <DependentUpon>TestControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestWindow1.xaml.cs">
+      <DependentUpon>TestWindow1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Toolbars\ColorToolbar.cs" />
+    <Compile Include="Toolbars\ConversionToolbar.cs" />
+    <Compile Include="Toolbars\DrawToolbar.cs" />
+    <Compile Include="Toolbars\MeasureToolbar.cs" />
+    <Compile Include="Toolbars\NotesToolbar.cs" />
+    <Compile Include="Tools\Colors\Colors_ColorDisplay.xaml.cs">
+      <DependentUpon>Colors_ColorDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors\Colors_Eyedropper.xaml.cs">
+      <DependentUpon>Colors_Eyedropper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors\Colors_Sliders.xaml.cs">
+      <DependentUpon>Colors_Sliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors\Colors_Swatches.xaml.cs">
+      <DependentUpon>Colors_Swatches.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Colors\Colors_ValuesDisplay.xaml.cs">
+      <DependentUpon>Colors_ValuesDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion\Conversion_Ascii.xaml.cs">
+      <DependentUpon>Conversion_Ascii.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion\Conversion_Bases.xaml.cs">
+      <DependentUpon>Conversion_Bases.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion\Conversion_Calculator.xaml.cs">
+      <DependentUpon>Conversion_Calculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion\Conversion_Unicode.xaml.cs">
+      <DependentUpon>Conversion_Unicode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion\Conversion_Units.xaml.cs">
+      <DependentUpon>Conversion_Units.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Conversion\Conversion_UnitsInner.xaml.cs">
+      <DependentUpon>Conversion_UnitsInner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Clear.xaml.cs">
+      <DependentUpon>Drawing_Clear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_DynamicRenderer.cs" />
+    <Compile Include="Tools\Drawing\Drawing_Eraser.xaml.cs">
+      <DependentUpon>Drawing_Eraser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_FillSelect.xaml.cs">
+      <DependentUpon>Drawing_FillSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Highlighter.xaml.cs">
+      <DependentUpon>Drawing_Highlighter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_InkCanvas.cs" />
+    <Compile Include="Tools\Drawing\Drawing_Lines.xaml.cs">
+      <DependentUpon>Drawing_Lines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Overlay.xaml.cs">
+      <DependentUpon>Drawing_Overlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Pen.xaml.cs">
+      <DependentUpon>Drawing_Pen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_ReturnCursor.xaml.cs">
+      <DependentUpon>Drawing_ReturnCursor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Save.xaml.cs">
+      <DependentUpon>Drawing_Save.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Shapes.xaml.cs">
+      <DependentUpon>Drawing_Shapes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Stroke.cs" />
+    <Compile Include="Tools\Drawing\Drawing_StrokeSelect.xaml.cs">
+      <DependentUpon>Drawing_StrokeSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_StrokeWeight.xaml.cs">
+      <DependentUpon>Drawing_StrokeWeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Drawing\Drawing_Text.xaml.cs">
+      <DependentUpon>Drawing_Text.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure\Measure_BoxSelector.xaml.cs">
+      <DependentUpon>Measure_BoxSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Notes\Notes_Clipboard.xaml.cs">
+      <DependentUpon>Notes_Clipboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Notes\Notes_ClipboardInner.xaml.cs">
+      <DependentUpon>Notes_ClipboardInner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure\Measure_GridDisplay.xaml.cs">
+      <DependentUpon>Measure_GridDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure\Measure_HorizontalRuler.xaml.cs">
+      <DependentUpon>Measure_HorizontalRuler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure\Measure_MouseCoords.xaml.cs">
+      <DependentUpon>Measure_MouseCoords.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Measure\Measure_VerticalRuler.xaml.cs">
+      <DependentUpon>Measure_VerticalRuler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Notes\Notes_QuickNotes.xaml.cs">
+      <DependentUpon>Notes_QuickNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Notes\Notes_ScreenClipping.xaml.cs">
+      <DependentUpon>Notes_ScreenClipping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ActiveInactiveImageButton.xaml.cs">
+      <DependentUpon>ActiveInactiveImageButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Calculator.xaml.cs">
+      <DependentUpon>Calculator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClipboardDataObjectDisplay.xaml.cs">
+      <DependentUpon>ClipboardDataObjectDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EnabledSymbolButton.xaml.cs">
+      <DependentUpon>EnabledSymbolButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseTool_Expandable.xaml.cs">
+      <DependentUpon>BaseTool_Expandable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BaseTool_Toggle.xaml.cs">
+      <DependentUpon>BaseTool_Toggle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EyeDropOverlay.xaml.cs">
+      <DependentUpon>EyeDropOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FloatingSelectionBox.xaml.cs">
+      <DependentUpon>FloatingSelectionBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FloatingToolbar.xaml.cs">
+      <DependentUpon>FloatingToolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HSBASliders.xaml.cs">
+      <DependentUpon>HSBASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HSLASliders.xaml.cs">
+      <DependentUpon>HSLASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MeasuringOverlay.xaml.cs">
+      <DependentUpon>MeasuringOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OrientableListBox.cs" />
+    <Compile Include="UserControls\OrientableUniformGrid.cs" />
+    <Compile Include="UserControls\QuickNoteWindow.xaml.cs">
+      <DependentUpon>QuickNoteWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RGBASliders.xaml.cs">
+      <DependentUpon>RGBASliders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ScreenClippingOverlay.xaml.cs">
+      <DependentUpon>ScreenClippingOverlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThreeStateEnabledButton.xaml.cs">
+      <DependentUpon>ThreeStateEnabledButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ToolbarWindow.xaml.cs">
+      <DependentUpon>ToolbarWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Win32API\DBIConverter.cs" />
+    <Compile Include="Win32API\GDITools.cs" />
+    <Compile Include="Win32API\Win32Tools.cs" />
+    <Page Include="LauncherWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LauncherWindow.xaml.cs">
+      <DependentUpon>LauncherWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="TestControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestWindow1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors\Colors_ColorDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors\Colors_Eyedropper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors\Colors_Sliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors\Colors_Swatches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Colors\Colors_ValuesDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion\Conversion_Ascii.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion\Conversion_Bases.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion\Conversion_Calculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion\Conversion_Unicode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion\Conversion_Units.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Conversion\Conversion_UnitsInner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Clear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Eraser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_FillSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Highlighter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Lines.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Overlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Pen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_ReturnCursor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Save.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Shapes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_StrokeSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_StrokeWeight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Drawing\Drawing_Text.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure\Measure_BoxSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Notes\Notes_Clipboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Notes\Notes_ClipboardInner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure\Measure_GridDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure\Measure_HorizontalRuler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure\Measure_MouseCoords.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Measure\Measure_VerticalRuler.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Notes\Notes_QuickNotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\Notes\Notes_ScreenClipping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ActiveInactiveImageButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Calculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ClipboardDataObjectDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EnabledSymbolButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseTool_Expandable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BaseTool_Toggle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EyeDropOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FloatingSelectionBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\FloatingToolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HSBASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HSLASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\MeasuringOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\QuickNoteWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\RGBASliders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ScreenClippingOverlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ThreeStateEnabledButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ToolbarWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="TestProject_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconCloseH.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconCloseN.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconCloseP.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconMinimizeH.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconMinimizeN.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconMinimizeP.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\colorsIconActive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\colorsIconActiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\colorsIconActivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\colorsIconDisabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\colorsIconInactive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\colorsIconInactiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\colorsIconInactivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\conversionIconActive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\conversionIconActiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\conversionIconActivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\conversionIconDisabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\conversionIconInactive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\conversionIconInactiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\conversionIconInactivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\drawingIconActive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\drawingIconActiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\drawingIconActivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\drawingIconDisabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\drawingIconInactive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\drawingIconInactiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\drawingIconInactivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\launchIconActive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\launchIconActiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\launchIconActivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\launchIconDisabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\launchIconInactive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\launchIconInactiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\launchIconInactivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconActive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconActiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconActivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconDisabled.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconInactive.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconInactiveHover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ToolbarIcons\measureIconInactivePressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconHelpH.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconHelpN.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconHelpP.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreH.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreN.png" />
+    <Resource Include="Images\CommandButtons\commandButtonToolbarIconRestoreP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\toolbarIconTest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CommandButtons\toolbarClose.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\toolbarHide.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\CommandButtons\toolbarOrientation.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\launcher.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\colorsIconInToolbar.png" />
+    <Resource Include="Images\ToolbarIcons\conversionIconInToolbar.png" />
+    <Resource Include="Images\ToolbarIcons\drawingIconInToolbar.png" />
+    <Resource Include="Images\ToolbarIcons\measureIconInToolbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cursors\CursorCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cursors\CursorSquare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cursors\CursorEraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\notesIconActive.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconActiveHover.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconActivePressed.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconDisabled.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconInactive.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconInactiveHover.png" />
+    <Resource Include="Images\ToolbarIcons\notesIconInactivePressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ToolbarIcons\notesIconInToolbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

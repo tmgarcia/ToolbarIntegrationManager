@@ -1,0 +1,15 @@
+﻿<Window x:Class="TIM.UserControls.EyeDropOverlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="EyeDropOverlay"
+		ResizeMode="NoResize"
+		WindowStartupLocation="CenterScreen" WindowState="Maximized"
+		WindowStyle="None"
+		Background="#01000000"
+		MouseLeftButtonDown="Window_MouseLeftButtonDown"
+		MouseLeftButtonUp="Window_MouseLeftButtonUp"
+		AllowsTransparency="True">
+    <Grid>
+        
+    </Grid>
+</Window>

@@ -1,49 +1,0 @@
-﻿<Button x:Class="TestProject.UserControls.ActiveInactiveImageButton"
-   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	Name="buttonControl">
-	<Button.Content>
-		<x:Type TypeName="Visual"/>
-	</Button.Content>
-	<Button.Template>
-		<ControlTemplate TargetType="{x:Type Button}">
-			<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="9*"/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-				<Rectangle Grid.Row="0"						   Grid.RowSpan="2"						   Height="30"						   Width="{Binding ElementName=Normal, Path=ActualWidth, Mode=OneWay}"						   VerticalAlignment="Bottom"						   Name="Shadow">					<Rectangle.Fill>						<DrawingBrush >
-							<DrawingBrush.Drawing>
-								<GeometryDrawing>
-									<GeometryDrawing.Brush>
-										<SolidColorBrush Color="#BB000000" />
-									</GeometryDrawing.Brush>
-									<GeometryDrawing.Geometry>
-										<PathGeometry Figures="M 405.254,286.667C 405.254,292.514 400.514,297.254 394.667,297.254C 388.819,297.254 384.08,292.514 384.08,286.667C 384.08,280.819 388.819,276.079 394.667,276.079C 400.514,276.079 405.254,280.819 405.254,286.667 Z "/>
-									</GeometryDrawing.Geometry>
-								</GeometryDrawing>
-							</DrawingBrush.Drawing>
-						</DrawingBrush>					</Rectangle.Fill>					<Rectangle.Effect>						<BlurEffect Radius="20"/>					</Rectangle.Effect>				</Rectangle>
-				<Image Name="Normal" RenderOptions.BitmapScalingMode="HighQuality"/>
-				<Image Name="Hover" Visibility="Hidden" RenderOptions.BitmapScalingMode="HighQuality"/>
-				<Image Name="Pressed" Visibility="Hidden" RenderOptions.BitmapScalingMode="HighQuality"/>
-				<Image Name="Disabled" Visibility="Hidden" RenderOptions.BitmapScalingMode="HighQuality"/>
-				
-			</Grid>
-			<ControlTemplate.Triggers>
-				<Trigger Property="IsPressed" Value="True">
-					<Setter TargetName="Normal" Property="Visibility" Value="Hidden"/>
-					<Setter TargetName="Pressed" Property="Visibility" Value="Visible"/>
-				</Trigger>
-				<Trigger Property="IsMouseOver"  Value="True">
-					<Setter TargetName="Normal" Property="Visibility" Value="Hidden"/>
-					<Setter TargetName="Hover" Property="Visibility" Value="Visible"/>
-				</Trigger>
-				<Trigger Property="IsEnabled" Value="False">
-					<Setter TargetName="Normal" Property="Visibility" Value="Hidden"/>
-					<Setter TargetName="Disabled" Property="Visibility" Value="Visible"/>
-				</Trigger>
-			</ControlTemplate.Triggers>
-		</ControlTemplate>
-	</Button.Template>
-</Button>

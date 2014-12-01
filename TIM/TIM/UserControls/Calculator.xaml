@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="TIM.UserControls.Calculator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="310" Width="210">
+	<UserControl.Background>
+		<SolidColorBrush Color="{StaticResource ResourceKey=ToolbarBackgroundMediumColor}" />
+	</UserControl.Background>
+	<UserControl.Resources>
+	</UserControl.Resources>
+	<StackPanel Margin="5">
+		<TextBox Height="50"
+				 TextAlignment="Right"
+				 VerticalContentAlignment="Bottom"
+				  Name="DisplayTop"
+				 IsReadOnly="True"/>
+		<TextBox Height="50"
+				 TextAlignment="Right"
+				 TextWrapping="WrapWithOverflow"
+				 VerticalContentAlignment="Bottom"
+				 Name="DisplayBottom"
+				 IsReadOnly="True"/>
+		<Grid Height="200">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Button Grid.Column="0"
+					Grid.Row="0"
+					Content="🔙"
+					FontSize="21"
+					VerticalContentAlignment="Center"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="1"
+					Grid.Row="0"
+					Grid.ColumnSpan="2"
+					Content="Clear"
+					Click="Clear_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="2"
+					Grid.Row="1"
+					Content="9"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="1"
+					Grid.Row="1"
+					Content="8"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="0"
+					Grid.Row="1"
+					Content="7"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="2"
+					Grid.Row="2"
+					Content="6"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="1"
+					Grid.Row="2"
+					Content="5"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="0"
+					Grid.Row="2"
+					Content="4"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="2"
+					Grid.Row="3"
+					Content="3"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="1"
+					Grid.Row="3"
+					Content="2"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="0"
+					Grid.Row="3"
+					Content="1"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="0"
+					Grid.Row="4"
+					Grid.ColumnSpan="2"
+					Content="0"
+					Click="NumberButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="2"
+					Grid.Row="4"
+					Content="."
+					Click="Decimal_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="3"
+					Content="+/-"
+					Click="FlipSign_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="3"
+					Grid.Row="1"
+					Content="*"
+					Click="Operation_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="3"
+					Grid.Row="2"
+					Content="/"
+					Click="Operation_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="3"
+					Grid.Row="3"
+					Content="+"
+					Click="Operation_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="3"
+					Grid.Row="4"
+					Content="-"
+					Click="Operation_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="0"
+					Grid.Row="5"
+					Grid.ColumnSpan="4"
+					Content="="
+					Click="Equals_Click"
+					FontWeight="Bold"
+					FontSize="20"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+		</Grid>
+	</StackPanel>
+</UserControl>
