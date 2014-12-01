@@ -34,24 +34,24 @@ namespace ScrapProject
             InitializeComponent();
         }
 
-        protected override void OnSourceInitialized(EventArgs e)
-        {
-            //Console.WriteLine("ONSOURCEINITIALIZED");
-            base.OnSourceInitialized(e);
-            IntPtr hwnd = new WindowInteropHelper(this).Handle;   
-            HwndSource.FromHwnd(hwnd).AddHook(new HwndSourceHook(WndProc));
-            AddClipboardFormatListener(hwnd);
-        }
+        //protected override void OnSourceInitialized(EventArgs e)
+        //{
+        //    //Console.WriteLine("ONSOURCEINITIALIZED");
+        //    base.OnSourceInitialized(e);
+        //    IntPtr hwnd = new WindowInteropHelper(this).Handle;   
+        //    HwndSource.FromHwnd(hwnd).AddHook(new HwndSourceHook(WndProc));
+        //    AddClipboardFormatListener(hwnd);
+        //}
 
-        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
-        {
-            if (msg == (int)ClipboardMessages.WM_CLIPBOARDUPDATE)
-            {
-                //Console.WriteLine("WM_CLIPBOARDUPDATE");
-                UpdateDisplayClipboard();
-            }
-            return IntPtr.Zero;
-        }
+        //private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        //{
+        //    if (msg == (int)ClipboardMessages.WM_CLIPBOARDUPDATE)
+        //    {
+        //        //Console.WriteLine("WM_CLIPBOARDUPDATE");
+        //        UpdateDisplayClipboard();
+        //    }
+        //    return IntPtr.Zero;
+        //}
         //private void UpdateDisplayClipboard()
         //{
         //    IDataObject data = Clipboard.GetDataObject();
@@ -131,83 +131,83 @@ namespace ScrapProject
         //        }
         //    }
         //}
-        private void UpdateDisplayClipboard()
-        {
-            IDataObject data = Clipboard.GetDataObject();
-            try
-            {
-                if (data != null)
-                {
-                    string[] formats = data.GetFormats();
+    //    private void UpdateDisplayClipboard()
+    //    {
+    //        IDataObject data = Clipboard.GetDataObject();
+    //        try
+    //        {
+    //            if (data != null)
+    //            {
+    //                string[] formats = data.GetFormats();
 
-                    formatView.Text = "";
-                    textView.Text = "";
-                    foreach (string format in formats)
-                    {
-                        Console.WriteLine(format);
-                        formatView.Text += format + ":\n";
-                        if (format == "DeviceIndependentBitmap")
-                        {
-                            ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
-                            if (i != null)
-                            {
-                                imageView.Source = i;
-                            }
-                        }
-                        //imageView
-                        if (!format.Contains("moz"))
-                        {
-                            string s = data.GetData(format) as string;
-                            if (!String.IsNullOrWhiteSpace(s))
-                            {
-                                if (format.ToLower().Contains("html"))
-                                {
-                                    string sFixed = FixHtml(s);
-                                    htmlView.NavigateToString(sFixed);
-                                    //textView.Text += "HTML FIXED" + ": \n";
-                                    //textView.Text += "\t" + sFixed + "\n";
-                                }
-                                textView.Text += format + ": \n";
-                                textView.Text += "\t" + s + "\n";
-                            }
-                        }
-                    }
-                }
-            }
-            catch (System.OutOfMemoryException)
-            {
-                data = null;
-            }
-            catch (System.Runtime.InteropServices.COMException)
-            {
-                System.Threading.Thread.Sleep(0);
-                UpdateDisplayClipboard();
-            }
-        }
+    //                formatView.Text = "";
+    //                textView.Text = "";
+    //                foreach (string format in formats)
+    //                {
+    //                    Console.WriteLine(format);
+    //                    formatView.Text += format + ":\n";
+    //                    if (format == "DeviceIndependentBitmap")
+    //                    {
+    //                        ImageSource i = DBIConverter.ImageFromDBIMemStream(data.GetData("DeviceIndependentBitmap") as MemoryStream);
+    //                        if (i != null)
+    //                        {
+    //                            imageView.Source = i;
+    //                        }
+    //                    }
+    //                    //imageView
+    //                    if (!format.Contains("moz"))
+    //                    {
+    //                        string s = data.GetData(format) as string;
+    //                        if (!String.IsNullOrWhiteSpace(s))
+    //                        {
+    //                            if (format.ToLower().Contains("html"))
+    //                            {
+    //                                string sFixed = FixHtml(s);
+    //                                htmlView.NavigateToString(sFixed);
+    //                                //textView.Text += "HTML FIXED" + ": \n";
+    //                                //textView.Text += "\t" + sFixed + "\n";
+    //                            }
+    //                            textView.Text += format + ": \n";
+    //                            textView.Text += "\t" + s + "\n";
+    //                        }
+    //                    }
+    //                }
+    //            }
+    //        }
+    //        catch (System.OutOfMemoryException)
+    //        {
+    //            data = null;
+    //        }
+    //        catch (System.Runtime.InteropServices.COMException)
+    //        {
+    //            System.Threading.Thread.Sleep(0);
+    //            UpdateDisplayClipboard();
+    //        }
+    //    }
 
-        public string FixHtml(string HTML)
-        {
-            string ret = "";
-            StringBuilder sb = new StringBuilder();
-            char[] s = HTML.ToCharArray();
-            foreach (char c in s)
-            {
-                if (Convert.ToInt32(c) > 127)
-                    sb.Append("&#" + Convert.ToInt32(c) + ";");
-                else
-                    sb.Append(c);
-            }
-            ret =  sb.ToString();
-            if(ret.Contains("<META content=\"IE"))
-            {
-                ret = ret.Remove(ret.IndexOf("<!DOCTYPE"));
-            }
-            return ret;
-        }
-        [DllImport("user32.dll")]
-        public static extern IntPtr SetClipboardViewer(IntPtr hwnd);
-        [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool AddClipboardFormatListener(IntPtr hwnd);
+    //    public string FixHtml(string HTML)
+    //    {
+    //        string ret = "";
+    //        StringBuilder sb = new StringBuilder();
+    //        char[] s = HTML.ToCharArray();
+    //        foreach (char c in s)
+    //        {
+    //            if (Convert.ToInt32(c) > 127)
+    //                sb.Append("&#" + Convert.ToInt32(c) + ";");
+    //            else
+    //                sb.Append(c);
+    //        }
+    //        ret =  sb.ToString();
+    //        if(ret.Contains("<META content=\"IE"))
+    //        {
+    //            ret = ret.Remove(ret.IndexOf("<!DOCTYPE"));
+    //        }
+    //        return ret;
+    //    }
+    //    [DllImport("user32.dll")]
+    //    public static extern IntPtr SetClipboardViewer(IntPtr hwnd);
+    //    [DllImport("user32.dll", SetLastError = true)]
+    //    [return: MarshalAs(UnmanagedType.Bool)]
+    //    public static extern bool AddClipboardFormatListener(IntPtr hwnd);
     }
 }

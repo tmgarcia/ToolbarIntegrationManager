@@ -3,4 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:cust="clr-namespace:ScrapProject"
         Title="MainWindow" Height="550" Width="525">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Label Grid.Column="0"
+			   Grid.Row="0"
+			   Margin="10">Text 1
+		</Label>
+		<TextBox Width="200"
+				 Grid.Column="1"
+				 Grid.Row="0"
+				 Margin="10">
+			Hello World!
+		</TextBox>
+
+		<Label Grid.Column="0"
+			   Grid.Row="1"
+			   Margin="10">Text 2
+		</Label>
+		<TextBox Width="200"
+				 Grid.Column="1"
+				 Grid.Row="1"
+				 Margin="10">
+			Hello World!
+		</TextBox>
+	</Grid>
 </Window>

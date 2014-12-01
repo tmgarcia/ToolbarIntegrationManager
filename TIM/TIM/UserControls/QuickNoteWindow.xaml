@@ -21,17 +21,21 @@
 					Grid.Column="0"
 					Background="Transparent"
 					Name="AddButton"
-					Click="AddButton_Click"/>
-			<Button Content="[]"
-					Grid.Column="2"
+					Click="AddButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
+			<Button Grid.Column="2"
 					Background="Transparent"
 					Name="DeleteButton"
-					Click="DeleteButton_Click"/>
+					Click="DeleteButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}">
+				<Image Source="{StaticResource ResourceKey=SymbolTrash}"/>
+			</Button>
 			<Button Content="X"
 					Grid.Column="3"
 					Background="Transparent"
 					Name="CloseButton"
-					Click="CloseButton_Click"/>
+					Click="CloseButton_Click"
+					Style="{DynamicResource ResourceKey=BasicButton}"/>
 		</Grid>
 		<RichTextBox Name="noteTextBox">
 			<RichTextBox.Background>

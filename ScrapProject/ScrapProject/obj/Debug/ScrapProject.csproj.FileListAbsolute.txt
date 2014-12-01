@@ -29,3 +29,5 @@ T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\SimpleView.b
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\SimpleView.g.cs
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\QuickNotesTest.baml
 T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\QuickNotesTest.g.cs
+T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\ClipboardDemo.baml
+T:\School\Capstone-TaylorGarcia\ScrapProject\ScrapProject\obj\Debug\ClipboardDemo.g.cs
