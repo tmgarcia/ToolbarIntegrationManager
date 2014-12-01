@@ -64,7 +64,7 @@ namespace TestProject.Tools
             newRectangle.StrokeThickness = 1;
             newRectangle.MouseDown += newRectangle_MouseDown;
             newRectangle.ToolTip = "(" + c.A + "," + c.R + "," + c.G + "," + c.B + ")";
-            ItemsControl.Items.Add(newRectangle);
+            SwatchDisplay.Items.Add(newRectangle);
         }
 
         private Rectangle preview;
@@ -82,14 +82,14 @@ namespace TestProject.Tools
                     preview.Height = 15;
                     preview.Stroke = (Brush)converter.ConvertFromString(dataString);
                     preview.Fill = new SolidColorBrush { Color = Color.FromArgb(0, 0, 0, 0) };
-                    ItemsControl.Items.Add(preview);
+                    SwatchDisplay.Items.Add(preview);
                 }
             }
         }
 
         private void Grid_DragLeave(object sender, DragEventArgs e)
         {
-            ItemsControl.Items.Remove(preview);
+            SwatchDisplay.Items.Remove(preview);
         }
 
         private void Grid_DragOver(object sender, DragEventArgs e)
@@ -127,8 +127,8 @@ namespace TestProject.Tools
                     newRectangle.MouseDown += newRectangle_MouseDown;
                     Color c = ((SolidColorBrush)newRectangle.Fill).Color;
                     newRectangle.ToolTip = "(" + c.A + "," + c.R + "," + c.G + "," + c.B + ")";
-                    ItemsControl.Items.Remove(preview);
-                    ItemsControl.Items.Add(newRectangle);
+                    SwatchDisplay.Items.Remove(preview);
+                    SwatchDisplay.Items.Add(newRectangle);
                 }
             }
         }
@@ -158,12 +158,20 @@ namespace TestProject.Tools
 
         public void ReorientHorizontal()
         {
-
+            SwatchDisplay.Orientation = Orientation.Horizontal;
+            Height = Constants.ToolButtonHeight;
+            Width = 3 * Constants.ToolButtonWidth;
+            Scroll.Height = Constants.ToolButtonHeight;
+            Scroll.Width = 3 * Constants.ToolButtonWidth;
         }
 
         public void ReorientVertical()
         {
-
+            SwatchDisplay.Orientation = Orientation.Vertical;
+            Width = Constants.ToolButtonHeight;
+            Height = 3 * Constants.ToolButtonWidth;
+            Scroll.Width = Constants.ToolButtonHeight;
+            Scroll.Height= 3 * Constants.ToolButtonWidth;
         }
 
         public void Collapse()

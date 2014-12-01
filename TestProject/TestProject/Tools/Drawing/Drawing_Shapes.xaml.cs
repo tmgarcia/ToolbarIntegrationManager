@@ -42,18 +42,38 @@ namespace TestProject.Tools
 
         private void Square_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Shape_Rectangle;
-            this.RaiseEvent(new RoutedEventArgs(ShapeSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Shape_Rectangle;
+                this.RaiseEvent(new RoutedEventArgs(ShapeSelectedEvent, this));
+                e.Handled = true;
+            }
         }
         private void Circle_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Shape_Ellipse;
-            this.RaiseEvent(new RoutedEventArgs(ShapeSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Shape_Ellipse;
+                shapeChoice.UnselectAll();
+                this.RaiseEvent(new RoutedEventArgs(ShapeSelectedEvent, this));
+                e.Handled = true;
+            }
         }
         private void Triangle_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Shape_Triangle;
-            this.RaiseEvent(new RoutedEventArgs(ShapeSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Shape_Triangle;
+                shapeChoice.UnselectAll();
+                this.RaiseEvent(new RoutedEventArgs(ShapeSelectedEvent, this));
+                e.Handled = true;
+            }
         }
 
         public void Activate()
@@ -89,5 +109,6 @@ namespace TestProject.Tools
         {
 
         }
+
     }
 }

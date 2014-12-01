@@ -41,28 +41,58 @@ namespace TestProject.Tools
         }
         private void Line_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Line_Line;
-            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Line_Line;
+                this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+                e.Handled = true;
+            }
         }
         private void Arrow_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Line_Arrow;
-            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Line_Arrow;
+                this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+                e.Handled = true;
+            }
         }
         private void CoordQuad_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Line_CoordQuad;
-            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Line_CoordQuad;
+                this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+                e.Handled = true;
+            }
         }
         private void Coord2D_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Line_Coord2D;
-            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Line_Coord2D;
+                this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+                e.Handled = true;
+            }
         }
         private void Coord3D_Selected(object sender, RoutedEventArgs e)
         {
-            selectedStrokeType = DrawingStrokeType.Line_Coord3D;
-            this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+            ListBoxItem item = sender as ListBoxItem;
+            if (item.IsSelected)
+            {
+                item.IsSelected = false;
+                selectedStrokeType = DrawingStrokeType.Line_Coord3D;
+                this.RaiseEvent(new RoutedEventArgs(LineSelectedEvent, this));
+                e.Handled = true;
+            }
         }
 
         public void Activate()

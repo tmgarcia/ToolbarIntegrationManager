@@ -8,7 +8,8 @@
 	<Grid>
 		<uc:BaseTool_Expandable x:Name="expandable">
 			<uc:BaseTool_Expandable.PopupContent>
-				<uc:OrientableListBox Width="40">
+				<uc:OrientableListBox Width="40"
+									  SelectionMode="Single">
 					<ListBox.Background>
 						<SolidColorBrush Color="{DynamicResource ResourceKey=ToolbarBackgroundMediumColor}" />
 					</ListBox.Background>

@@ -135,3 +135,7 @@ T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure\
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Measure\Measure_VerticalRuler.baml
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes\Notes_QuickNotes.baml
 T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\Tools\Notes\Notes_ScreenClipping.baml
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\bin\Debug\TestProject.exe.manifest
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\bin\Debug\TestProject.application
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\TestProject.exe.manifest
+T:\School\Capstone-TaylorGarcia\TestProject\TestProject\obj\Debug\TestProject.application

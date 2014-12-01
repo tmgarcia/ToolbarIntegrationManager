@@ -28,9 +28,13 @@ namespace TestProject.Tools
             remove { RemoveHandler(WeightChangedEvent, value); }
         }
         public double currentWeight=1;
+        Slider weightSlider;
+        Border sliderBorder;
         public Drawing_StrokeWeight()
         {
             InitializeComponent();
+            sliderBorder = expandable.PopupContent as Border;
+            weightSlider = sliderBorder.Child as Slider;
             expandable.setSymbol((DrawingImage)Application.Current.FindResource("SymbolStrokes"));
             expandable.Toggle.toggleControl.ToolTip = "Stroke Thickness";
         }
@@ -48,23 +52,37 @@ namespace TestProject.Tools
 
         public void Deactivate()
         {
-
+            expandable.Collapse();
         }
 
 
         public void ReorientHorizontal()
         {
-
+            weightSlider.Orientation = Orientation.Vertical;
+            weightSlider.Height = 100;
+            weightSlider.Width = 20;
+            sliderBorder.Width = 30;
+            sliderBorder.Height = Double.NaN;
+            expandable.SetPlacementModeBottom();
+            expandable.setAlignmentPointTopLeft();
+            //border width 50
+            
         }
 
         public void ReorientVertical()
         {
-
+            weightSlider.Orientation = Orientation.Horizontal;
+            weightSlider.Width = 100;
+            weightSlider.Height= 20;
+            sliderBorder.Height = 30;
+            sliderBorder.Width= Double.NaN;
+            expandable.SetPlacementModeRight();
+            expandable.setAlignmentPointTopLeft();
         }
 
         public void Collapse()
         {
-
+            expandable.Collapse();
         }
     }
 }

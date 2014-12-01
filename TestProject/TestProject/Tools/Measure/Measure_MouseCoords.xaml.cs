@@ -142,12 +142,16 @@ namespace TestProject.Tools
 
         public void ReorientHorizontal()
         {
-
+            DisplayStackPanel.Orientation = Orientation.Horizontal;
+            Width = 140;
+            Height = Constants.ToolButtonHeight;
         }
 
         public void ReorientVertical()
         {
-
+            DisplayStackPanel.Orientation = Orientation.Vertical;
+            this.Height = 140;
+            this.Width = Constants.ToolButtonHeight;
         }
 
         public void Collapse()

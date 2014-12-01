@@ -3,25 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:uc="clr-namespace:TestProject.UserControls"
              mc:Ignorable="d">
 	<ScrollViewer Name="Scroll"
-				  HorizontalScrollBarVisibility="Disabled"
+				  HorizontalScrollBarVisibility="Auto"
 				  VerticalScrollBarVisibility="Auto">
-		<ItemsControl Name="ItemsControl"
-					  AllowDrop="True"
-						DragEnter="Grid_DragEnter"
-						DragLeave="Grid_DragLeave"
-						DragOver="Grid_DragOver"
-						Drop="Grid_Drop">
-			<ItemsControl.ItemsPanel>
-				<ItemsPanelTemplate>
-					<UniformGrid Columns="4">
-						<UniformGrid.Background>
-							<SolidColorBrush Color="{StaticResource ResourceKey=ToolbarBackgroundDarkColor}" />
-						</UniformGrid.Background>
-					</UniformGrid>
-				</ItemsPanelTemplate>
-			</ItemsControl.ItemsPanel>
-		</ItemsControl>
+		<uc:OrientableUniformGrid x:Name="SwatchDisplay"
+								  AllowDrop="True"
+								  DragEnter="Grid_DragEnter"
+								  DragLeave="Grid_DragLeave"
+								  DragOver="Grid_DragOver"
+								  Drop="Grid_Drop">
+		</uc:OrientableUniformGrid>
 	</ScrollViewer>
 </UserControl>

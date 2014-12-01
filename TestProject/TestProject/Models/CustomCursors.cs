@@ -34,6 +34,10 @@ namespace TestProject.Models
 
         public static Cursor Cursor_EmptyCircle(int diameter)
         {
+            if (diameter < 8)
+            {
+                diameter = 8;
+            }
             System.Drawing.Size s = new System.Drawing.Size(diameter, diameter);
             System.Drawing.Image prebmp = new System.Drawing.Bitmap(Constants.SolutionRoot + "Images/Cursors/CursorCircle.png");
             System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(prebmp, s);

@@ -39,14 +39,17 @@ namespace TestProject.Toolbars
         Cursor previousCursor;
         void display_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            previousCursor = Mouse.OverrideCursor;
-            Mouse.OverrideCursor = Cursors.Arrow;
+            if (overlay.activelyDrawing)
+            {
+                previousCursor = Mouse.OverrideCursor;
+                Mouse.OverrideCursor = Cursors.Arrow;
+            }
         }
         void display_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            if (previousCursor != null && Mouse.OverrideCursor == Cursors.Arrow && overlay.activelyDrawing)
+            if (overlay.activelyDrawing)
             {
-                Mouse.OverrideCursor = previousCursor;
+                Mouse.OverrideCursor = overlay.currentCursor;
             }
         }
         

@@ -44,6 +44,8 @@ namespace TestProject.Tools
         DrawingStrokeType currentStrokeType = DrawingStrokeType.Pen;
         public bool activelyDrawing = true;
 
+        public Cursor currentCursor;
+
         public ToolbarWindow parentToolbar;
 
         private int originalExtendedStyle;
@@ -54,6 +56,7 @@ namespace TestProject.Tools
             Drawing_Clear clearButton, Drawing_Save saveButton, Drawing_ReturnCursor returnCursorButton, Drawing_Highlighter highlighterTool)
         {
             InitializeComponent();
+            currentCursor = Cursors.Arrow;
             this.WindowState = System.Windows.WindowState.Maximized;
             inkCanvas.DefaultDrawingAttributes.FitToCurve = true;
             parentToolbar = parent;
@@ -158,7 +161,6 @@ namespace TestProject.Tools
 
         void EraserToolActivated(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = CustomCursors.Cursor_Eraser();
             highlighterTool.toggle.toggleControl.IsChecked = false;
             textTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
@@ -168,6 +170,8 @@ namespace TestProject.Tools
 
             inkCanvas.EditingMode = InkCanvasEditingMode.EraseByStroke;
             StartDrawing();
+            Mouse.OverrideCursor = CustomCursors.Cursor_Eraser();
+            currentCursor = Mouse.OverrideCursor;
         }
         void EraserToolDeactivated(object sender, RoutedEventArgs e)
         {
@@ -176,7 +180,6 @@ namespace TestProject.Tools
         }
         void HighlighterToolActivated(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight + 4);
             penTool.toggle.toggleControl.IsChecked = false;
             textTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
@@ -185,6 +188,8 @@ namespace TestProject.Tools
             inkCanvas.DefaultDrawingAttributes.IsHighlighter = true;
             CollapseAll();
             StartDrawing();
+            Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight + 4);
+            currentCursor = Mouse.OverrideCursor;
         }
         void HighlighterToolDeactivated(object sender, RoutedEventArgs e)
         {
@@ -193,7 +198,6 @@ namespace TestProject.Tools
         }
         void PenToolActivated(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight+4);
             highlighterTool.toggle.toggleControl.IsChecked = false;
             textTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
@@ -201,6 +205,8 @@ namespace TestProject.Tools
             currentStrokeType = DrawingStrokeType.Pen;
             CollapseAll();
             StartDrawing();
+            Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight + 4);
+            currentCursor = Mouse.OverrideCursor;
         }
         void PenToolDeactivated(object sender, RoutedEventArgs e)
         {
@@ -209,7 +215,6 @@ namespace TestProject.Tools
 
         void TextToolActivated(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.IBeam;
             highlighterTool.toggle.toggleControl.IsChecked = false;
             penTool.toggle.toggleControl.IsChecked = false;
             eraserTool.toggle.toggleControl.IsChecked = false;
@@ -217,6 +222,8 @@ namespace TestProject.Tools
             currentStrokeType = DrawingStrokeType.Text;
             CollapseAll();
             StartDrawing();
+            Mouse.OverrideCursor = Cursors.IBeam;
+            currentCursor = Mouse.OverrideCursor;
         }
         void TextToolDeactivated(object sender, RoutedEventArgs e)
         {
@@ -225,19 +232,21 @@ namespace TestProject.Tools
 
         void lineSelect_LineSelected(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.Cross;
             currentStrokeType = lineSelect.selectedStrokeType;
             CollapseAll();
             UnToggleAll();
             StartDrawing();
+            Mouse.OverrideCursor = Cursors.Cross;
+            currentCursor = Mouse.OverrideCursor;
         }
         void shapeSelect_ShapeSelected(object sender, RoutedEventArgs e)
         {
-            Mouse.OverrideCursor = Cursors.Cross;
             currentStrokeType = shapeSelect.selectedStrokeType;
             CollapseAll();
             UnToggleAll();
             StartDrawing();
+            Mouse.OverrideCursor = Cursors.Cross;
+            currentCursor = Mouse.OverrideCursor;
         }
 
         void weightSlider_WeightChanged(object sender, RoutedEventArgs e)
@@ -249,6 +258,7 @@ namespace TestProject.Tools
             if ((bool)penTool.toggle.toggleControl.IsChecked || (bool)highlighterTool.toggle.toggleControl.IsChecked)
             {
                 Mouse.OverrideCursor = CustomCursors.Cursor_EmptyCircle((int)strokeWeight + 4);
+                currentCursor = Mouse.OverrideCursor;
             }
         }
 
@@ -341,10 +351,11 @@ namespace TestProject.Tools
         }
         private void StopDrawing()
         {
+            activelyDrawing = false;
             Mouse.OverrideCursor = Cursors.Arrow;
+            currentCursor = Mouse.OverrideCursor;
             inkCanvas.Background = new SolidColorBrush(Color.FromArgb(0, 255, 255, 255));
             SetTransparent();
-            activelyDrawing = false;
         }
 
 

@@ -7,7 +7,8 @@
 			 d:DesignWidth="170">
 	<Border Padding="5">
 		<StackPanel Orientation="Horizontal"
-					ToolTip="Mouse Coordinates">
+					ToolTip="Mouse Coordinates"
+					Name="DisplayStackPanel">
 			<Image Source="{StaticResource SymbolPointer}"
 				   Width="10"/>
 			<Label Content="X:"

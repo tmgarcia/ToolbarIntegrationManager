@@ -2,5 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
+    <PublishUrlHistory>ftp://ftp.gametaylor.com/|http://www.gametaylor.com/Downloads/|ftp.gametaylor.com\|ftp://www.gametaylor.com/|http://http://www.gametaylor.com/Downloads/</PublishUrlHistory>
+    <InstallUrlHistory>http://www.gametaylor.com/Files/|http://www.gametaylor.com/Files/TIM/|http://www.gametaylor.com/|http://www.gametaylor.com/Downloads/</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>true</VerifyUploadedFiles>
   </PropertyGroup>
 </Project>

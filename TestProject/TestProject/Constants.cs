@@ -11,8 +11,8 @@ namespace TestProject
     {
         public static int ToolbarIconWidth = 150;
         public static int ToolbarIconHeight = 150;
-        public static int ToolIconWidth;
-        public static int ToolIconHeight;
+        public static int ToolIconWidth = 40;
+        public static int ToolIconHeight = 40;
 
         public static int ToolbarHorizontalExpandedHeight = 50;
         public static int ToolbarHorizontalExpandedWidth = 200;

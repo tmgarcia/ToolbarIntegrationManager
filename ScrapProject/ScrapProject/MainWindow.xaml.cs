@@ -30,5 +30,6 @@ namespace ScrapProject
             SimpleView sv = new SimpleView();
             sv.Show();
         }
+
     }
 }
