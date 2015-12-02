@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TIM.Models;
 using TIM.UserControls;
 using TIM.Tools;
+using System.Windows;
 
 namespace TIM.Toolbars
 {
@@ -25,7 +26,14 @@ namespace TIM.Toolbars
             SetupLaunchIcon();
             SetupCommandButtons();
             SetupTools();
+            commandButtons.Help.Click += Help_Click;
         }
+
+        void Help_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            DebugConsole.DisplayDebugDialogue();
+        }
+       
 
         protected override void PreDisplaySetup()
         {

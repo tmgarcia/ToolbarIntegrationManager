@@ -80,7 +80,7 @@ namespace TIM.Tools
             hslaBinding.Bindings.Add(new Binding { Source = hslaSliders.lSlider, Path = new PropertyPath("Value"), Mode = BindingMode.TwoWay });
             hslaBinding.Bindings.Add(new Binding { Source = hslaSliders.aSlider, Path = new PropertyPath("Value"), Mode = BindingMode.TwoWay });
 
-            HSLAToColor hsbaCon = new HSLAToColor();
+            HSBAToColor hsbaCon = new HSBAToColor();
             hsbaBinding = new MultiBinding();
             hsbaBinding.Mode = BindingMode.TwoWay;
             hsbaBinding.Converter = hsbaCon;

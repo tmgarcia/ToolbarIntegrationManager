@@ -2,13 +2,13 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>T:\ToolbarIntegrationManager\TIM\|ftp://ftp.gametaylor.com/|http://www.gametaylor.com/Downloads/|ftp.gametaylor.com\|ftp://www.gametaylor.com/</PublishUrlHistory>
-    <InstallUrlHistory>http://www.gametaylor.com/Files/|http://www.gametaylor.com/Files/TIM/|http://www.gametaylor.com/|http://www.gametaylor.com/Downloads/</InstallUrlHistory>
+    <PublishUrlHistory>ftp://ftp.gametaylor.com/files/tim/|T:\ToolbarIntegrationManager\TIM\|ftp://ftp.gametaylor.com/|http://www.gametaylor.com/Downloads/|ftp.gametaylor.com\</PublishUrlHistory>
+    <InstallUrlHistory>http://www.gametaylor.com/files/tim/|http://www.gametaylor.com/tim/|http://www.gametaylor.com/Files/|http://www.gametaylor.com/Files/TIM/|http://www.gametaylor.com/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
-    <VerifyUploadedFiles>true</VerifyUploadedFiles>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
 </Project>

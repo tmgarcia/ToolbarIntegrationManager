@@ -33,6 +33,7 @@ namespace TIM.Tools
         
         protected override void OnStylusDown(RawStylusInput rawStylusInput)
         {
+            DebugConsole.Print("TEST");
             currentStrokeMode = canvas.StrokeMode;
             ((SolidColorBrush)pen.Brush).Color = canvas.strokeColor;
             pen.Thickness = canvas.DefaultDrawingAttributes.Width;

@@ -50,7 +50,7 @@ namespace TIM
             this.ShowInTaskbar = false;
 
             ni = new System.Windows.Forms.NotifyIcon();
-            ni.Icon = new System.Drawing.Icon(Constants.SolutionRoot + "Images/launcher.ico");
+            ni.Icon = new System.Drawing.Icon(Constants.SolutionRoot + "Images/trayIcon.ico");
             ni.Visible = true;
             ni.DoubleClick +=
                 delegate(object sender, EventArgs args)
@@ -58,7 +58,8 @@ namespace TIM
                     this.Show();
                     this.WindowState = System.Windows.WindowState.Normal;
                 };
-            
+            DebugConsole.initialize();
+            //if there is anything wrong this will catch the things
         }
 
         void ToolbarWindow_Activated(object sender, EventArgs e)
@@ -103,6 +104,8 @@ namespace TIM
             launchCommands.AddButtonsToGrid(launcherGrid, 3, 0);
             launchCommands.SetToActiveState();
         }
+
+
         private void InitializeIcons()
         {
             toolbars = new List<Models.Toolbar>();

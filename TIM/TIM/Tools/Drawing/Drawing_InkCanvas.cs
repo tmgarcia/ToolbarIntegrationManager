@@ -44,6 +44,34 @@ namespace TIM.Tools
             
         }
 
+        protected override void OnPreviewStylusButtonDown(StylusButtonEventArgs e)
+        {
+            if (strokeColor.A == 0)
+            {
+                this.DefaultDrawingAttributes.Color = Color.FromArgb(255, 255, 255, 255);
+            }
+            else
+            {
+                this.DefaultDrawingAttributes.Color = strokeColor;
+            }
+            if (StrokeMode == DrawingStrokeType.Text && !textBeingInput && EditingMode == InkCanvasEditingMode.Ink)
+            {
+                textBeingInput = true;
+                textInputPos = e.GetPosition(this);
+                InkCanvas.SetLeft(box, textInputPos.X);
+                InkCanvas.SetTop(box, textInputPos.Y);
+                box.Width = 200;
+                box.Foreground = new SolidColorBrush(fillColor);
+                Children.Add(box);
+                Keyboard.Focus(box);
+                e.Handled = true;
+            }
+            else
+            {
+                base.OnPreviewStylusButtonDown(e);
+            }
+        }
+
         protected override void OnPreviewMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs e)
         {
             if (strokeColor.A == 0)
